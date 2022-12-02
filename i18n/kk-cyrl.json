@@ -11,7 +11,7 @@
 	"citizen.css": "/* Мұндағы барлық CSS Citizen мұқабасы бар қатысушыларға жүктеледі */",
 	"citizen.js": "/* Мұндағы барлық JavaScript Citizen мұқабасы бар қатысушыларға жүктеледі */",
 	"citizen-drawer-toggle": "Мәзірді ашу",
-	"citizen-personalmenu-toggle": "Жеке мәзірді ашу",
+	"citizen-usermenu-toggle": "Жеке мәзірді ашу",
 	"citizen-search-toggle": "Іздеу",
 	"citizen-languages-toggle": "Басқа тілдер",
 	"citizen-actions-more-toggle": "Басқа әрекеттер",

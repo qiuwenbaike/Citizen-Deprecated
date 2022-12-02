@@ -1,4 +1,4 @@
-const ACTIVE_SECTION_CLASS = 'toc__item--active';
+const ACTIVE_SECTION_CLASS = 'citizen-toc__listItem--active';
 
 let /** @type {HTMLElement | undefined} */ activeSection;
 
@@ -6,7 +6,7 @@ let /** @type {HTMLElement | undefined} */ activeSection;
  * @param {string} id
  */
 function changeActiveSection( id ) {
-	const toc = document.getElementById( 'toc' );
+	const toc = document.getElementById( 'mw-panel-toc' );
 
 	const getLink = ( hash ) => {
 		const
@@ -56,7 +56,8 @@ function initToC() {
 	const initSectionObserver = require( './sectionObserver.js' ).init;
 
 	const sectionObserver = initSectionObserver( {
-		elements: bodyContent.querySelectorAll( '.mw-headline' ),
+		/* T13555 */
+		elements: bodyContent.querySelectorAll( '.mw-headline' ) ?? bodyContent.querySelectorAll( '.mw-heading' ),
 		topMargin: getTopMargin(),
 		onIntersection: ( section ) => { changeActiveSection( section.id ); }
 	} );
