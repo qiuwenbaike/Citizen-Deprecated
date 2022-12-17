@@ -20,10 +20,23 @@
 		margin-left: auto;
 	}
 
-	&__bottom {
-		padding: var( --space-md ) 0;
+	&__siteinfo {
+		padding: var( --space-md ) 0 0;
 		margin-right: auto;
 		margin-left: auto;
+	}
+
+	&__bottom {
+		padding: var(--space-xs);
+
+		.page-info {
+			font-size: 0.8125rem;
+			padding: var( --space-xs );
+	
+			&__item {
+				padding: var(--space-xs) var(--space-md);
+			}
+		}
 	}
 
 	a {
@@ -43,15 +56,6 @@
 }
 
 #footer {
-	.page-info {
-		font-size: 0.8125rem;
-		padding: var( --space-xs );
-
-		&__item {
-			padding: var(--space-xs) var(--space-md);
-		}
-	}
-
 	&-places {
 		ul {
 			padding: var( --space-xs );
