@@ -51,6 +51,10 @@ sub {
 	line-height: 1;
 }
 
+th {
+	font-weight: var( --font-weight-semibold );
+}
+
 td {
 	> p,
 	> ul,
@@ -109,6 +113,15 @@ video {
 				color: @color-primary--active;
 			}
 		}
+	}
+}
+
+@media ( hover: none ) {
+	a,
+	button,
+	label {
+		// Remove the 300ms delay in click event (T118509)
+		touch-action: manipulation;
 	}
 }
 

@@ -52,11 +52,13 @@
 .citizen-card-content-show() {
 	opacity: 1;
 	transition: @transition-opacity--transform;
+	will-change: opacity;
 }
 
 // Transition animation
 .citizen-card-transition() {
 	transition: @transition-transform, @transition-opacity--transform, @transition-visibility--transform;
+	will-change: transform, opacity, opacity;
 }
 
 // Header card popups
@@ -69,6 +71,7 @@
 	min-width: 16rem;
 	max-height: var( --header-card-maxheight );
 	margin: var( --space-xs );
+	contain: content;
 	overscroll-behavior: contain;
 	user-select: none;
 	.citizen-card();
@@ -100,13 +103,16 @@
 	}
 }
 
-.citizen-sticky-header( @topOffset: 0, @bottomBorder: true ) {
+.citizen-sticky-header( @topOffset: 0, @bottomBorder: true, @zIndex: true ) {
 	position: sticky;
-	z-index: @z-index-page-header;
 	top: @topOffset;
 
 	& when ( @bottomBorder ) {
 		border-bottom: 1px solid var( --border-color-base );
+	}
+
+	& when ( @zIndex ) {
+		z-index: @z-index-page-header;
 	}
 
 	// HACK: Hide overflow

@@ -1,6 +1,6 @@
 {
 	"name": "Citizen",
-	"version": "2.1.0",
+	"version": "2.2.0",
 	"author": [
 		"[https://www.mediawiki.org/wiki/User:Alistair3149 Alistair3149]",
 		"[https://www.mediawiki.org/wiki/User:Octfx Octfx]",
@@ -34,7 +34,6 @@
 					],
 					"styles": [
 						"skins.citizen.styles",
-						"skins.citizen.styles.fonts",
 						"skins.citizen.icons",
 						"skins.citizen.icons.wmui"
 					],
@@ -102,22 +101,6 @@
 				"resources/skins.citizen.styles/skin.less"
 			]
 		},
-		"skins.citizen.styles.fonts": {
-			"class": "ResourceLoaderSkinModule",
-			"targets": [
-				"desktop",
-				"mobile"
-			],
-			"features": {
-				"accessibility": false,
-				"content-body": false,
-				"interface-core": false,
-				"toc": false
-			},
-			"styles": [
-				"resources/skins.citizen.styles.fonts/skins.citizen.styles.fonts.less"
-			]
-		},
 		"skins.citizen.styles.fonts.cjk": {
 			"class": "ResourceLoaderSkinModule",
 			"targets": [
@@ -131,39 +114,7 @@
 				"toc": false
 			},
 			"styles": [
-				"resources/skins.citizen.styles.fonts.cjk/skins.citizen.styles.fonts.cjk.less"
-			]
-		},
-		"skins.citizen.styles.sections": {
-			"class": "ResourceLoaderSkinModule",
-			"targets": [
-				"desktop",
-				"mobile"
-			],
-			"features": {
-				"accessibility": false,
-				"content-body": false,
-				"interface-core": false,
-				"toc": false
-			},
-			"styles": [
-				"resources/skins.citizen.styles.sections/skins.citizen.styles.sections.less"
-			]
-		},
-		"skins.citizen.styles.sitestats": {
-			"class": "ResourceLoaderSkinModule",
-			"targets": [
-				"desktop",
-				"mobile"
-			],
-			"features": {
-				"accessibility": false,
-				"content-body": false,
-				"interface-core": false,
-				"toc": false
-			},
-			"styles": [
-				"resources/skins.citizen.styles.sitestats/skins.citizen.styles.sitestats.less"
+				"resources/skins.citizen.styles.fonts.cjk/index.less"
 			]
 		},
 		"skins.citizen.scripts": {
@@ -177,6 +128,7 @@
 				"resources/skins.citizen.scripts/scrollObserver.js",
 				"resources/skins.citizen.scripts/sectionObserver.js",
 				"resources/skins.citizen.scripts/search.js",
+				"resources/skins.citizen.scripts/sections.js",
 				"resources/skins.citizen.scripts/tableOfContents.js"
 			],
 			"dependencies": [
@@ -185,14 +137,6 @@
 			"targets": [
 				"desktop",
 				"mobile"
-			]
-		},
-		"skins.citizen.scripts.sections": {
-			"scripts": [
-				"resources/skins.citizen.scripts.sections/skins.citizen.scripts.sections.js"
-			],
-			"targets": [
-				"desktop"
 			]
 		},
 		"skins.citizen.search": {
@@ -216,7 +160,10 @@
 			"messages": [
 				"citizen-search-fulltext",
 				"citizen-search-fulltext-empty",
-				"search-redirect"
+				"citizen-search-noresults-title",
+				"citizen-search-noresults-desc",
+				"search-redirect",
+				"searchsuggest-search"
 			],
 			"targets": [
 				"desktop",
@@ -278,7 +225,10 @@
 			"class": "ResourceLoaderOOUIIconPackModule",
 			"icons": [
 				"article",
+				"articleNotFound",
 				"articleRedirect",
+				"articleSearch",
+				"articlesSearch",
 				"block",
 				"collapse",
 				"database",
@@ -365,6 +315,7 @@
 			"+ext.managewiki.oouiform.styles": "skinStyles/extensions/ManageWiki/ext.managewiki.oouiform.styles.less",
 			"+ext.pygments": "skinStyles/extensions/SyntaxHighlight_GeSHi/ext.pygments.less",
 			"+ext.math.styles": "skinStyles/extensions/Math/ext.math.styles.less",
+			"+mediasearch.styles": "skinStyles/extensions/MediaSearch/mediasearch.styles.less",
 			"+mmv": "skinStyles/extensions/MultimediaViewer/mmv.less",
 			"+mmv.ui.download.pane": "skinStyles/extensions/MultimediaViewer/mmv.ui.download.pane.less",
 			"+mmv.ui.reuse.shareembed": "skinStyles/extensions/MultimediaViewer/mmv.ui.reuse.shareembed.less",
@@ -479,7 +430,7 @@
 			"+mediawiki.action.view.filepage": "skinStyles/mediawiki/action/mediawiki.action.view.filepage.less",
 			"+mediawiki.debug": "skinStyles/mediawiki/debug/mediawiki.debug.less",
 			"+mediawiki.notification": "skinStyles/mediawiki/mediawiki.notification.less",
-			"+mediawiki.pager.tablePager": "skinStyles/mediawiki/mediawiki.pager.tablePager.less",
+			"+mediawiki.pager.styles": "skinStyles/mediawiki/mediawiki.pager.styles.less",
 			"mediawiki.skinning.content.parsoid": [],
 			"mediawiki.skinning.interface": [],
 			"+mediawiki.special": "skinStyles/mediawiki/special/mediawiki.special.less",
@@ -504,6 +455,8 @@
 			"+mediawiki.legacy.shared": "skinStyles/mediawiki/mediawiki.legacy.shared.less",
 			"+mediawiki.page.gallery.styles": "skinStyles/mediawiki/mediawiki.page.gallery.styles.less",
 			"+mediawiki.rcfilters.filters.base.styles": "skinStyles/mediawiki/mediawiki.rcfilters.filters.base.styles.less",
+			"+mediawiki.rcfilters.highlightCircles.seenunseen.styles": "skinStyles/mediawiki/mediawiki.rcfilters.highlightCircles.seenunseen.styles.less",
+			"+mediawiki.rcfilters.filters.ui": "skinStyles/mediawiki/mediawiki.rcfilters.filters.ui.less",
 			"+mediawiki.widgets.DateInputWidget.styles": "skinStyles/mediawiki/mediawiki.widgets.DateInputWidget.styles.less",
 			"+oojs-ui-core.styles": "skinStyles/ooui/oojs-ui-core.less",
 			"+oojs-ui-toolbars": "skinStyles/ooui/oojs-ui-toolbars.less",
@@ -545,15 +498,15 @@
 			"descriptionmsg": "citizen-config-manifestbackgroundcolor",
 			"public": true
 		},
-		"EnableSearch": {
-			"value": true,
-			"description": "Enable or disable rich search suggestions",
-			"descriptionmsg": "citizen-config-enablesearch",
+		"SearchModule": {
+			"value": "skins.citizen.search",
+			"description": "Which module to use for search suggestion. Avaliable options: [skins.citizen.search|mediawiki.searchSuggest|custom]",
+			"descriptionmsg": "citizen-config-searchmodule",
 			"public": true
 		},
 		"SearchGateway": {
 			"value": "mwActionApi",
-			"description": "Which gateway to use for fetching search suggestion. Avaliable options: [mwActionApi|mwRestApi]",
+			"description": "Which gateway to use for fetching search suggestion. Avaliable options: [mwActionApi|mwRestApi|custom]",
 			"descriptionmsg": "citizen-config-searchgateway",
 			"public": true
 		},
