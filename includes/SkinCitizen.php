@@ -88,7 +88,6 @@ class SkinCitizen extends SkinMustache {
 			// Booleans
 			'toc-enabled' => !empty( $parentData['data-toc'] ),
 			// Data objects
-			'data-sitestats' => $drawer->getSiteStatsData(),
 			'data-user-info' => $header->getUserInfoData( $parentData['data-portlets']['data-user-page'] ),
 			// HTML strings
 			'html-title-heading--formatted' => $pageTitle->buildTitle( $parentData, $title ),

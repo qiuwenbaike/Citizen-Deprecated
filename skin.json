@@ -517,12 +517,6 @@
 			"descriptionmsg": "citizen-config-enablecollapsiblesections",
 			"public": true
 		},
-		"EnableDrawerSiteStats": {
-			"value": true,
-			"description": "Enables the site statistics in drawer menu",
-			"descriptionmsg": "citizen-config-enabledrawersitestats",
-			"public": true
-		},
 		"UseNumberFormatter": {
 			"value": true,
 			"description": "Use NumberFormatter for site statistics",
