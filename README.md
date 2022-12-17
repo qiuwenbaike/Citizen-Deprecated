@@ -1,5 +1,4 @@
 # Citizen
-[![](https://img.shields.io/github/contributors/StarCitizenTools/mediawiki-skins-Citizen?style=flat-square&logo=github)](https://github.com/StarCitizenTools/mediawiki-skins-Citizen/graphs/contributors) ![](https://img.shields.io/github/workflow/status/StarCitizenTools/mediawiki-skins-Citizen/MediaWiki%20CI?label=MediaWiki%20CI&style=flat-square&logo=GithubActions) [![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg?style=flat-square&logo=GNU)](https://www.gnu.org/licenses/gpl-3.0) [![MediaWiki: >=1.39.0](https://img.shields.io/badge/MediaWiki-%3E%3D1.39.0-%2336c?style=flat-square&logo=Wikipedia)](https://www.mediawiki.org) [![](https://img.shields.io/badge/translations-translatewiki-%23013467?style=flat-square&logo=GoogleTranslate)](https://translatewiki.net/w/i.php?title=Special:Translate&group=mwgithub-star-citizen)
 
 Citizen is a beautiful, usable, responsive [MediaWiki](https://www.mediawiki.org) skin that makes [extensions](https://www.mediawiki.org/wiki/Manual:Extensions) part of the cohesive experience. It was initially created for the [Star Citizen Wiki](https://starcitizen.tools) but is flexible to run on various MediaWiki configurations.
 
@@ -8,6 +7,7 @@ Live demo: [English](https://starcitizen.tools), [German](https://star-citizen.w
 For the old design, [click here](https://github.com/StarCitizenTools/mediawiki-skins-Citizen/releases/tag/v1.17.9) for the last release.
 
 ## Notable features
+
 - **Responsive layout**: Responsive and able to adapt to different screen sizes. 📱💻🖥️
 - **Light/dark mode**: Switch between light and dark mode. ☀️🌙
 - **Improved extension UI**: Adjust supported extensions to be more usable and cohesive. 🤝🔗
@@ -18,6 +18,7 @@ For the old design, [click here](https://github.com/StarCitizenTools/mediawiki-s
 - **Progressive Web App**: Give a more app-like experience when user add your wiki to their home screen. 📱
 
 ## Extension styles
+
 Citizen overrides some extension styles through skinStyles that applies custom styling to extensions and core libraries.
 
 - **Grade A - Overhaul** - Major adjustments to UI, plus Grade B.
@@ -27,6 +28,7 @@ Citizen overrides some extension styles through skinStyles that applies custom s
 Please feel free to submit PRs if you want to add support for more extensions!
 
 ### Core
+
 Name | Grade | Version | Last updated
 :--- | :--- | :--- | :---
 MediaWiki UI | A | 1.39.0 | 2022-11-30
@@ -34,6 +36,7 @@ Codex | A | 0.1.1| 2022-12-01
 OOUI | A | 0.44.3 | 2022-11-30
 
 ### Extensions
+
 Name | Grade | Version | Last updated
 :--- | :--- | :--- | :---
 [AdvancedSearch](https://www.mediawiki.org/wiki/Extension:AdvancedSearch) | B | REL1_35 `fae6250` | 2021-08-26
@@ -84,19 +87,19 @@ Some of the field are tagged as N/A because the information was not tracked befo
 If you are interested in adding skinstyles, please check out [this page on the wiki](https://github.com/StarCitizenTools/mediawiki-skins-Citizen/wiki/Adding-extension-SkinStyles)!
 
 ## Installation
+
 1. [Download](https://github.com/StarCitizenTools/mediawiki-skins-Citizen/archive/main.zip) place the file(s) in a directory called `Citizen` in your `skins/` folder.
-2. Add the following code at the bottom of your LocalSettings.php and **after all other extensions**:
-```php
-wfLoadSkin( 'Citizen' );
-```
+2. Add the following code at the bottom of your LocalSettings.php and **after all other extensions**: `wfLoadSkin( 'Citizen' );`
 3. **✔️Done** - Navigate to Special:Version on your wiki to verify that the skin is successfully installed.
 
 ## Configurations
+
 **The skin works out of the box without any configurations.**
 The config flags allow more customization on the specific features in the skin.
 Check out [this wiki page](https://github.com/StarCitizenTools/mediawiki-skins-Citizen/wiki/Adapting-Citizen-styles) on how to adapt Citizen styles on your wiki.
 
 ### Appearance
+
 Name | Description | Values | Default
 :--- | :--- | :--- | :---
 `$wgCitizenThemeDefault` | The default theme of the skin | `auto` - switch between light and dark according to OS/browser settings; `light`; `dark` | `auto`
@@ -109,6 +112,7 @@ Name | Description | Values | Default
 `$wgCitizenEnableCJKFonts` | Enable included Noto Sans CJK for wikis that serves CJK languages | `true` - enable; `false` - disable | `false`
 
 ### Search suggestions
+
 Name | Description | Values | Default
 :--- | :--- | :--- | :---
 `$wgCitizenSearchModule` | Which ResourceLoader module to use for search suggestion | `skins.citizen.search`; `mediawiki.searchSuggest`; string | `skins.citizen.search`
@@ -117,11 +121,13 @@ Name | Description | Values | Default
 `$wgCitizenMaxSearchResults` | Max number of search suggestions | Integer > 0 | `6`
 
 ### Miscellaneous
+
 Name | Description | Values | Default
 :--- | :--- | :--- | :---
 `$wgCitizenThemeColor` | The color defined in the `theme-color` meta tag | Hex color code | `#11151d`
 
 ## Requirements
-* [MediaWiki](https://www.mediawiki.org) 1.39.0 or later
-* For the legacy versions, check the other release branches.
 
+- [MediaWiki](https://www.mediawiki.org) 1.39.0 or later
+
+- For the legacy versions, check the other release branches.
