@@ -154,11 +154,7 @@ class SkinCitizen extends SkinMustache {
 	private function buildSkinFeatures( array &$options ) {
 		$title = $this->getOutput()->getTitle();
 
-		$metadata = new Metadata( $this );
 		$skinTheme = new Theme( $this );
-
-		// Add metadata
-		$metadata->addMetadata();
 
 		// Add theme handler
 		$skinTheme->setSkinTheme( $options );
