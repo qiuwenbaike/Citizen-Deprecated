@@ -2,7 +2,6 @@
 	padding: var( --space-xxl ) var( --padding-page );
 	margin-top: var( --space-xxl );
 	// Reserve space for header
-	margin-bottom: var( --header-size );
 	background-color: var( --color-surface-2 );
 	clear: both;
 	color: var( --color-base--subtle );
@@ -38,19 +37,18 @@
 }
 
 #footer {
-	&-sitetitle {
-		color: var( --color-base--emphasized );
-		font-size: 1.25rem;
+	.page-info {
+		font-size: 0.8125rem;
+		padding: var( --space-xs );
 
-		img.mw-logo-wordmark {
-			max-height: 54px;
-			filter: invert( 1 ) hue-rotate( 180deg );
+		&__item {
+			padding: var(--space-xs) var(--space-md);
 		}
 	}
 
 	&-places {
 		ul {
-			flex-direction: column;
+			padding: var( --space-xs );
 		}
 
 		a {
@@ -70,6 +68,7 @@
 
 	&-icons {
 		display: flex;
+		padding: var( --space-xs );
 
 		ul {
 			gap: var( --space-xs );
@@ -82,6 +81,7 @@
 		a {
 			display: flex;
 			align-items: center;
+			padding: var( --space-xs );
 		}
 	}
 }
