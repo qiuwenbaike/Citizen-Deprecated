@@ -92,13 +92,10 @@
 		right: unset;
 		left: 100%;
 		& when ( @position = left ) {
-			top: 0;
-			bottom: unset;
 			.citizen-card-hide( top left );
 		}
 
 		& when ( @position = right ) {
-			bottom: 0;
 			.citizen-card-hide( bottom left );
 		}
 	}
