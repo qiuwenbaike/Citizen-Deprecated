@@ -144,24 +144,6 @@
 	}
 }
 
-@media ( min-width: @width-breakpoint-desktop ) {
-	.citizen-header {
-		--header-direction: column;
-		top: 0;
-		right: unset;
-		left: 0;
-		border-top: 0;
-		border-right: 1px solid var( --border-color-base );
-
-		&__logo {
-			padding: 0 0 var( --space-xs ) 0;
-			border-right: 0;
-			border-bottom: 1px solid var( --border-color-base );
-			margin: var( --space-xxs ) 0;
-		}
-	}
-}
-
 /* Hide header when scroll down on smaller screen sizes */
 @media ( max-width: @width-breakpoint-tablet ) {
 	.citizen-header {
