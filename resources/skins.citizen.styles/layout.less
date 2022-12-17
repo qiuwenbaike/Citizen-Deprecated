@@ -3,6 +3,11 @@
 	min-height: 80vh; // avoid footer being in the middle of the page
 }
 
+.citizen-page-container {
+	// Reserve space for header
+	margin-top: var( --header-size );
+}
+
 .citizen-body-container {
 	display: grid;
 	justify-content: center;
@@ -47,11 +52,6 @@ a.image {
 }
 
 @media ( min-width: @width-breakpoint-desktop ) {
-	.citizen-page-container {
-		// Reserve space for header
-		margin-top: var( --header-size );
-	}
-
 	.citizen-toc-enabled {
 		.citizen-body-container {
 			display: grid;
