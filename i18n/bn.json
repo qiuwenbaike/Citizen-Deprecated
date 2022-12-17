@@ -8,8 +8,6 @@
 	"skinname-citizen": "সিটিজেন",
 	"citizen-prefs-talkpage": "[[mw:Skin_talk:Citizen|আলোচনা]]",
 	"citizen.js": "/* এখানের সকল জাভাস্ক্রিপ্ট সিটিজেন আবরণের ব্যবহারকারীদের জন্য লোড হবে */",
-	"citizen-footer-desc": "[[MediaWiki:Citizen-footer-desc]]-এ এই লেখা সম্পাদনা করুন",
-	"citizen-footer-tagline": "[[MediaWiki:Citizen-footer-tagline]]-এ এই লেখা সম্পাদনা করুন",
 	"citizen-action-addsection": "আলোচনা যোগ করুন",
 	"citizen-jumptotop": "উপরে চলুন",
 	"citizen-search-fulltext": "এটি থাকা পাতাগুলিতে অনুসন্ধান করুন:",

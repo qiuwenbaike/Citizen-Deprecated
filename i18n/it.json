@@ -13,8 +13,6 @@
 	"citizen-languages-toggle": "Altre lingue",
 	"citizen-actions-more-toggle": "Altre azioni",
 	"citizen-page-info-lastmod": "Ultima modifica",
-	"citizen-footer-desc": "Modifica questo testo in [[MediaWiki:Citizen-footer-desc]]",
-	"citizen-footer-tagline": "Modifica questo testo in [[MediaWiki:Citizen-footer-tagline]]",
 	"citizen-action-addsection": "Aggiungi argomento",
 	"citizen-jumptotop": "Torna all'inizio",
 	"citizen-tagline-ns-talk": "Pagina di discussione su {{SUBJECTPAGENAME}}",

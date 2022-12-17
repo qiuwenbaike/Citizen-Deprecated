@@ -94,10 +94,6 @@ class SkinCitizen extends SkinMustache {
 			'html-citizen-jumptotop' => $parentData['msg-citizen-jumptotop'] . ' [home]',
 			'html-body-content--formatted' => $bodycontent->buildBodyContent(),
 			'html-tagline' => $tagline->getTagline(),
-			// Messages
-			// Needed to be parsed here as it should be wikitext
-			'msg-citizen-footer-desc' => $this->msg( "citizen-footer-desc" )->inContentLanguage()->parse(),
-			'msg-citizen-footer-tagline' => $this->msg( "citizen-footer-tagline" )->inContentLanguage()->parse(),
 			// Decorate data provided by core
 			'data-search-box' => $header->decorateSearchBoxData( $parentData['data-search-box'] ),
 			'data-portlets-sidebar' => $drawer->decorateSidebarData( $parentData['data-portlets-sidebar'] ),

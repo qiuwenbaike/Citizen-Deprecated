@@ -25,8 +25,6 @@
 	"citizen-page-info-copyright": "版权",
 	"citizen-page-info-credits": "制作人员",
 	"citizen-page-info-lastmod": "最近修改",
-	"citizen-footer-desc": "在[[MediaWiki:Citizen-footer-desc]]编辑此文本",
-	"citizen-footer-tagline": "在[[MediaWiki:Citizen-footer-tagline]]编辑此文本",
 	"citizen-action-addsection": "添加话题",
 	"citizen-jumptotop": "回到顶部",
 	"citizen-search-fulltext": "搜索包含“$1”的页面",
