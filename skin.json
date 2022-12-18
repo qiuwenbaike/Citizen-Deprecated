@@ -363,6 +363,10 @@
 			"+mediawiki.rcfilters.filters.base.styles": "skinStyles/mediawiki/mediawiki.rcfilters.filters.base.styles.less",
 			"+mediawiki.rcfilters.highlightCircles.seenunseen.styles": "skinStyles/mediawiki/mediawiki.rcfilters.highlightCircles.seenunseen.styles.less",
 			"+mediawiki.rcfilters.filters.ui": "skinStyles/mediawiki/mediawiki.rcfilters.filters.ui.less",
+			"+oojs-ui-core.styles": "skinStyles/ooui/oojs-ui-core.less",
+			"+oojs-ui-toolbars": "skinStyles/ooui/oojs-ui-toolbars.less",
+			"+oojs-ui-widgets": "skinStyles/ooui/oojs-ui-widgets.less",
+			"+oojs-ui-windows": "skinStyles/ooui/oojs-ui-windows.less",
 			"+@wikimedia/codex": "skinStyles/codex/codex-styles.less"
 		}
 	},
