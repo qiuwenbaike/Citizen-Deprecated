@@ -256,6 +256,22 @@
 	}
 }
 
+// Additional buttons
+#Wikiplus-Edit-TopBtn,
+#ca-redirect > a:before {
+	> a {
+		&:before {
+			width: var( --size-icon );
+			height: var( --size-icon );
+			background-position: center;
+			background-repeat: no-repeat;
+			background-size: var( --size-icon );
+			content: '';
+			transition: @transition-opacity;
+		}
+	}
+}
+
 // Checkbox hack
 #page-actions-more,
 #citizen-languages {
