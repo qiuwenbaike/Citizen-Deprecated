@@ -166,10 +166,5 @@ class SkinCitizen extends SkinMustache {
 				$options['bodyClasses'][] = 'citizen-sections-enabled';
 			}
 		}
-
-		// CJK fonts
-		if ( $this->getConfigValue( 'CitizenEnableCJKFonts' ) === true ) {
-			$options['styles'][] = 'skins.citizen.styles.fonts.cjk';
-		}
 	}
 }

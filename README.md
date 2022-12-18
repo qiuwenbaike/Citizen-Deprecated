@@ -108,7 +108,6 @@ Name | Description | Values | Default
 `$wgCitizenGlobalToolsPortlet` | ID of the portlet to attach the global tools | string |
 `$wgCitizenUseNumberFormatter` | Use NumberFormatter for site statistics, which allows formatting number in a localized way | `true` - enable; `false` - disable | `true`
 `$wgCitizenThemeColor` | The color defined in the `theme-color` meta tag | Hex color code | `#131a21`
-`$wgCitizenEnableCJKFonts` | Enable included Noto Sans CJK for wikis that serves CJK languages | `true` - enable; `false` - disable | `false`
 
 ### Search suggestions
 
