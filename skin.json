@@ -164,8 +164,8 @@
 				}
 			],
 			"messages": [
-				"preferences",
-																											],
+				"preferences"
+			],
 			"targets": [
 				"desktop",
 				"mobile"

@@ -13,7 +13,8 @@
           "accent-color",
           "overflow-x: clip",
           "scroll-behavior",
-          "user-select"
+          "user-select",
+          "scrollbar-width"
         ]
       }
     ]
