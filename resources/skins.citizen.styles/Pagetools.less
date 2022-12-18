@@ -131,6 +131,10 @@
 		content: attr( data-counter-text );
 		font-size: 0.65rem;
 	}
+
+	&[ data-counter-text='0' ]:after {
+		display: none;
+	}
 }
 
 .citizen-languages {
