@@ -33,10 +33,6 @@
 		}
 	}
 
-	&__bottom {
-		padding: var(--space-xs);
-	}
-
 	a {
 		color: var( --color-base--emphasized );
 		font-weight: var( --font-weight-medium );
@@ -55,13 +51,16 @@
 
 #footer {
 	&-places {
+		padding: var(--space-xs);
+		font-size: 0.8125rem;
+
 		ul {
 			padding: var( --space-xs );
 		}
 
 		a {
 			display: block;
-			padding: var(--space-xs) var(--space-md) var(--space-xs) 0;
+			padding: 0 var(--space-md) 0 0;;
 		}
 	}
 
@@ -75,12 +74,12 @@
 
 		li {
 			display: flex; // Horizontally aligned with there are two icons in the same li
+			gap: var( --space-xs );
 		}
 
 		a {
 			display: flex;
 			align-items: center;
-			padding: var(--space-xs) var(--space-xs) var(--space-xs) 0;
 		}
 	}
 }
