@@ -33,12 +33,4 @@
 	"citizen-tagline-ns-template": "Page de modèle",
 	"citizen-tagline-ns-help": "Page d’aide",
 	"citizen-tagline-ns-category": "Page de catégorie",
-	"prefs-citizen-theme-label": "Thème",
-	"prefs-citizen-theme-option-auto": "Automatique",
-	"prefs-citizen-theme-option-light": "Clair",
-	"prefs-citizen-theme-option-dark": "Sombre",
-	"prefs-citizen-fontsize-label": "Taille de police",
-	"prefs-citizen-pagewidth-label": "Largeur de la page",
-	"prefs-citizen-lineheight-label": "Hauteur de ligne",
-	"prefs-citizen-resetbutton-label": "Réinitialiser aux valeurs par défaut"
 }

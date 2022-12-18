@@ -29,12 +29,4 @@
 	"citizen-tagline-ns-template": "Страница шаблона",
 	"citizen-tagline-ns-help": "Страница справки",
 	"citizen-tagline-ns-category": "Страница категории",
-	"prefs-citizen-theme-label": "Тема оформления",
-	"prefs-citizen-theme-option-auto": "Авто",
-	"prefs-citizen-theme-option-light": "Светлая",
-	"prefs-citizen-theme-option-dark": "Тёмная",
-	"prefs-citizen-fontsize-label": "Размер шрифта",
-	"prefs-citizen-pagewidth-label": "Ширина страницы",
-	"prefs-citizen-lineheight-label": "Высота строки",
-	"prefs-citizen-resetbutton-label": "Сброс"
 }

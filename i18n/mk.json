@@ -30,12 +30,4 @@
 	"citizen-tagline-ns-template": "Предложна страница",
 	"citizen-tagline-ns-help": "Помошна страница",
 	"citizen-tagline-ns-category": "Категориска страница",
-	"prefs-citizen-theme-label": "Изглед",
-	"prefs-citizen-theme-option-auto": "Авто",
-	"prefs-citizen-theme-option-light": "Светол",
-	"prefs-citizen-theme-option-dark": "Темен",
-	"prefs-citizen-fontsize-label": "Големина на фонтот",
-	"prefs-citizen-pagewidth-label": "Ширина на страницата",
-	"prefs-citizen-lineheight-label": "Висина на редот",
-	"prefs-citizen-resetbutton-label": "Врати по основно"
 }

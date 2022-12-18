@@ -14,12 +14,4 @@
 	"citizen-action-addsection": "주제 추가",
 	"citizen-jumptotop": "맨 위로 돌아가기",
 	"citizen-search-fulltext-empty": "검색을 시작하려면 입력하세요",
-	"prefs-citizen-theme-label": "테마",
-	"prefs-citizen-theme-option-auto": "자동",
-	"prefs-citizen-theme-option-light": "밝음",
-	"prefs-citizen-theme-option-dark": "어두움",
-	"prefs-citizen-fontsize-label": "글자 크기",
-	"prefs-citizen-pagewidth-label": "페이지 너비",
-	"prefs-citizen-lineheight-label": "줄 높이",
-	"prefs-citizen-resetbutton-label": "기본값으로 재설정"
 }

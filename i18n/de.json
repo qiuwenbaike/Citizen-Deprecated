@@ -34,12 +34,4 @@
 	"citizen-tagline-ns-template": "Vorlagenseite",
 	"citizen-tagline-ns-help": "Hilfeseite",
 	"citizen-tagline-ns-category": "Kategorieseite",
-	"prefs-citizen-theme-label": "Thema",
-	"prefs-citizen-theme-option-auto": "Automatisch",
-	"prefs-citizen-theme-option-light": "Hell",
-	"prefs-citizen-theme-option-dark": "Dunkel",
-	"prefs-citizen-fontsize-label": "Schriftgröße",
-	"prefs-citizen-pagewidth-label": "Seitenbreite",
-	"prefs-citizen-lineheight-label": "Zeilenhöhe",
-	"prefs-citizen-resetbutton-label": "Zurücksetzen"
 }
