@@ -739,14 +739,6 @@ TODO: Need to refactor the current shadow for filter drop-shadow, see variables.
 	background-color: var( --color-surface-4 );
 }
 
-// Invert icon for dark mode
-.skin-citizen-dark {
-	.oo-ui-iconElement-icon:not( .oo-ui-image-invert ),
-	.oo-ui-indicatorElement-indicator:not( .oo-ui-image-invert ) {
-		filter: invert( 1 ) hue-rotate( 180deg );
-	}
-}
-
 // Reset style if light mode
 @media ( forced-colors: active ) and ( prefers-color-scheme: dark ) {
 	.skin-citizen-light {

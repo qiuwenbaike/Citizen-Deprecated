@@ -90,18 +90,3 @@
 		background-color: var( --background-color-quiet--active );
 	}
 }
-
-// Dark mode icon
-.skin-citizen-dark {
-	#pt-notifications-alert,
-	#pt-notifications-notice {
-		.mw-echo-notifications-badge {
-			filter: invert( 1 ) hue-rotate( 180deg );
-
-			// Re-invert indicator color
-			&:after {
-				filter: invert( 1 ) hue-rotate( 180deg );
-			}
-		}
-	}
-}

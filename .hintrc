@@ -9,7 +9,11 @@
         "ignore": [
           "backdrop-filter",
           "contain",
-          "overscroll-behavior"
+          "overscroll-behavior",
+          "accent-color",
+          "overflow-x: clip",
+          "scroll-behavior",
+          "user-select"
         ]
       }
     ]

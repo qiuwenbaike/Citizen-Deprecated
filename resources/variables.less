@@ -280,70 +280,6 @@
 @box-shadow-card: 0 2.8px 2.2px -4px ~'hsl(var(--surface-shadow) / calc(var(--shadow-strength) + .03))', 0 6.7px 5.3px -4px ~'hsl(var(--surface-shadow) / calc(var(--shadow-strength) + .01))', 0 12.5px 10px -4px ~'hsl(var(--surface-shadow) / calc(var(--shadow-strength) + .02))', 0 22.3px 17.9px -4px ~'hsl(var(--surface-shadow) / calc(var(--shadow-strength) + .02))', 0 41.8px 33.4px -4px ~'hsl(var(--surface-shadow) / calc(var(--shadow-strength) + .03))', 0 100px 80px -4px ~'hsl(var(--surface-shadow) / var(--shadow-strength))';
 @box-shadow-dialog: 0 2.8px 2.2px ~'hsl(var(--surface-shadow) / calc(var(--shadow-strength) + .03))', 0 6.7px 5.3px ~'hsl(var(--surface-shadow) / calc(var(--shadow-strength) + .01))', 0 12.5px 10px ~'hsl(var(--surface-shadow) / calc(var(--shadow-strength) + .02))', 0 22.3px 17.9px ~'hsl(var(--surface-shadow) / calc(var(--shadow-strength) + .02))', 0 41.8px 33.4px ~'hsl(var(--surface-shadow) / calc(var(--shadow-strength) + .03))', 0 100px 80px ~'hsl(var(--surface-shadow) / var(--shadow-strength))';
 
-/**
- * Dark theme color palette
- * Background color is used instead of shadow to show elevation
- * and hierarchy in dark theme
- * See https://material.io/design/color/dark-theme.html#properties
- */
-@dark-color-base0:	#131a21;	// Surface color
-@dark-color-base10: #1f262c; 	// 5% white overlay
-@dark-color-base20: #242a31;	// 7% white overlay
-@dark-color-base30: #262c32;	// 8% white overlay
-@dark-color-base40: #282f35;	// 9% white overlay
-@dark-color-base50: #2d3339;	// 11% white overlay
-@dark-color-base60: #30363c;	// 12% white overlay
-@dark-color-base70: #343a40;	// 14% white overlay
-@dark-color-base80: #363c42;	// 15% white overlay
-@dark-color-base90: #393f45;	// 16% white overlay
-
-@dark-background-color-overlay:				rgba( 19, 26, 33, 0.95 );
-@dark-background-color-overlay--lighter:	rgba( 19, 26, 33, 0.6 );
-
-@dark-background-color-framed:			@dark-color-base10;
-@dark-background-color-framed--hover:	@dark-color-base30;
-@dark-background-color-framed--active:	@dark-color-base0;
-
-@dark-background-color-input: 			rgba( 0, 0, 0, 0.5 );
-
-@dark-background-color-icon:			rgba( 255, 255, 255, 0.6 );
-@dark-background-color-icon--hover:		rgba( 255, 255, 255, 0.8 );
-@dark-background-color-icon--active:	rgba( 255, 255, 255, 0.4 );
-// @dark-background-color-quiet: 			transparent;
-@dark-background-color-quiet--hover:	rgba( 255, 255, 255, 0.07 );
-@dark-background-color-quiet--active:	rgba( 255, 255, 255, 0.03 );
-
-@dark-background-color-primary--hover:	@color-accent30;
-@dark-background-color-primary--active:	@color-accent-30--darken;
-
-@dark-background-color-destructive:	@color-red30;
-@dark-background-color-warning:		@color-yellow30;
-@dark-background-color-success:		@color-green30;
-
-/* Foreground colors */
-@dark-color-base:				rgba( 255, 255, 255, 0.6 );
-@dark-color-base--emphasized:	rgba( 255, 255, 255, 0.87 );
-@dark-color-base--subtle:		rgba( 255, 255, 255, 0.38 );
-
-@dark-color-link:				@color-accent50--lighten;
-@dark-color-link--hover:		@color-accent90;
-@dark-color-link--active:		@color-accent30;
-@dark-color-link-new:			@color-red50--lighten;
-@dark-color-link-new--hover:	@color-red90;
-@dark-color-link-new--active:	@color-red30;
-
-/* Opacity */
-// @dark-opacity-icon-base:			0.4;
-// @dark-opacity-icon-base--hover:		0.6;
-@dark-opacity-icon-base--active:	0.4;
-
-/* Border colors */
-@dark-border-color-base:			rgba( 255, 255, 255, 0.05 );
-@dark-border-color-base--lighter:	rgba( 255, 255, 255, 0.02 );
-@dark-border-color-base--darker:	rgba( 255, 255, 255, 0.08 );
-@dark-border-color-input:			@dark-border-color-base;
-@dark-border-color-input--hover:	rgba( 255, 255, 255, 0.5 );
-
 /*
  * Framework
 */
@@ -351,19 +287,3 @@
 @icon-size: 1.125rem; // 18px, TODO: Replace this var
 @icon-box-size: @icon-size + @icon-margin * 2;
 @icon-margin: 3px;
-
-/*
- * Legacy colors
- *
- * They are used by the SMW skinstyles and a few MW UI stuff.
- * Those styles should be updated to the new standard.
- * After that we can remove all theses LESS variables.
-*/
-
-// Dark mode colors
-@dark-bg-10: #1d2129;
-@dark-bg-20: #22262d;
-@dark-bg-30: #24272f;
-@dark-bg-40: #2b2f36;
-@dark-bg-50: #33363d;
-@dark-bg-60: #34383f;

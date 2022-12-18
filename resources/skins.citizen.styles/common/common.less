@@ -95,27 +95,6 @@ video {
 	outline: 1px solid var( --color-primary );
 }
 
-.skin-citizen-dark {
-	color-scheme: dark;
-
-	.mw-indicator {
-		filter: invert( 1 ) hue-rotate( 180deg );
-
-		// Have to hardcode the color since the filter breaks the color
-		a {
-			color: @color-primary;
-
-			&:hover {
-				color: @color-primary--hover;
-			}
-
-			&:active {
-				color: @color-primary--active;
-			}
-		}
-	}
-}
-
 @media ( hover: none ) {
 	a,
 	button,

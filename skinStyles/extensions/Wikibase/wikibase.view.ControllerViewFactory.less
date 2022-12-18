@@ -24,25 +24,6 @@
 	background: var( --color-surface-1 );
 }
 
-.skin-citizen-dark {
-	.wb-badge,
-	.wb-badge-empty {
-		filter: invert( 1 ) hue-rotate( 180deg );
-	}
-
-	/* jquery.wikibase.sitelinkgroupview.mw-collapsible.css */
-	// Collapsible toggle
-	.wikibase-sitelinkgroupview {
-		> .mw-collapsible {
-			&-toggle,
-			&-toggle-expanded,
-			&-toggle-collapsed {
-				filter: invert( 1 ) hue-rotate( 180deg );
-			}
-		}
-	}
-}
-
 /* jquery.wikibase.sitelinkgroupview.css */
 .wikibase-sitelinkgroupview {
 	border-color: var( --border-color-base );
@@ -149,14 +130,3 @@ ul.tagadata li.tagadata-choice .tagadata-label input:focus {
 	background-color: var( --color-surface-1 );
 }
 
-/* snakview.SnakTypeSelector.css */
-// snaktypeselector icon
-.skin-citizen-dark .ui-state-default .ui-icon-snaktypeselector {
-	filter: invert( 1 ) hue-rotate( 180deg );
-}
-
-/* jquery.wikibase.statementview.RankSelector.css */
-.skin-citizen-dark .wikibase-rankselector .ui-icon.ui-icon-rankselector {
-	// Rank selector icon
-	filter: invert( 1 ) hue-rotate( 180deg );
-}
