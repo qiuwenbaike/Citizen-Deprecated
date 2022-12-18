@@ -64,8 +64,8 @@
 // Header card popups
 .citizen-header-card( @position ) {
 	position: absolute;
-	right: 0;
 	top: 100%;
+	right: 0;
 	left: 0;
 	overflow: auto;
 	min-width: 16rem;
@@ -76,7 +76,7 @@
 	-webkit-user-select: none;
 	user-select: none;
 	.citizen-card();
-	.citizen-card-hide( bottom @position );
+	.citizen-card-hide( top @position );
 
 	@media ( min-width: @width-breakpoint-tablet ) {
 		& when ( @position = left ) {
