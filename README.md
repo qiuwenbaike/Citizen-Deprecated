@@ -102,7 +102,6 @@ Check out [this wiki page](https://github.com/StarCitizenTools/mediawiki-skins-C
 
 Name | Description | Values | Default
 :--- | :--- | :--- | :---
-`$wgCitizenThemeDefault` | The default theme of the skin | `auto` - switch between light and dark according to OS/browser settings; `light`; `dark` | `auto`
 `$wgCitizenEnableCollapsibleSections` | Enables or disable collapsible sections on content pages | `true` - enable; `false` - disable | `true`
 `$wgCitizenShowPageTools` | The condition of page tools visibility | `true` - always visible; `login` - visible to logged-in users; `permission` - visible to users with the right permissions | `true`
 `$wgCitizenGlobalToolsPortlet` | ID of the portlet to attach the global tools | string |
