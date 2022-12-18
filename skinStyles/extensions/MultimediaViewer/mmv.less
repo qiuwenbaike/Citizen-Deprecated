@@ -506,7 +506,6 @@
 	border-top: 0;
 	margin-top: -4px;
 	// Sync with title
-	background-color: #000;
 	gap: var( --space-xs );
 	grid-template-areas: 'desc links'
 		'about about';
@@ -602,10 +601,8 @@
 // Only apply background color when scroll up
 .mw-mmv-post-image {
 	min-height: @mmv-height-abovethefold;
-	background-color: transparent;
 	border-top-left-radius: var( --border-radius--large );
 	border-top-right-radius: var( --border-radius--large );
-	color: #fff;
 	transition: @transition-background, @transition-color;
 
 	&.mw-mmv-untruncated {
