@@ -149,37 +149,7 @@
 				"mobile"
 			]
 		},
-		"skins.citizen.preferences": {
-			"templates": [
-				"resources/skins.citizen.preferences/templates/preferences.mustache"
-			],
-			"styles": [
-				"resources/skins.citizen.preferences/skins.citizen.preferences.less"
-			],
-			"packageFiles": [
-				"resources/skins.citizen.preferences/skins.citizen.preferences.js",
-				{
-					"name": "resources/skins.citizen.preferences/config.json",
-					"callback": "MediaWiki\\Skins\\Citizen\\Hooks\\ResourceLoaderHooks::getCitizenPreferencesResourceLoaderConfig"
-				}
-			],
-			"messages": [
-				"preferences"
-			],
-			"targets": [
-				"desktop",
-				"mobile"
-			]
-		},
-		"skins.citizen.serviceWorker": {
-			"scripts": [
-				"resources/skins.citizen.serviceWorker/sw.js"
-			],
-			"targets": [
-				"desktop",
-				"mobile"
-			]
-		},
+
 		"skins.citizen.icons": {
 			"class": "ResourceLoaderImageModule",
 			"selector": "{name}",

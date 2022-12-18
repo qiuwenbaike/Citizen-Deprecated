@@ -49,21 +49,6 @@ class ResourceLoaderHooks {
 	}
 
 	/**
-	 * Passes config variables to skins.citizen.preferences ResourceLoader module.
-	 * @param RL\Context $context
-	 * @param Config $config
-	 * @return array
-	 */
-	public static function getCitizenPreferencesResourceLoaderConfig(
-		RL\Context $context,
-		Config $config
-	) {
-		return [
-			'wgCitizenThemeDefault' => $config->get( 'CitizenThemeDefault' ),
-		];
-	}
-
-	/**
 	 * Passes config variables to skins.citizen.search ResourceLoader module.
 	 * @param RL\Context $context
 	 * @param Config $config
