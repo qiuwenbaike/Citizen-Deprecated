@@ -16,16 +16,10 @@
 	box-shadow: var( --box-shadow-dialog );
 }
 
-@media ( min-width: @width-breakpoint-tablet ) {
-	.mw-echo-ui-notificationBadgeButtonPopupWidget-popup {
-		// .citizen-header-card-tablet( right );
-	}
-}
-
 @media ( min-width: @width-breakpoint-desktop ) {
 	.mw-echo-ui-notificationBadgeButtonPopupWidget-popup {
+		right: var( --header-size ) !important;
 		bottom: 0 !important;
-		left: var( --header-size ) !important;
 	}
 }
 
