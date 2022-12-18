@@ -11,5 +11,5 @@
 	"citizen.js": "/* All JavaScript här kommer laddas in för användare av utseendet Citizen */",
 	"citizen-drawer-toggle": "Visa/dölj menyn",
 	"citizen-search-toggle": "Visa/dölj sök",
-	"citizen-search-fulltext": "Sökningar som innehåller",
+	"citizen-search-fulltext": "Sökningar som innehåller"
 }
