@@ -210,7 +210,10 @@
 			"defaultColor": "#000",
 			"images": {
 				".citizen-toc__top:before": "resources/skins.citizen.icons/backToTop.svg",
-				"#ca-ve-edit > a:before": "resources/skins.citizen.icons/wmui/edit.svg"
+				"#ca-ve-edit > a:before": "resources/skins.citizen.icons/wmui/edit.svg",
+				"#Wikiplus-Edit-TopBtn > a:before": "resources/skins.citizen.icons/wikiplus.svg",
+				"#ca-redirect > a:before": "resources/skins.citizen.icons/wmui/redirect-grey-ltr.svg",
+				".mw-content-rtl #ca-redirect > a:before": "resources/skins.citizen.icons/wmui/redirect-grey-rtl.svg"
 			}
 		},
 		"skins.citizen.icons.wmui": {
