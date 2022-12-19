@@ -8,7 +8,6 @@
  * Date: 2021-08-04
  * Note: VE has many modules so they are combined in one file for now
 */
-
 .ve-activated {
 	#page-tools {
 		z-index: 1; // Fix collision
@@ -349,4 +348,9 @@
 // HACK: Temp fix for mobile toolbar, will revisit when we move to 1.39+
 .ve-ui-toolbar .oo-ui-toolbar-after {
 	display: none !important;
+}
+
+// HACK: hide .mw-editsection-divider
+.client-js .mw-editsection-divider {
+    display: none !important;
 }
