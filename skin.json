@@ -158,7 +158,7 @@
 				".citizen-toc__top:before": "resources/skins.citizen.icons/backToTop.svg",
 				"#ca-ve-edit > a:before": "resources/skins.citizen.icons/wmui/edit.svg",
 				"#Wikiplus-Edit-TopBtn > a:before": "resources/skins.citizen.icons/wikiplus.svg",
-				".Wikiplus-Edit-SectionBtn > a:before": "resources/skins.citizen.icons/wikiplus.svg",
+				"a.Wikiplus-Edit-SectionBtn:before": "resources/skins.citizen.icons/wikiplus.svg",
 				"#ca-redirect > a:before": "resources/skins.citizen.icons/wmui/redirect-ltr.svg",
 				".mw-content-rtl #ca-redirect > a:before": "resources/skins.citizen.icons/wmui/redirect-rtl.svg",
 				"#ca-masseditregex > a:before": "resources/skins.citizen.icons/pencilBatch.svg"
