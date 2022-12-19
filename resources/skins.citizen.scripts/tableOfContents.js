@@ -57,7 +57,7 @@ function initToC() {
 
 	const sectionObserver = initSectionObserver( {
 		/* T13555 */
-		elements: bodyContent.querySelectorAll( '.mw-headline' ) ?? bodyContent.querySelectorAll( '.mw-heading' ),
+		elements: bodyContent.querySelectorAll( '.mw-headline' ) ? bodyContent.querySelectorAll( '.mw-headline' ) : bodyContent.querySelectorAll( '.mw-heading' ),
 		topMargin: getTopMargin(),
 		onIntersection: ( section ) => { changeActiveSection( section.id ); }
 	} );
