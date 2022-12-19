@@ -340,3 +340,39 @@
 .oo-ui-searchWidget-query {
 	border-bottom: 1px solid var( --border-color-base );
 }
+
+// Fix Special:Contribs
+.mw-collapsibleFieldsetLayout {
+	&.mw-collapsible {
+		.mw-collapsible-toggle .oo-ui-iconElement-icon {
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 1.14285714em;
+			min-width: 16px;
+			margin-right: 0.5em;
+		}
+
+		.mw-collapsible-toggle {
+			.oo-ui-icon-collapse {
+				display: inline-block;
+			}
+
+			.oo-ui-icon-expand {
+				display: none;
+			}
+		}
+
+		&.mw-collapsed {
+			.mw-collapsible-toggle {
+				.oo-ui-icon-collapse {
+					display: none;
+				}
+
+				.oo-ui-icon-expand {
+					display: inline-block;
+				}
+			}
+		}
+	}
+}
