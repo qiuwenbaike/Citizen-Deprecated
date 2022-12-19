@@ -17,8 +17,24 @@
 
 .citizen-body-header--sticky {
 	.mw-body-header {
+		position: sticky;
+		top: var( --header-size );
 		padding-bottom: var( --space-md );
-		.citizen-sticky-header( var( --header-size ) );
+
+		// HACK: Hide overflow
+		// This has an issue if parent has overflow set
+		&:before {
+			position: absolute;
+			z-index: -1;
+			top: 0;
+			right: ~'calc( var(--padding-page ) * -1 )';
+			left: ~'calc( var(--padding-page ) * -1 )';
+			height: 100%;
+			-webkit-backdrop-filter: saturate( 50% ) blur( 16px );
+			backdrop-filter: saturate( 50% ) blur( 16px );
+			background-color: var( --background-color-overlay );
+			content: '';
+		}
 
 		.mw-indicators {
 			display: none;
