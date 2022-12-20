@@ -13,6 +13,7 @@
 	border-bottom: 1px solid var( --border-color-base );
 	background-color: var( --color-surface-0 );
 	gap: var( --space-xxs );
+	transition: @transition-transform; // Hide header when scroll down
 
 	&__item {
 		display: flex;
@@ -138,10 +139,6 @@
 
 /* Hide header when scroll down */
 @media screen {
-	.citizen-header {
-		transition: @transition-transform;
-	}
-
 	.citizen-scroll--down .citizen-header {
 		transform: translateY( -100% );
 	}
