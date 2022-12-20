@@ -8,16 +8,19 @@
 */
 
 .wikitable {
-	border: 0.5px solid var( --border-color-base );
 	margin: var( --space-md ) 0;
-	background-color: #f8f9fa;
 	border-collapse: collapse;
+
+	tbody {
+		border: 0.5px solid var( --border-color-base );
+		background-color: #f8f9fa;
+	}
 
 	caption {
 		padding-right: var( --space-sm );
 		padding-left: var( --space-sm );
 		color: var( --color-base--emphasized );
-		font-size: 1rem;
+		font-size: 1.125rem;
 		font-weight: var( --font-weight-semibold );
 		text-align: center;
 	}
