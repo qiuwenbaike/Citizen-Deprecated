@@ -8,6 +8,8 @@
  * Date: 2022-11-30
 */
 
+@import '../../../resources/variables.less';
+
 /**
  * OOUI has some layout issues when the font size is not
  * same as what is being used in Vector. This is a dirty
@@ -121,7 +123,7 @@
 }
 
 .oo-ui-windowManager-modal > .oo-ui-dialog {
-	z-index: 11;
+	z-index: @z-index-page-header;
 	background-color: var( --background-color-overlay--lighter );
 }
 
