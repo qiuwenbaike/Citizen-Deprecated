@@ -29,8 +29,8 @@
 			position: absolute;
 			z-index: -1;
 			top: 0;
-			right: ~'calc( var(--padding-page ) * -1 )';
-			left: ~'calc( var(--padding-page ) * -1 )';
+			right: 0;
+			left: 0;
 			height: 100%;
 			-webkit-backdrop-filter: saturate( 50% ) blur( 16px );
 			backdrop-filter: saturate( 50% ) blur( 16px );
@@ -58,7 +58,7 @@
 		bottom: 0;
 		left: 0;
 		border-radius: var( --border-radius--small );
-		margin: ~'calc( var(  --space-xs ) * -1 )';
+		margin: ~'calc( var(  --space-xs ) * -1 ) 0';
 
 		&:hover {
 			background-color: var( --background-color-quiet--hover );
