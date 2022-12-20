@@ -222,10 +222,10 @@
 		grid-area: toc;
 
 		&__card {
-			--toc-margin-top: var( --space-xs );
+			--toc-margin-top: ~'calc( var( --header-size ) + var( --space-md ) )';
 			position: sticky;
-			top: var( --toc-margin-top );
-			max-height: ~'calc( 90vh - var( --space-md ) )';
+			top: ~'calc( 2 * var( --toc-margin-top ) )';
+			max-height: ~'calc( 90vh - 2 * var( --toc-margin-top ) - var( --space-md ) )';
 			overflow-y: auto;
 			overscroll-behavior: contain;
 		}
