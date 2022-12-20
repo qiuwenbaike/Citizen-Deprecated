@@ -99,7 +99,7 @@
 	}
 }
 
-.citizen-sticky-header( @topOffset: @header-size, @bottomBorder: true, @zIndex: true ) {
+.citizen-sticky-header( @topOffset: 0, @bottomBorder: true, @zIndex: true ) {
 	position: sticky;
 	top: @topOffset;
 
@@ -116,7 +116,7 @@
 	&:before {
 		position: absolute;
 		z-index: -1;
-		top: 0;
+		top: @topOffset;
 		right: ~'calc( var(--padding-page ) * -1 )';
 		left: ~'calc( var(--padding-page ) * -1 )';
 		height: 100%;
