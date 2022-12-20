@@ -21,6 +21,7 @@
 		top: ~'calc( var( --header-size ) - 1px )';
 		padding-bottom: var( --space-md );
 		border-bottom: 1px solid var( --border-color-base );
+		transition: @transition-transform; // Hide sticky header on scroll down
 
 		// HACK: Hide overflow
 		// This has an issue if parent has overflow set
@@ -67,19 +68,11 @@
 			background-color: var( --background-color-quiet--active );
 		}
 	}
-}
 
-// Hide sticky header on scroll down
-@media screen {
-	.citizen-body-header--sticky {
+	// Hide sticky header on scroll down
+	&.citizen-scroll--down {
 		.mw-body-header {
-			transition: @transition-transform;
-		}
-
-		&.citizen-scroll--down {
-			.mw-body-header {
-				transform: translateY( -100% );
-			}
+			transform: translateY( -100% );
 		}
 	}
 }
