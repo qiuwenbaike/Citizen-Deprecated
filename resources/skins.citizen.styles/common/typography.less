@@ -4,7 +4,7 @@ html {
 
 html,
 body {
-	font-family: sans-serif;
+	font-family: var( --fonts-sans );
 	font-weight: var( --font-weight-normal );
 	// font-smoothing: antialiased;
 	// -webkit-font-smoothing: antialiased; /* Chrome, Safari */
@@ -12,7 +12,7 @@ body {
 }
 
 input {
-	font-family: sans-serif; // Override browser's default
+	font-family: var( --fonts-sans ); // Override browser's default
 }
 
 b,
@@ -25,11 +25,11 @@ cite {
 }
 
 blockquote {
-	font-family: serif;
+	font-family: var( --fonts-serif );
 	font-style: italic;
 
 	cite {
-		font-family: sans-serif;
+		font-family: var( --fonts-sans );
 		font-size: 0.8125rem;
 		font-style: normal;
 	}

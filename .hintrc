@@ -14,7 +14,8 @@
           "overflow-x: clip",
           "scroll-behavior",
           "user-select",
-          "scrollbar-width"
+          "scrollbar-width",
+          "min-height: auto"
         ]
       }
     ]
