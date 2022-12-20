@@ -1,3 +1,4 @@
+/* eslint-disable es-x/no-symbol-prototype-description */
 const
 	config = require( './config.json' ),
 	PREFIX = 'citizen-typeahead',
@@ -186,6 +187,7 @@ function getSuggestions( searchQuery, htmlSafeSearchQuery, placeholder ) {
 						cleanTitle = cleanup( title ),
 						cleanMatchedTitle = cleanup( matchedTitle );
 
+					// eslint-disable-next-line max-len, es-x/no-array-prototype-includes
 					return !( cleanTitle.includes( cleanMatchedTitle ) || cleanMatchedTitle.includes( cleanTitle ) );
 				};
 
@@ -246,6 +248,7 @@ function getSuggestions( searchQuery, htmlSafeSearchQuery, placeholder ) {
 	searchInput.parentNode.classList.add( SEARCH_LOADING_CLASS );
 
 	const
+		// eslint-disable-next-line compat/compat
 		controller = new AbortController(),
 		abortFetch = () => {
 			controller.abort();

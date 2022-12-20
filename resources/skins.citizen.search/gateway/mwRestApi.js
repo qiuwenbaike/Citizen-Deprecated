@@ -22,6 +22,7 @@ function getUrl( input ) {
 function convertDataToResults( data ) {
 	const results = [];
 
+	// eslint-disable-next-line es-x/no-optional-chaining, es-x/no-nullish-coalescing-operators
 	data = data?.pages ?? [];
 
 	for ( let i = 0; i < data.length; i++ ) {
@@ -29,6 +30,7 @@ function convertDataToResults( data ) {
 			id: data[ i ].id,
 			key: data[ i ].key,
 			title: data[ i ].title,
+			// eslint-disable-next-line es-x/no-symbol-prototype-description
 			description: data[ i ].description
 		};
 		// Redirect title

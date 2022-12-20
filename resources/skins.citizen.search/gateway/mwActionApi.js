@@ -1,3 +1,5 @@
+/* eslint-disable es-x/no-optional-chaining */
+/* eslint-disable es-x/no-symbol-prototype-description */
 const config = require( '../config.json' ),
 	descriptionSource = config.wgCitizenSearchDescriptionSource;
 
@@ -84,6 +86,7 @@ function convertDataToResults( data ) {
 		return [];
 	}
 
+	// eslint-disable-next-line es-x/no-object-values, compat/compat
 	data = Object.values( data.query.pages );
 
 	// Sort the data with the index property since it is not in order

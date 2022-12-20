@@ -33,6 +33,7 @@ function getGateway() {
  * @param {AbortController} controller
  * @return {Object} Results
  */
+// eslint-disable-next-line es-x/no-async-functions
 async function getResults( searchQuery, controller ) {
 	const gateway = getGateway();
 
