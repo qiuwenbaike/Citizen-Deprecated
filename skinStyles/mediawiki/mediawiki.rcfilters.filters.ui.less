@@ -113,6 +113,7 @@
 
 	// Add margin between item and next header
 	+ .mw-rcfilters-ui-filterMenuSectionOptionWidget {
+		max-width: 81vw;
 		margin-top: var( --space-md );
 	}
 }
@@ -201,7 +202,10 @@
 
 /* mw.rcfilters.ui.FilterMenuHeaderWidget.less */
 .mw-rcfilters-ui-filterMenuHeaderWidget {
+	max-width: 90vw;
+
 	&-title {
+		max-width: 90vw;
 		// Left padding ~12px, sync with other padding
 		// Handle top padding in header instead so everything is aligned
 		padding: 0 0 0 0.75em;
@@ -211,6 +215,7 @@
 	}
 
 	&-header {
+		max-width: 90vw;
 		padding-top: 0.75em;
 		border-bottom-color: transparent; // Sticky header have divider already
 		background-color: transparent;
@@ -219,6 +224,12 @@
 
 /* mw.rcfilters.ui.MenuSelectWidget.less */
 .mw-rcfilters-ui-menuSelectWidget {
+	max-width: 90vw;
+
+	&-body {
+		max-width: 90vw !important;
+	}
+
 	&-noresults {
 		color: var( --color-base--subtle );
 	}
