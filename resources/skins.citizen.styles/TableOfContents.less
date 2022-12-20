@@ -1,6 +1,8 @@
 .citizen-toc {
 	font-size: 0.875rem;
 	line-height: var( --line-height-xs );
+	transition: @transition-transform;
+	will-change: transform;
 
 	&__card {
 		display: flex;
@@ -119,15 +121,8 @@
 }
 
 // Move down when site header is hidden
-@media screen {
-	.citizen-toc {
-		transition: @transition-transform;
-		will-change: transform;
-	}
-
-	.citizen-scroll--down .citizen-toc {
-		transform: translateY( var( --header-size ) );
-	}
+.citizen-scroll--down .citizen-toc {
+	transform: translateY( var( --header-size ) );
 }
 
 @media ( max-width: ( @width-breakpoint-desktop - 1px ) ) {
