@@ -66,12 +66,24 @@ a.image {
 
 /* Wider page width for certain namespaces */
 @media ( min-width: @width-breakpoint-desktop-wide ) {
-	// 1 - Special, 6 - File, 14 - Category
 	.ns {
+		// 1 - Special, 6 - File, 14 - Category
 		&--1,
 		&-6,
 		&-14 {
 			--width-layout: var( --width-layout--extended );
+		}
+
+		// 2 - User, 4 - Project, 12 - Help
+		// 8 - MediaWiki, 10 - Template, 828 - Module
+		&-2,
+		&-4,
+		&-8,
+		&-10,
+		&-12,
+		&-828,
+		&-talk {
+			--width-layout: var( --width-layout--wide );
 		}
 	}
 }
