@@ -239,12 +239,7 @@
 	// Sticky header styles
 	.citizen-body-header--sticky {
 		.citizen-toc__card {
-			--toc-margin-top: ~'calc( var( --header-size ) + var(  --space-xxl  ) )';
-
-			// Sticky header is shorter without buttons
-			@media ( max-height: 800px ) {
-				--toc-margin-top: ~'calc( var( --header-size ) + var( --space-md ) )';
-			}
+			--toc-margin-top: 0;
 		}
 	}
 }
