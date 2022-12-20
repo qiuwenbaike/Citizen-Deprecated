@@ -20,7 +20,7 @@
 		}
 
 		.oo-ui-tagMultiselectWidget-handle {
-			border-color: transparent;
+			border-color: var( --border-color-base--darker );
 			border-radius: var( --border-radius--small ) var( --border-radius--small ) 0 0;
 			border-bottom: 1px solid var( --border-color-base ); // Add divider
 			background-color: var( --color-surface-2 );
@@ -64,7 +64,9 @@
 	&-views {
 		&-select {
 			&-widget.oo-ui-widget {
+				border-color: var( --border-color-base--darker );
 				border-radius: 0 0 var( --border-radius--small ) 0;
+				border-top-width: 0;
 				border-left-width: 0;
 			}
 		}
@@ -297,7 +299,6 @@
 	}
 
 	.mw-changeslist-legend {
-		z-index: @z-index-page-header + 1; // so that it won't be covered by sticky header
 		border-color: var( --border-color-base );
 		background-color: var( --color-surface-1 );
 	}
@@ -305,6 +306,7 @@
 
 @media ( max-width: @width-breakpoint-tablet ) {
 	.mw-rcfilters-ui-changesListWrapperWidget .mw-changeslist-legend {
+		min-width: 7rem;
 		margin-left: 100%;
 	}
 }
