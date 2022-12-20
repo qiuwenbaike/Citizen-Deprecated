@@ -62,7 +62,10 @@
 
 /* jquery.wikiEditor.toolbar.less */
 .wikiEditor-ui-toolbar {
-	padding: var( --space-sm ) 0 0;
+	border: 1px solid var( --border-color-base--darker );
+	border-radius: var( --border-radius--small ) var( --border-radius--small ) 0 0;
+	border-bottom: 0;
+	margin: var( --space-sm ) -1px 0;
 	background-color: var( --color-surface-2 );
 	box-shadow: none;
 
@@ -252,4 +255,9 @@
 			background: var( --color-surface-0 );
 		}
 	}
+}
+
+.wikiEditor-ui-bottom {
+	border: 0 1px solid var( --border-color-base--darker );
+	border-radius: var( --border-radius--small ) var( --border-radius--small ) 0 0;
 }
