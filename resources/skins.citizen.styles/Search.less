@@ -15,8 +15,7 @@
 		height: var( --height-search-bar );
 		margin: var( --space-xs ) auto;
 		gap: 0.25rem;
-		.citizen-card();
-		.citizen-card-hide( top center, '', false );
+		.citizen-header-card( left );
 
 		.citizen-ui-icon {
 			width: var( --height-search-bar );
@@ -112,7 +111,7 @@
 @media ( max-width: @width-breakpoint-desktop ) {
 	.citizen-search__card {
 		width: auto;
-		margin: var( --space-xs );
+		margin: ~'calc( var( --header-size ) + 1px ) var( --space-xs )';
 
 		// Remove searchbox open animation on mobile
 		// But keep suggestion animation
@@ -131,22 +130,6 @@
 		~ .citizen-search__button {
 			// Reset containment so that the overlay is visible
 			contain: initial;
-
-			.citizen-search__buttonIcon {
-				display: none;
-			}
-
-			#citizen-search__buttonCheckbox {
-				position: fixed;
-				z-index: 1;
-				top: 0;
-				right: 0;
-				bottom: 0;
-				left: 0;
-				width: auto;
-				height: auto;
-				background-color: var( --background-color-overlay );
-			}
 		}
 	}
 }
