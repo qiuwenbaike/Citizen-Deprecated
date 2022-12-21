@@ -17,13 +17,18 @@ a {
 		cursor: pointer; /* Always cursor:pointer even without href */
 	}
 
-	&:hover {
+	&:hover,
+	&:visited:hover {
 		color: var( --color-link--hover );
 		text-decoration: underline;
 	}
 
 	&:active {
 		color: var( --color-link--active );
+	}
+
+	&:visited {
+		color: var( --color-link--visited );
 	}
 }
 
