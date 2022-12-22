@@ -19,8 +19,9 @@
 	.mw-body-header {
 		position: sticky;
 		top: ~'calc( var( --header-size ) - 1px )';
-		padding-bottom: var( --space-xs );
+		padding: var( --space-md ) var( --padding-page ) var( --space-sm );
 		border-bottom: 1px solid var( --border-color-base );
+		margin: ~'0 calc( -1 * var( --padding-page ) )';
 		transition: @transition-transform; // Hide sticky header on scroll down
 
 		// HACK: Hide overflow
