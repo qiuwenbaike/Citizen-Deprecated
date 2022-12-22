@@ -18,7 +18,7 @@
 
 // Sticky header
 .mw-search-form-wrapper {
-	padding-top: var( --space-md );
+	padding: var( --space-md ) 0;
 	margin-top: ~'calc( var( --space-md ) * -1 )'; // counteract padding
 	background-color: transparent;
 	.citizen-sticky-header;
@@ -27,6 +27,10 @@
 	.mw-search-profile-tabs:last-child {
 		border-bottom: 0;
 	}
+}
+
+.citizen-scroll--down .mw-search-form-wrapper {
+	transform: translateY( -50% );
 }
 
 #mw-search-top-table {
