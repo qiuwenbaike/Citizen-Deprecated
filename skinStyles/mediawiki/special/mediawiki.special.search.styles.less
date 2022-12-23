@@ -21,7 +21,7 @@
 	padding: var( --space-md ) 0;
 	margin-top: ~'calc( var( --space-md ) * -1 )'; // counteract padding
 	background-color: transparent;
-	.citizen-sticky-header;
+	.citizen-sticky-header('var( --header-size )');
 
 	// Wrapper has a border bottom already
 	.mw-search-profile-tabs:last-child {
@@ -30,6 +30,7 @@
 }
 
 .citizen-scroll--down .mw-search-form-wrapper {
+	top: ~'calc( var( --header-size ) + var( --space-md ) )';
 	transform: translateY( -50% );
 }
 
