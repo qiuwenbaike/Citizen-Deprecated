@@ -20,7 +20,7 @@
 .mw-search-form-wrapper {
 	position: sticky;
 	z-index: @z-index-page-header;
-	top: var( --header-size );
+	top: ~'calc( var( --header-size ) - 1px )';
 	padding: var( --space-md ) 0;
 	border-bottom: 1px solid var( --border-color-base );
 	margin-top: ~'calc( var( --space-md ) * -1 )'; // counteract padding
@@ -46,8 +46,7 @@
 }
 
 .citizen-scroll--down .mw-search-form-wrapper {
-	top: ~'calc( var( --header-size ) + var( --space-md ) )';
-	transform: translateY( -50% );
+	transform: ~'translateY( calc( -1 * var( --header-size ) ) )';
 }
 
 #mw-search-top-table {

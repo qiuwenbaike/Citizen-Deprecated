@@ -21,7 +21,7 @@
 		top: ~'calc( var( --header-size ) - 1px )';
 		padding: var( --space-md ) var( --padding-page ) var( --space-sm );
 		border-bottom: 1px solid var( --border-color-base );
-		margin: ~'0 calc( -1 * var( --padding-page ) )';
+		margin: ~'0 calc( var( --padding-page ) * -1 )';
 		transition: @transition-transform; // Hide sticky header on scroll down
 
 		// HACK: Hide overflow
