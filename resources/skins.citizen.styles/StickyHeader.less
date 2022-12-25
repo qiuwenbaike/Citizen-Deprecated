@@ -73,7 +73,7 @@
 	// Hide sticky header on scroll down
 	&.citizen-scroll--down {
 		.mw-body-header {
-			transform: translateY( -100% );
+			transform: ~'translateY( calc( -1 * var( --header-size ) ) )';
 		}
 	}
 }
