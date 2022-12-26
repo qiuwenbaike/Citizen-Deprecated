@@ -223,7 +223,8 @@ class SkinHooks implements
 			// I wish I can use str_ends_with but need to wait for PHP 7.X to be dropped
 			if ( substr( $key, -4 ) === 'talk' ) {
 				$links['associated-pages'][$key]['icon'] = 'speechBubbles';
-			} elseif ( substr( $key, -4 ) !== 'main' && substr( $key, -4 ) !== 'user' && substr( $key, -4 ) !== 'talk' ) {
+			} 
+			if ( substr( $key, -4 ) !== 'main' && substr( $key, -4 ) !== 'user' && substr( $key, -4 ) !== 'talk' ) {
 				$links['associated-pages'][$key]['icon'] = 'article'; // Add icons for other pages
 			}
 		}
