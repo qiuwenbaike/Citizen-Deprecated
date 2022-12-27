@@ -24,12 +24,13 @@
 		display: none;
 	}
 
+	// HACK: So sticky header will never trigger in edit action
+	#citizen-body-header-sticky-sentinel {
+		display: none;
+	}
+
 	.mw-body-header {
-		z-index: 0; // Reset z-index so toolbar won't clip
-		// Reset VE disabled style to allow page action buttons to work
-		opacity: 1;
-		pointer-events: auto;
-		user-select: auto;
+		display: none; // Hide header
 	}
 
 	.page-heading {
