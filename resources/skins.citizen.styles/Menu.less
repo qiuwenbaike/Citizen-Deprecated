@@ -32,8 +32,8 @@
 }
 
 .mw-portlet {
-	// Hide selected item
-	.selected {
+	// Hide selected item, except #ca-view
+	.selected:not( #ca-view ) {
 		.mixin-screen-reader-text;
 	}
 
