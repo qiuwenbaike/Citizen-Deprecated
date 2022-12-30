@@ -102,7 +102,7 @@
 
 .results-info {
 	color: var( --color-base--subtle );
-	font-size: 0.8125rem;
+	font-size: 0.875rem;
 	white-space: nowrap;
 }
 
@@ -133,10 +133,12 @@
 
 .mw-search-createlink,
 .mw-search-exists {
-	padding: var( --space-sm ) var( --space-md );
-	border-radius: var( --border-radius--small );
+	// These can generate a empty card when there are no text content
+	// FIXME: re-enable when this is addressed in core
+	// padding: var( --space-sm ) var( --space-md );
+	// background: var( --color-surface-2 );
+	// border-radius: var( --border-radius--small );
 	margin-top: 0 !important;
-	background: var( --color-surface-2 );
 	color: var( --color-base--emphasized );
 }
 
@@ -172,6 +174,11 @@
 .searchmatch {
 	color: var( --color-base--emphasized );
 	font-weight: var( --font-weight-semibold );
+
+	a & {
+		// If searchmatch is part of the link (usually title), use link color
+		color: inherit;
+	}
 }
 
 .searchresults {

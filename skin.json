@@ -1,6 +1,6 @@
 {
 	"name": "Citizen",
-	"version": "2.2.0",
+	"version": "2.3.0",
 	"author": [
 		"[https://www.mediawiki.org/wiki/User:Alistair3149 Alistair3149]",
 		"[https://www.mediawiki.org/wiki/User:Octfx Octfx]",
@@ -138,7 +138,8 @@
 			],
 			"messages": [
 				"citizen-search-fulltext",
-				"citizen-search-fulltext-empty",
+				"citizen-search-mediasearch",
+				"citizen-search-empty-desc",
 				"citizen-search-noresults-title",
 				"citizen-search-noresults-desc",
 				"search-redirect",
@@ -182,6 +183,7 @@
 				"edit",
 				"editLock",
 				"ellipsis",
+				"help",
 				"history",
 				"home",
 				"image",
@@ -235,6 +237,8 @@
 			"+ext.centralNotice.display": "skinStyles/extensions/CentralNotice/ext.centralNotice.display.less",
 			"+ext.cite.styles": "skinStyles/extensions/Cite/ext.cite.styles.less",
 			"+ext.cleanchanges.uls": "skinStyles/extensions/CleanChanges/ext.cleanchanges.uls.less",
+			"+ext.codeEditor.ace": "skinStyles/extensions/CodeEditor/ext.codeEditor.ace.less",
+			"+jquery.codeEditor": "skinStyles/extensions/CodeEditor/jquery.codeEditor.less",
 			"+ext.CodeMirror.lib": "skinStyles/extensions/CodeMirror/ext.CodeMirror.lib.less",
 			"+ext.CodeMirror.mode.mediawiki": "skinStyles/extensions/CodeMirror/ext.CodeMirror.mode.mediawiki.less",
 			"+ext.CodeMirror.visualEditor.init": "skinStyles/extensions/CodeMirror/ext.CodeMirror.visualEditor.init.less",

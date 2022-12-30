@@ -3,11 +3,12 @@
 		"authors": [
 			"Abijeet Patro",
 			"Alistair3149",
+			"Amire80",
 			"[https://www.mediawiki.org/wiki/User:Alistair3149 Alistair3149]",
 			"[https://www.mediawiki.org/wiki/User:Octfx Octfx]"
 		]
 	},
-	"skinname-citizen": "{{name}}",
+	"skinname-citizen": "{{name}}\n\n\"Citizen\" refers to the name of the video game [[:w:en:Star Citizen|Star Citizen]].",
 	"citizen-skin-desc": "{{desc|what=skin|name=Citizen|url=https://github.com/StarCitizenTools/mediawiki-skins-Citizen}}",
 	"citizen-prefs-talkpage": "Link to the Citizen talk page which is shown before the preview link in skin preferences. See T307113 for more information.",
 	"citizen.css": "{{optional}}",
@@ -23,7 +24,8 @@
 	"citizen-action-addsection": "Used in the Citizen skin. See for example {{canonicalurl:Talk:Main_Page|useskin=vector}}\n{{Identical|Add topic}}. Same as vector-action-addsection in Vector skin.",
 	"citizen-jumptotop": "Label for link to jump to top of page",
 	"citizen-search-fulltext": "Fulltext search suggestion",
-	"citizen-search-fulltext-empty": "Helper text in the search suggestion when there are no search query",
+	"citizen-search-mediasearch": "MediaSearch suggestion",
+	"citizen-search-empty-desc": "Helper text in the search suggestion when there are no search query",
 	"citizen-search-noresults-title": "Title in the search suggestion when there are no search results",
 	"citizen-search-noresults-desc": "Description in the search suggestion when there are no search results",
 	"citizen-tagline-ns-talk": "Tagline for pages in talk namespace",
