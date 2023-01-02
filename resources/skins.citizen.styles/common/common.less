@@ -95,6 +95,21 @@ video {
 	outline: 1px solid var( --color-primary );
 }
 
+#toc {
+	max-width: 320px;
+	padding: 1rem;
+	margin: 1rem auto 1rem 0;
+	background: var( --color-surface-3 );
+	font-size: 0.875rem;
+
+	ul,
+	li {
+		margin-top: 0;
+		margin-bottom: 0;
+		list-style: none;
+	}
+}
+
 @media ( hover: none ) {
 	a,
 	button,
@@ -113,6 +128,10 @@ video {
 
 	table {
 		display: block;
+	}
+
+	#toc {
+		max-width: 95vw;
 	}
 }
 
