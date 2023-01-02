@@ -86,7 +86,7 @@ class SkinCitizen extends SkinMustache {
 
 		$data += [
 			// Booleans
-			'toc-enabled' => !empty( $parentData['data-toc'] ),
+			// 'toc-enabled' => !empty( $parentData['data-toc'] ),
 			// Data objects
 			'data-user-info' => $header->getUserInfoData( $parentData['data-portlets']['data-user-page'] ),
 			// HTML strings
@@ -155,7 +155,7 @@ class SkinCitizen extends SkinMustache {
 		$skinTheme->setSkinTheme( $options );
 
 		// Disable default ToC since it is handled by Citizen
-		$options['toc'] = false;
+		// $options['toc'] = false;
 
 		// Collapsible sections
 		// Load in content pages
