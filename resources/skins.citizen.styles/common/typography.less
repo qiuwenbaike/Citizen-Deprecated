@@ -35,6 +35,16 @@ blockquote {
 	}
 }
 
+blockquote,
+q,
+cite {
+	&:lang( zh-Hans ),
+	&:lang( zh-Hant ),
+	&:lang( zh ) {
+		font-style: normal;
+	}
+}
+
 sub,
 sup {
 	font-size: 80%;
