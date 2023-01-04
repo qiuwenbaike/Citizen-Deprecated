@@ -48,7 +48,7 @@ img {
 hr {
 	border: 0;
 	border-top: 1px solid var( --border-color-base );
-	margin: var( --space-md ) 0;
+	margin: 0;
 }
 
 /* Structural Elements */
@@ -117,7 +117,7 @@ h6 {
 }
 
 p {
-	margin: var( --space-md ) 0;
+	margin: 0;
 	overflow-wrap: break-word; // Force wrap to preserve layout
 }
 
@@ -128,12 +128,12 @@ p img {
 ul {
 	// Will break a lot of styles if we use padding for horizontal spacing
 	padding: 0;
-	margin: var( --space-md ) 0 var( --space-md ) var( --space-lg );
+	margin: 0 0 0 var( --space-lg );
 }
 
 ol {
 	padding: 0;
-	margin: var( --space-md ) 0 var( --space-md ) var( --space-lg );
+	margin: 0 0 0 var( --space-lg );
 }
 
 dt {
@@ -142,7 +142,7 @@ dt {
 }
 
 dl {
-	margin: var( --space-md ) 0;
+	margin: 0;
 }
 
 dd {
@@ -189,9 +189,9 @@ table {
 
 /* Forms */
 fieldset {
-	padding: var( --space-xs ) var( --space-md );
+	padding: var( --space-xs ) 0;
 	border: 1px solid var( --border-color-base );
-	margin: var( --space-md ) 0;
+	margin: 0;
 }
 
 legend {
