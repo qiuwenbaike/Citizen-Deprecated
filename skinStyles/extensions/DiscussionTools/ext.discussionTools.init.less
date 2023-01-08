@@ -7,14 +7,21 @@
  *
  * Date: 2022-05-06
 */
+@import '../../../resources/variables.less';
+
 .ext-discussiontools-init-section {
 	display: flex;
 	flex-wrap: wrap;
 	justify-content: space-between;
 
 	.mw-headline {
-		flex: 1 0 50vw;
 		font-family: var( --fonts-serif );
+	}
+}
+
+@media ( max-width: @width-breakpoint-tablet ) {
+	.ext-discussiontools-init-section .mw-headline {
+		flex: 1 0 100vw;
 	}
 }
 
