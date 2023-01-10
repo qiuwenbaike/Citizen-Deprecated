@@ -254,12 +254,14 @@ class SkinHooks implements
 			'log' => 'history',
 			'blockip' => 'block',
 			'userrights' => 'userGroup',
+			'specialpages' => 'settings',
+			'upload' => 'upload',
 			// Extension:CiteThisPage
 			'citethispage' => 'reference',
 			// Extension:Cargo
 			'cargo-pagevalues' => 'database',
 			// Extension:SemanticMediaWiki
-			'smwbrowselink' => 'database'
+			'smwbrowselink' => 'database',
 		];
 
 		self::mapIconsToMenuItems( $links, 'TOOLBOX', $iconMap );
