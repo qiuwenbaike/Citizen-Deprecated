@@ -254,8 +254,8 @@ class SkinHooks implements
 			'log' => 'history',
 			'blockip' => 'block',
 			'userrights' => 'userGroup',
-			'specialpages' => 'settings',
 			'upload' => 'upload',
+			'specialpages' => 'specialpages',
 			// Extension:CiteThisPage
 			'citethispage' => 'reference',
 			// Extension:Cargo
