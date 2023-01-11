@@ -204,7 +204,6 @@
 				"sandbox",
 				"search",
 				"settings",
-				"specialpages",
 				"speechBubbleAdd",
 				"speechBubbles",
 				"star",
@@ -212,7 +211,6 @@
 				"trash",
 				"unLock",
 				"unStar",
-				"upload",
 				"userAdd",
 				"userAvatar",
 				"userContributions",
@@ -220,6 +218,15 @@
 				"userTalk",
 				"watchlist",
 				"wikiText"
+			]
+		},
+		"skins.citizen.icons.qiuwen": {
+			"useDataURI": false,
+			"defaultColor": "#000",
+			"class": "ResourceLoaderOOUIIconPackModule",
+			"icons": [
+				"specialPages",
+				"upload"
 			]
 		}
 	},
