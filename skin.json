@@ -220,12 +220,13 @@
 				"wikiText"
 			]
 		},
-		"skins.citizen.icons.qiuwen": {
+		"skins.citizen.icons.drawer": {
+			"selectorWithoutVariant": ".citizen-drawer__menu #t-{name}:before",
 			"useDataURI": false,
 			"defaultColor": "#000",
 			"class": "ResourceLoaderOOUIIconPackModule",
 			"icons": [
-				"specialPages",
+				"specialpages",
 				"upload"
 			]
 		}
