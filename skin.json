@@ -35,7 +35,8 @@
 					"styles": [
 						"skins.citizen.styles",
 						"skins.citizen.icons",
-						"skins.citizen.icons.wmui"
+						"skins.citizen.icons.wmui",
+						"skins.citizen.icons.drawer"
 					],
 					"messages": [
 						"citizen-actions-more-toggle",
@@ -226,7 +227,7 @@
 			"defaultColor": "#000",
 			"class": "ResourceLoaderOOUIIconPackModule",
 			"icons": [
-				"specialpages",
+				"specialPages",
 				"upload"
 			]
 		}
