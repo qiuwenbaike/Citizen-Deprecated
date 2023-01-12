@@ -229,6 +229,9 @@
 			"icons": [
 				"specialpages",
 				"upload"
+			],
+			"styles": [
+				"resources/skins.citizen.icons/drawer/skins.citizen.icons.drawer.less"
 			]
 		}
 	},
@@ -384,8 +387,7 @@
 			"+oojs-ui-toolbars": "skinStyles/ooui/oojs-ui-toolbars.less",
 			"+oojs-ui-widgets": "skinStyles/ooui/oojs-ui-widgets.less",
 			"+oojs-ui-windows": "skinStyles/ooui/oojs-ui-windows.less",
-			"+@wikimedia/codex": "skinStyles/codex/codex-styles.less",
-			"+skins.citizen.icons.drawer": "resources/skins.citizen.icons/drawer/skins.citizen.icons.drawer.less"
+			"+@wikimedia/codex": "skinStyles/codex/codex-styles.less"
 		}
 	},
 	"config_prefix": "wgCitizen",
