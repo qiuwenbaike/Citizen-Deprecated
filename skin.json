@@ -220,19 +220,6 @@
 				"watchlist",
 				"wikiText"
 			]
-		},
-		"skins.citizen.icons.drawer": {
-			"selectorWithoutVariant": ".citizen-drawer__menu #t-{name}:before",
-			"useDataURI": false,
-			"defaultColor": "#000",
-			"class": "ResourceLoaderOOUIIconPackModule",
-			"icons": [
-				"specialpages",
-				"upload"
-			],
-			"styles": [
-				"resources/skins.citizen.icons/drawer/skins.citizen.icons.drawer.less"
-			]
 		}
 	},
 	"ResourceFileModulePaths": {
