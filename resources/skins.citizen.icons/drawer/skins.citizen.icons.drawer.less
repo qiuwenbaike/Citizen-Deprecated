@@ -1,0 +1,18 @@
+@import '../variables.less';
+@import '../mixins.less';
+
+.citizen-drawer__menu {
+	#t-specialpages,
+	#t-upload {
+		&:before {
+			display: block;
+			width: var( --size-icon );
+			height: var( --size-icon );
+			background-position: center;
+			background-repeat: no-repeat;
+			background-size: contain;
+			content: '';
+			opacity: var( --opacity-icon-base );
+		}
+	}
+}
