@@ -254,6 +254,7 @@ class SkinHooks implements
 			'log' => 'history',
 			'blockip' => 'block',
 			'userrights' => 'userGroup',
+			'emailuser' => 'message',
 			// Extension:CiteThisPage
 			'citethispage' => 'reference',
 			// Extension:Cargo
