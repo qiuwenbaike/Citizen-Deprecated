@@ -169,7 +169,9 @@
 .mw-mmv-options-subcontainer {
 	display: flex;
 	margin-top: var( --space-md );
+	column-gap: var( --space-sm );
 	gap: var( --space-sm );
+	row-gap: var( --space-sm );
 }
 
 .mw-mmv-options-subcontainer .mw-mmv-options-text {
@@ -505,16 +507,20 @@
 	padding: 0 var( --space-md ) var( --space-md ) var( --space-md );
 	border-top: 0;
 	margin-top: -4px;
+	column-gap: var( --space-xs );
 	// Sync with title
 	gap: var( --space-xs );
 	grid-template-areas: 'desc links'
 		'about about';
 	grid-template-columns: 2fr 1fr;
+	row-gap: var( --space-xs );
 	transition: @transition-background;
 
 	.mw-mmv-untruncated & {
 		background-color: transparent;
-		gap: var( --space-lg );
+		column-gap: var( --space-xl );
+		gap: var( --space-xl );
+		row-gap: var( --space-xl );
 
 		@media ( max-width: @width-breakpoint-tablet ) {
 			grid-template-areas: 'desc desc'
@@ -641,5 +647,7 @@
 	display: flex; // let's use flex instead of float
 	height: auto; // avoid layout shift when scroll up
 	padding-bottom: 0; // let metadata handle the padding
+	column-gap: var( --space-xs );
 	gap: var( --space-xs );
+	row-gap: var( --space-xs );
 }

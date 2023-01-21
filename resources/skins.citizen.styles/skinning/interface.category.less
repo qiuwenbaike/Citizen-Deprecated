@@ -11,16 +11,20 @@
 	display: flex;
 	flex-wrap: wrap;
 	clear: both;
+	column-gap: var( --space-xl );
 	gap: var( --space-xl );
+	row-gap: var( --space-xl );
 
 	ul {
 		display: flex;
 		flex-wrap: wrap;
 		margin: var( --space-xs ) 0 0 0;
+		column-gap: var( --space-xs );
 		/* Reset font */
 		font-size: 0.8125rem;
 		gap: var( --space-xs );
 		letter-spacing: 0; // hidden-catlink title does not have a selector
+		row-gap: var( --space-xs );
 	}
 
 	li {

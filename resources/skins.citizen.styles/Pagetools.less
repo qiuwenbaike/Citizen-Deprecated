@@ -4,9 +4,11 @@
 	flex-wrap: wrap;
 	justify-content: flex-end;
 	margin-left: -0.75rem; // Align to the margin
+	column-gap: var( --space-xxs );
 	font-size: 0.875rem;
 	font-weight: var( --font-weight-medium );
 	gap: var( --space-xxs );
+	row-gap: var( --space-xxs );
 
 	// TODO: Merge this with header__item
 	&__item {
@@ -69,7 +71,9 @@
 	> .mw-portlet {
 		ul {
 			display: flex;
+			column-gap: var( --space-xxs );
 			gap: var( --space-xxs );
+			row-gap: var( --space-xxs );
 		}
 
 		li > a {
@@ -297,8 +301,10 @@
 	.page-actions {
 		> .mw-portlet {
 			li > a {
+				column-gap: var( --space-xs );
 				font-size: 0.75rem;
 				gap: var( --space-xs );
+				row-gap: var( --space-xs );
 			}
 		}
 
