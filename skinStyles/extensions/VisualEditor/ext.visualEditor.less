@@ -29,8 +29,8 @@
 		display: none;
 	}
 
-	.mw-body-header {
-		display: none; // Hide header
+	.mw-body-header .page-actions {
+		display: none; // Hide page header
 	}
 
 	.page-heading {
@@ -66,6 +66,7 @@
 		&-ui {
 			&-toolbar {
 				> .oo-ui-toolbar-bar {
+					z-index: @z-index-site-header;
 					border-color: var( --border-color-base--darker );
 					background-color: var( --color-surface-0 );
 
