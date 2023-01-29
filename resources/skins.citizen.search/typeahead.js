@@ -1,3 +1,12 @@
+/* eslint-disable es-x/no-array-prototype-includes */
+// Polyfill
+if ( !Array.prototype.includes ) {
+	// eslint-disable-next-line no-extend-native
+	Array.prototype.includes = function ( searchElement, fromIndex ) {
+		return this.indexOf( searchElement, fromIndex ) > -1;
+	};
+}
+
 /* eslint-disable es-x/no-symbol-prototype-description */
 const
 	PREFIX = 'citizen-typeahead',
