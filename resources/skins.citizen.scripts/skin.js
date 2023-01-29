@@ -65,17 +65,17 @@ function initStickyHeader( document ) {
 	const scrollObserver = require( './scrollObserver.js' );
 
 	// Detect scroll direction and add the right class
-	scrollObserver.initDirectionObserver(
-		() => {
-			document.body.classList.remove( 'citizen-scroll--up' );
-			document.body.classList.add( 'citizen-scroll--down' );
-		},
-		() => {
-			document.body.classList.remove( 'citizen-scroll--down' );
-			document.body.classList.add( 'citizen-scroll--up' );
-		},
-		10
-	);
+	// scrollObserver.initDirectionObserver(
+	//     () => {
+	//         document.body.classList.remove( 'citizen-scroll--up' );
+	//         document.body.classList.add( 'citizen-scroll--down' );
+	//     },
+	//     () => {
+	//         document.body.classList.remove( 'citizen-scroll--down' );
+	//         document.body.classList.add( 'citizen-scroll--up' );
+	//     },
+	//     10
+	// );
 
 	const sentinel = document.getElementById( 'citizen-body-header-sticky-sentinel' );
 
