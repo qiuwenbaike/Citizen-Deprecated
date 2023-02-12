@@ -210,7 +210,7 @@ function bindDismissOnFocusLoss( window, checkbox, button, target ) {
  * @ignore
  */
 function bindDismissOnEscape( window, checkbox ) {
-	const onKeyup = ( /** @type {KeyboardEvent} */ event ) => {
+	const onKeyup = function ( /** @type {KeyboardEvent} */ event ) {
 		// Only handle ESCAPE
 		if ( event.key !== 'Escape' ) {
 			return;

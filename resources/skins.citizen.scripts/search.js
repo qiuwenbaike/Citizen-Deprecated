@@ -15,10 +15,10 @@ const SEARCH_LOADING_CLASS = 'citizen-loading';
  * @param {function(): void} afterLoadFn function to execute after search module loads.
  */
 function loadSearchModule( element, moduleName, afterLoadFn ) {
-	const requestSearchModule = () => {
+	function requestSearchModule() {
 		mw.loader.using( moduleName, afterLoadFn );
 		element.removeEventListener( 'focus', requestSearchModule );
-	};
+	}
 
 	if ( document.activeElement === element ) {
 		requestSearchModule();
@@ -123,7 +123,7 @@ function isFormField( element ) {
  * @return {void}
  */
 function bindExpandOnSlash( window, checkbox, input ) {
-	const onExpandOnSlash = ( /** @type {KeyboardEvent} */ event ) => {
+	const onExpandOnSlash = function ( /** @type {KeyboardEvent} */ event ) {
 		// Only handle SPACE and ENTER.
 		if ( event.key === '/' && !isFormField( event.target ) ) {
 			// Since Firefox quickfind interfere with this
@@ -149,10 +149,9 @@ function initSearch( window ) {
 		return;
 	}
 
-	searchBoxes.forEach( ( searchBox ) => {
+	searchBoxes.forEach( function ( searchBox ) {
 		const
-			input = searchBox.querySelector( 'input[name="search"]' ),
-			isPrimarySearch = input && input.getAttribute( 'id' ) === 'searchInput';
+			input = searchBox.querySelector( 'input[name="search"]' ), isPrimarySearch = input && input.getAttribute( 'id' ) === 'searchInput';
 
 		if ( !input ) {
 			return;
@@ -163,13 +162,13 @@ function initSearch( window ) {
 			const checkbox = document.getElementById( 'citizen-search__checkbox' );
 			bindExpandOnSlash( window, checkbox, input );
 			// Focus when toggled
-			checkbox.addEventListener( 'input', () => {
+			checkbox.addEventListener( 'input', function () {
 				focusOnChecked( checkbox, input );
 			} );
 		}
 
 		setLoadingIndicatorListeners( searchBox, true, renderSearchLoadingIndicator );
-		loadSearchModule( input, searchModule, () => {
+		loadSearchModule( input, searchModule, function () {
 			setLoadingIndicatorListeners( searchBox, false, renderSearchLoadingIndicator );
 		} );
 	} );

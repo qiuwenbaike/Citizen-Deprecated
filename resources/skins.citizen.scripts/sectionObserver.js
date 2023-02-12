@@ -48,44 +48,37 @@ function sectionObserver( props ) {
 	props = Object.assign( {
 		topMargin: 0,
 		throttleMs: 200,
-		onIntersection: () => {}
+		onIntersection: function () { }
 	}, props );
 
 	let /** @type {boolean} */ inThrottle = false;
 	let /** @type {HTMLElement | undefined} */ current;
 	// eslint-disable-next-line compat/compat
-	const observer = new IntersectionObserver( ( entries ) => {
+	const observer = new IntersectionObserver( function ( entries ) {
 		let /** @type {IntersectionObserverEntry | undefined} */ closestNegativeEntry;
 		let /** @type {IntersectionObserverEntry | undefined} */ closestPositiveEntry;
 		const topMargin = /** @type {number} */ ( props.topMargin );
 
-		entries.forEach( ( entry ) => {
-			const top =
-					entry.boundingClientRect.top - topMargin;
-			if (
-				top > 0 &&
-				(
-					closestPositiveEntry === undefined ||
-					top < closestPositiveEntry.boundingClientRect.top - topMargin
-				)
+		entries.forEach( function ( entry ) {
+			const top = entry.boundingClientRect.top - topMargin;
+			if ( top > 0 &&
+                ( closestPositiveEntry === undefined ||
+                    top < closestPositiveEntry.boundingClientRect.top - topMargin )
 			) {
 				closestPositiveEntry = entry;
 			}
 
-			if (
-				top <= 0 &&
-				(
-					closestNegativeEntry === undefined ||
-					top > closestNegativeEntry.boundingClientRect.top - topMargin
-				)
+			if ( top <= 0 &&
+                ( closestNegativeEntry === undefined ||
+                    top > closestNegativeEntry.boundingClientRect.top - topMargin )
 			) {
 				closestNegativeEntry = entry;
 			}
 		} );
 
 		const closestTag =
-			/** @type {HTMLElement} */ ( closestNegativeEntry ? closestNegativeEntry.target :
-				/** @type {IntersectionObserverEntry} */ ( closestPositiveEntry ).target
+		/** @type {HTMLElement} */ ( closestNegativeEntry ? closestNegativeEntry.target :
+			/** @type {IntersectionObserverEntry} */ ( closestPositiveEntry ).target
 			);
 
 		// If the intersection is new, fire the `onIntersection` callback.
@@ -109,8 +102,8 @@ function sectionObserver( props ) {
 	function calcIntersection() {
 		// IntersectionObserver will asynchronously calculate the boundingClientRect
 		// of each observed element off the main thread after `observe` is called.
-		props.elements.forEach( ( element ) => {
-			observer.observe( /** @type {HTMLElement} */ ( element ) );
+		props.elements.forEach( function ( element ) {
+			observer.observe( /** @type {HTMLElement} */( element ) );
 		} );
 	}
 
@@ -119,7 +112,7 @@ function sectionObserver( props ) {
 		if ( !inThrottle ) {
 			inThrottle = true;
 
-			setTimeout( () => {
+			setTimeout( function () {
 				calcIntersection();
 				inThrottle = false;
 			}, props.throttleMs );
