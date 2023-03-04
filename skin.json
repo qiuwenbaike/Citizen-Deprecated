@@ -35,8 +35,7 @@
 					"styles": [
 						"skins.citizen.styles",
 						"skins.citizen.icons",
-						"skins.citizen.icons.wmui",
-						"skins.citizen.icons.drawer"
+						"skins.citizen.icons.wmui"
 					],
 					"messages": [
 						"citizen-actions-more-toggle",
