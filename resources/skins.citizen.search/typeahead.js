@@ -382,7 +382,7 @@ function updateTypeahead( messages ) {
 	 */
 	const updateToolItem = function ( data ) {
 		const
-			itemId = `${PREFIX}-${data.id}`, query = `<span class="citizen-typeahead__query">${htmlSafeSearchQuery}</span>`, itemLink = data.link + htmlSafeSearchQuery,
+			itemId = `${PREFIX}-${data.id}`, query = `<span class="citizen-typeahead__query">${htmlSafeSearchQuery}</span>`, itemLink = data.link + searchQuery,
 			/* eslint-disable-next-line mediawiki/msg-doc */
 			itemDesc = mw.message( data.msg, query );
 
