@@ -1,3 +1,12 @@
+/* eslint-disable es-x/no-array-prototype-includes */
+// Polyfill
+if ( !Array.prototype.includes ) {
+	// eslint-disable-next-line no-extend-native
+	Array.prototype.includes = function ( searchElement, fromIndex ) {
+		return this.indexOf( searchElement, fromIndex ) > -1;
+	};
+}
+
 /* eslint-disable es-x/no-symbol-prototype-description */
 const
 	PREFIX = 'citizen-typeahead',
@@ -111,15 +120,15 @@ function keyboardEvents( event ) {
 }
 
 /**
- * Bind mouseenter and mouseleave event to reproduce mouse hover event
+ *  Bind mouseenter and mouseleave event to reproduce mouse hover event
  *
  * @param {HTMLElement} element
  */
 function bindMouseHoverEvent( element ) {
-	element.addEventListener( 'mouseenter', ( event ) => {
+	element.addEventListener( 'mouseenter', function ( event ) {
 		toggleActive( event.currentTarget );
 	} );
-	element.addEventListener( 'mouseleave', ( event ) => {
+	element.addEventListener( 'mouseleave', function ( event ) {
 		toggleActive( event.currentTarget );
 	} );
 }
@@ -137,7 +146,7 @@ function clearSuggestions() {
 			fragment = new DocumentFragment(),
 			template = document.getElementById( `${PREFIX}-template` );
 
-		[ ...typeaheadItems ].forEach( ( item ) => {
+		[ ...typeaheadItems ].forEach( function ( item ) {
 			if ( !item.classList.contains( `${ITEM_CLASS}--page` ) ) {
 				fragment.append( item );
 			}
@@ -160,18 +169,17 @@ function clearSuggestions() {
  * @param {HTMLElement} placeholder
  */
 function getSuggestions( searchQuery, htmlSafeSearchQuery, placeholder ) {
-	const renderSuggestions = ( results ) => {
+	function renderSuggestions( results ) {
 		if ( results.length > 0 ) {
 			const
-				fragment = document.createDocumentFragment(),
-				suggestionLinkPrefix = `${config.wgScriptPath}/index.php?title=Special:Search&search=`;
+				fragment = document.createDocumentFragment(), suggestionLinkPrefix = `${config.wgScriptPath}/index.php?title=Special:Search&search=`;
 			/**
 			 * Return the redirect title with search query highlight
 			 *
 			 * @param {string} text
 			 * @return {string}
 			 */
-			const highlightTitle = ( text ) => {
+			const highlightTitle = function ( text ) {
 				const regex = new RegExp( mw.util.escapeRegExp( htmlSafeSearchQuery ), 'i' );
 				return text.replace( regex, `<span class="${PREFIX}__highlight">$&</span>` );
 			};
@@ -182,24 +190,23 @@ function getSuggestions( searchQuery, htmlSafeSearchQuery, placeholder ) {
 			 * @param {string} matchedTitle
 			 * @return {string}
 			 */
-			const getRedirectLabel = ( title, matchedTitle ) => {
+			const getRedirectLabel = function ( title, matchedTitle ) {
 				/**
 				 * Check if the redirect is useful (T303013)
 				 *
 				 * @return {boolean}
 				 */
-				const isRedirectUseful = () => {
+				const isRedirectUseful = function () {
 					// Change to lowercase then remove space and dashes
-					const cleanup = ( text ) => {
+					const cleanup = function ( text ) {
 						return text.toLowerCase().replace( /-|\s/g, '' );
 					};
 					const
-						cleanTitle = cleanup( title ),
-						cleanMatchedTitle = cleanup( matchedTitle );
+						cleanTitle = cleanup( title ), cleanMatchedTitle = cleanup( matchedTitle );
 
 					return !(
 						cleanTitle.includes( cleanMatchedTitle ) ||
-						cleanMatchedTitle.includes( cleanTitle )
+                        cleanMatchedTitle.includes( cleanTitle )
 					);
 				};
 
@@ -217,7 +224,7 @@ function getSuggestions( searchQuery, htmlSafeSearchQuery, placeholder ) {
 			};
 
 			// Create suggestion items
-			results.forEach( ( result, index ) => {
+			results.forEach( function ( result, index ) {
 				const data = {
 					id: `${PREFIX}-suggestion-${index}`,
 					type: 'page',
@@ -253,7 +260,7 @@ function getSuggestions( searchQuery, htmlSafeSearchQuery, placeholder ) {
 			);
 			placeholder.classList.remove( HIDDEN_CLASS );
 		}
-	};
+	}
 
 	// Add loading animation
 	searchInput.parentNode.classList.add( SEARCH_LOADING_CLASS );
@@ -261,7 +268,7 @@ function getSuggestions( searchQuery, htmlSafeSearchQuery, placeholder ) {
 	const
 		// eslint-disable-next-line compat/compat
 		controller = new AbortController(),
-		abortFetch = () => {
+		abortFetch = function () {
 			controller.abort();
 		};
 
@@ -273,13 +280,13 @@ function getSuggestions( searchQuery, htmlSafeSearchQuery, placeholder ) {
 	// So that fetch request won't be queued up
 	searchInput.addEventListener( 'input', abortFetch, { once: true } );
 
-	getResults.then( ( results ) => {
+	getResults.then( function ( results ) {
 		searchInput.removeEventListener( 'input', abortFetch );
 		clearSuggestions();
 		if ( results !== null ) {
 			renderSuggestions( results );
 		}
-	} ).catch( ( error ) => {
+	} ).catch( function ( error ) {
 		searchInput.removeEventListener( 'input', abortFetch );
 		searchInput.parentNode.classList.remove( SEARCH_LOADING_CLASS );
 		// User can trigger the abort when the fetch event is pending
@@ -373,11 +380,9 @@ function updateTypeahead( messages ) {
 	 *
 	 * @param {Object} data
 	 */
-	const updateToolItem = ( data ) => {
+	const updateToolItem = function ( data ) {
 		const
-			itemId = `${PREFIX}-${data.id}`,
-			query = `<span class="citizen-typeahead__query">${htmlSafeSearchQuery}</span>`,
-			itemLink = data.link + htmlSafeSearchQuery,
+			itemId = `${PREFIX}-${data.id}`, query = `<span class="citizen-typeahead__query">${htmlSafeSearchQuery}</span>`, itemLink = data.link + searchQuery,
 			/* eslint-disable-next-line mediawiki/msg-doc */
 			itemDesc = mw.message( data.msg, query );
 
@@ -469,13 +474,13 @@ function initTypeahead( searchForm, input ) {
 			'msg-citizen-search-empty-desc': messages.emptyDesc
 		};
 
-	const onBlur = ( event ) => {
+	const onBlur = function ( event ) {
 		const focusIn = typeahead.contains( event.relatedTarget );
 
 		if ( !focusIn ) {
 			// HACK: On Safari, users are unable to click any links because the blur
 			// event dismiss the links before it is clicked. This should fix it.
-			setTimeout( () => {
+			setTimeout( function () {
 				searchInput.setAttribute( 'aria-activedescendant', '' );
 				typeahead.classList.remove( EXPANDED_CLASS );
 				searchInput.removeEventListener( 'keydown', keyboardEvents );
@@ -484,7 +489,7 @@ function initTypeahead( searchForm, input ) {
 		}
 	};
 
-	const onFocus = () => {
+	const onFocus = function () {
 		// Refresh the typeahead since the query will be emptied when blurred
 		updateTypeahead( messages );
 		typeahead.classList.add( EXPANDED_CLASS );
@@ -510,7 +515,7 @@ function initTypeahead( searchForm, input ) {
 		updateTypeahead( messages );
 	}
 
-	searchInput.addEventListener( 'input', () => {
+	searchInput.addEventListener( 'input', function () {
 		mw.util.debounce( 100, updateTypeahead( messages ) );
 	} );
 

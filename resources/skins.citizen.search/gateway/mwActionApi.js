@@ -61,7 +61,7 @@ function getUrl( input ) {
  * @return {Object} Results
  */
 function convertDataToResults( data ) {
-	const getDisplayTitle = ( item ) => {
+	const getDisplayTitle = function ( item ) {
 		if ( item.pageprops && item.pageprops.displaytitle ) {
 			return item.pageprops.displaytitle;
 		} else {
@@ -69,7 +69,7 @@ function convertDataToResults( data ) {
 		}
 	};
 
-	const getDescription = ( item ) => {
+	const getDescription = function ( item ) {
 		switch ( descriptionSource ) {
 			case 'wikidata':
 				return item.description || '';
@@ -90,7 +90,7 @@ function convertDataToResults( data ) {
 	data = Object.values( data.query.pages );
 
 	// Sort the data with the index property since it is not in order
-	data.sort( ( a, b ) => {
+	data.sort( function ( a, b ) {
 		return a.index - b.index;
 	} );
 

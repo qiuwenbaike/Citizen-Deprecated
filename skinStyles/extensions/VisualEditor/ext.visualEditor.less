@@ -29,8 +29,8 @@
 		display: none;
 	}
 
-	.mw-body-header {
-		display: none; // Hide header
+	.mw-body-header .page-actions {
+		display: none; // Hide page header
 	}
 
 	.page-heading {
@@ -66,6 +66,7 @@
 		&-ui {
 			&-toolbar {
 				> .oo-ui-toolbar-bar {
+					z-index: 91; // @z-index-site-header - 1
 					border-color: var( --border-color-base--darker );
 					background-color: var( --color-surface-0 );
 
@@ -235,8 +236,7 @@
 				}
 
 				&.ve-ui-toolbar-floating > .oo-ui-toolbar-bar {
-					top: ~'calc( var( --header-size ) - 1px )'; // stick to top
-					padding-top: var( --space-md );
+					top: ~'calc( var( --header-size ) )'; // stick to top
 					transition: @transition-transform; // Hide toolbar on scroll down
 				}
 			}
@@ -259,11 +259,11 @@
 	}
 }
 
-.citizen-scroll--down .ve-init-mw-desktopArticleTarget-toolbar {
-	&.ve-ui-toolbar-floating > .oo-ui-toolbar-bar {
-		top: 0; // stick to top
-	}
-}
+// .citizen-scroll--down .ve-init-mw-desktopArticleTarget-toolbar {
+// 	&.ve-ui-toolbar-floating > .oo-ui-toolbar-bar {
+// 		top: 0; // stick to top
+// 	}
+// }
 
 // Make toolbar more smaller screen friendly
 // Well at least I did by best

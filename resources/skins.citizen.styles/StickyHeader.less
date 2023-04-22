@@ -52,6 +52,7 @@
 		overflow: hidden;
 		font-size: var( --font-size-h3 );
 		text-overflow: ellipsis;
+		white-space: nowrap;
 	}
 
 	.citizen-jumptotop {
@@ -73,11 +74,11 @@
 	}
 
 	// Hide sticky header on scroll down
-	&.citizen-scroll--down {
-		.mw-body-header {
-			transform: ~'translateY( calc( -1 * var( --header-size ) ) )';
-		}
-	}
+	// &.citizen-scroll--down {
+	// 	.mw-body-header {
+	// 		transform: ~'translateY( calc( -1 * var( --header-size ) ) )';
+	// 	}
+	// }
 }
 
 // Make sticky header more compact if there are less screen estate

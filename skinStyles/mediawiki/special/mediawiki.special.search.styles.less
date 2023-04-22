@@ -18,37 +18,15 @@
 
 // Sticky header
 .mw-search-form-wrapper {
-	position: sticky;
-	z-index: 11; // @z-index-page-header - 1
-	top: ~'calc( var( --header-size ) - 1px )';
-	padding: var( --space-md ) 0;
-	border-bottom: 1px solid var( --border-color-base );
-	margin-top: ~'calc( var( --space-md ) * -1 )'; // counteract padding
-	background-color: transparent;
-	transition: @transition-transform; // Hide when scroll down
-
-	&:before {
-		position: absolute;
-		z-index: -1;
-		top: 0;
-		right: ~'calc( var(--padding-page ) * -1 )';
-		left: ~'calc( var(--padding-page ) * -1 )';
-		height: 100%;
-		-webkit-backdrop-filter: saturate( 50% ) blur( 16px );
-		backdrop-filter: saturate( 50% ) blur( 16px );
-		background-color: var( --background-color-overlay );
-		content: '';
-	}
-
 	// Wrapper has a border bottom already
 	.mw-search-profile-tabs:last-child {
 		border-bottom: 0;
 	}
 }
 
-.citizen-scroll--down .mw-search-form-wrapper {
-	transform: ~'translateY( calc( -1 * var( --header-size ) ) )';
-}
+// .citizen-scroll--down .mw-search-form-wrapper {
+// 	transform: ~'translateY( calc( -1 * var( --header-size ) ) )';
+// }
 
 #mw-search-top-table {
 	display: flex;

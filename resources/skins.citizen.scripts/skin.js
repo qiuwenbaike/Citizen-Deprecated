@@ -28,9 +28,8 @@ function bind() {
 	// Search for all dropdown containers using the CHECKBOX_HACK_CONTAINER_SELECTOR.
 	const containers = document.querySelectorAll( CHECKBOX_HACK_CONTAINER_SELECTOR );
 
-	containers.forEach( ( container ) => {
-		const
-			checkbox = container.querySelector( CHECKBOX_HACK_CHECKBOX_SELECTOR ),
+	containers.forEach( function ( container ) {
+		const checkbox = container.querySelector( CHECKBOX_HACK_CHECKBOX_SELECTOR ),
 			button = container.querySelector( CHECKBOX_HACK_BUTTON_SELECTOR ),
 			target = container.querySelector( CHECKBOX_HACK_TARGET_SELECTOR );
 
@@ -50,7 +49,7 @@ function bind() {
 function uncheckCheckboxHacks() {
 	const checkboxes = document.querySelectorAll( CHECKBOX_HACK_CHECKBOX_SELECTOR + ':checked' );
 
-	checkboxes.forEach( ( checkbox ) => {
+	checkboxes.forEach( function ( checkbox ) {
 		/** @type {HTMLInputElement} */ ( checkbox ).checked = false;
 	} );
 }
@@ -65,17 +64,17 @@ function initStickyHeader( document ) {
 	const scrollObserver = require( './scrollObserver.js' );
 
 	// Detect scroll direction and add the right class
-	scrollObserver.initDirectionObserver(
-		() => {
-			document.body.classList.remove( 'citizen-scroll--up' );
-			document.body.classList.add( 'citizen-scroll--down' );
-		},
-		() => {
-			document.body.classList.remove( 'citizen-scroll--down' );
-			document.body.classList.add( 'citizen-scroll--up' );
-		},
-		10
-	);
+	// scrollObserver.initDirectionObserver(
+	//     function () {
+	//         document.body.classList.remove( 'citizen-scroll--up' );
+	//         document.body.classList.add( 'citizen-scroll--down' );
+	//     },
+	//     function () {
+	//         document.body.classList.remove( 'citizen-scroll--down' );
+	//         document.body.classList.add( 'citizen-scroll--up' );
+	//     },
+	//     10
+	// );
 
 	const sentinel = document.getElementById( 'citizen-body-header-sticky-sentinel' );
 
@@ -83,10 +82,10 @@ function initStickyHeader( document ) {
 	// Do not start observer if it is set to display:none
 	if ( sentinel && getComputedStyle( sentinel ).getPropertyValue( 'display' ) !== 'none' ) {
 		const observer = scrollObserver.initIntersectionObserver(
-			() => {
+			function () {
 				document.body.classList.add( 'citizen-body-header--sticky' );
 			},
-			() => {
+			function () {
 				document.body.classList.remove( 'citizen-body-header--sticky' );
 			}
 		);
@@ -122,7 +121,7 @@ function main( window ) {
 		sections.init();
 	}
 
-	window.addEventListener( 'beforeunload', () => {
+	window.addEventListener( 'beforeunload', function () {
 		// T295085: Close all dropdown menus when page is unloaded to prevent them
 		// from being open when navigating back to a page.
 		uncheckCheckboxHacks();
