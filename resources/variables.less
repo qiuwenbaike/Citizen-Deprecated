@@ -101,20 +101,6 @@
 @color-syntax-violet: #945eb8;
 @color-syntax-grey: #90a4ae;
 
-/* Dark theme */
-@diff-hoverstate-dark: 4;
-
-@color-primary__l-dark: 60%;
-
-@color-surface-0-dark: ~'hsl( 210, 27%, 10% )';
-@color-surface-1-dark: ~'hsl( 212, 15%, 17% )';
-@color-surface-2-dark: ~'hsl( 208, 14%, 18% )';
-@color-surface-3-dark: ~'hsl( 210, 11%, 21% )';
-@color-surface-4-dark: ~'hsl( 210, 10%, 24% )';
-
-@color-surface-2-dark--hover: ~'hsl( 208, 14%, 'unit( 18 + @diff-hoverstate-dark, % )~' )';
-@color-surface-2-dark--active: ~'hsl( 208, 14%, 'unit( 18 - @diff-hoverstate-dark, % )~' )';
-
 /*
  * Syntax highlight colors
  * Based on Material Theme Palenight
@@ -174,12 +160,6 @@
 @background-color-overlay:			rgba( 255, 255, 255, 0.95 ); //base100 95% opacity
 @background-color-overlay--lighter:	rgba( 255, 255, 255, 0.6 );
 
-@background-color-framed:			@color-base90;
-@background-color-framed--hover:	@color-base100;
-@background-color-framed--active:	@color-base70;
-
-@background-color-input: 			rgba( 255, 255, 255, 0.5 );
-
 @background-color-icon:				rgba( 0, 0, 0, 0.6 );
 @background-color-icon--hover:		rgba( 0, 0, 0, 0.8 );
 @background-color-icon--active:		rgba( 0, 0, 0, 1 );
@@ -233,7 +213,9 @@
 @size-icon:		1.25rem;
 // Not in the header section it is also used outside of header
 @header-size:	3.5rem;
-@width-layout:	@width-breakpoint-desktop - 2 * @padding-page;
+// 67.5rem at 16px font size
+// We use px because it would be frustrating if max-width changes with font size
+@width-layout:	1080px;
 // TODO: Revise this number, fixed value isn't great but we need it for b
 @width-toc: 240px;
 
@@ -287,3 +269,19 @@
 @icon-size: 1.125rem; // 18px, TODO: Replace this var
 @icon-box-size: @icon-size + @icon-margin * 2;
 @icon-margin: 3px;
+
+/*
+ * Legacy colors
+ *
+ * They are used by the SMW skinstyles and a few MW UI stuff.
+ * Those styles should be updated to the new standard.
+ * After that we can remove all theses LESS variables.
+*/
+
+@dark-color-base: rgba( 255, 255, 255, 0.6 );
+@dark-bg-10: #1d2129;
+@dark-bg-20: #22262d;
+@dark-bg-30: #24272f;
+@dark-bg-40: #2b2f36;
+@dark-bg-50: #33363d;
+@dark-bg-60: #34383f;

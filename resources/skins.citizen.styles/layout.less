@@ -12,12 +12,14 @@
 	display: grid;
 	justify-content: center;
 	padding: var( --space-xl ) var( --padding-page );
-	gap: var( --space-md ) var( --space-xl );
+	column-gap: var( --space-md );
+	gap: var( --space-md ) var( --space-md );
 	grid-template-areas: 'header'
 		'content'
 		'footer';
 	// Using auto as min value will cause overflow
 	grid-template-columns: minmax( 0, var( --width-layout ) );
+	row-gap: var( --space-md );
 }
 
 .mw-body-header {
@@ -28,8 +30,10 @@
 	align-items: center;
 	justify-content: flex-end;
 	padding-top: var( --space-md );
+	column-gap: var( --space-md );
 	gap: var( --space-md );
 	grid-area: header;
+	row-gap: var( --space-md );
 }
 
 .page-heading {
@@ -38,7 +42,9 @@
 
 .firstHeading-container {
 	display: flex;
+	flex-wrap: wrap;
 	align-items: center;
+	justify-content: space-between;
 }
 
 .citizen-body {

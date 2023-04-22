@@ -31,9 +31,24 @@
 	}
 }
 
+#t-specialpages,
+#t-upload {
+	a:before {
+		display: block;
+		width: var( --size-icon );
+		height: var( --size-icon );
+		background-position: center;
+		background-repeat: no-repeat;
+		background-size: contain;
+		contain: strict;
+		content: '';
+		opacity: var( --opacity-icon-base );
+	}
+}
+
 .mw-portlet {
-	// Hide selected item
-	.selected {
+	// Hide selected item, except #ca-view
+	.selected:not( #ca-view ) {
 		.mixin-screen-reader-text;
 	}
 

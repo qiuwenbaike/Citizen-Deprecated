@@ -12,7 +12,9 @@
 	padding: var( --space-xs );
 	border-bottom: 1px solid var( --border-color-base );
 	background-color: var( --color-surface-0 );
+	column-gap: var( --space-xxs );
 	gap: var( --space-xxs );
+	row-gap: var( --space-xxs );
 	transition: @transition-transform; // Hide header when scroll down
 
 	&__item {
@@ -83,7 +85,9 @@
 		flex-direction: var( --header-direction );
 		flex-grow: 1;
 		justify-content: space-between;
+		column-gap: var( --space-xxs );
 		gap: var( --space-xxs );
+		row-gap: var( --space-xxs );
 
 		.mw-checkbox-hack-checkbox:checked {
 			~ .citizen-header__button {
@@ -96,7 +100,9 @@
 	&__end {
 		display: flex;
 		flex-direction: var( --header-direction );
+		column-gap: var( --space-xxs );
 		gap: var( --space-xxs );
+		row-gap: var( --space-xxs );
 	}
 
 	&__start {
@@ -117,7 +123,9 @@
 		display: flex;
 		flex-direction: var( --header-direction );
 		align-items: center;
+		column-gap: var( --space-xxs );
 		gap: var( --space-xxs );
+		row-gap: var( --space-xxs );
 	}
 }
 
@@ -138,6 +146,6 @@
 }
 
 /* Hide header when scroll down */
-.citizen-scroll--down .citizen-header {
-	transform: translateY( -100% );
-}
+// .citizen-scroll--down .citizen-header {
+// 	transform: translateY( -100% );
+// }

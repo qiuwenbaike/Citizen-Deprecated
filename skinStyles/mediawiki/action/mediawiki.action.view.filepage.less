@@ -101,7 +101,14 @@
 #file {
 	> a {
 		overflow: hidden;
-		border-radius: var( --border-radius--medium );
+
+		> img {
+			margin: var( --space-md );
+		}
+	}
+
+	img {
+		max-width: 85vw;
 	}
 }
 

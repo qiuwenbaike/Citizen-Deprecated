@@ -11,7 +11,7 @@ function initDirectionObserver( onScrollDown, onScrollUp, threshold ) {
 
 	let lastScrollTop = window.scrollY;
 
-	const onScroll = () => {
+	function onScroll() {
 		const scrollTop = window.scrollY;
 
 		if ( Math.abs( scrollTop - lastScrollTop ) < threshold ) {
@@ -24,7 +24,7 @@ function initDirectionObserver( onScrollDown, onScrollUp, threshold ) {
 			onScrollUp();
 		}
 		lastScrollTop = scrollTop;
-	};
+	}
 
 	window.addEventListener( 'scroll', throttle( onScroll, 250 ) );
 }
@@ -39,7 +39,7 @@ function initDirectionObserver( onScrollDown, onScrollUp, threshold ) {
  */
 function initIntersectionObserver( onHidden, onVisible ) {
 	/* eslint-disable-next-line compat/compat */
-	return new IntersectionObserver( ( entries ) => {
+	return new IntersectionObserver( function ( entries ) {
 		if ( !entries[ 0 ].isIntersecting && entries[ 0 ].boundingClientRect.top < 0 ) {
 			// Viewport has crossed the bottom edge of the target element.
 			onHidden();

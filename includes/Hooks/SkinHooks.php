@@ -223,6 +223,9 @@ class SkinHooks implements
 			// I wish I can use str_ends_with but need to wait for PHP 7.X to be dropped
 			if ( substr( $key, -4 ) === 'talk' ) {
 				$links['associated-pages'][$key]['icon'] = 'speechBubbles';
+			} 
+			if ( substr( $key, -4 ) !== 'main' && substr( $key, -4 ) !== 'user' && substr( $key, -4 ) !== 'talk' ) {
+				$links['associated-pages'][$key]['icon'] = 'article'; // Add icons for other pages
 			}
 		}
 
@@ -251,12 +254,13 @@ class SkinHooks implements
 			'log' => 'history',
 			'blockip' => 'block',
 			'userrights' => 'userGroup',
+			'emailuser' => 'message',
 			// Extension:CiteThisPage
 			'citethispage' => 'reference',
 			// Extension:Cargo
 			'cargo-pagevalues' => 'database',
 			// Extension:SemanticMediaWiki
-			'smwbrowselink' => 'database'
+			'smwbrowselink' => 'database',
 		];
 
 		self::mapIconsToMenuItems( $links, 'TOOLBOX', $iconMap );
@@ -302,7 +306,7 @@ class SkinHooks implements
 	private static function updateViewsMenu( &$links ) {
 		// Most icons are not mapped yet in the views menu
 		$iconMap = [
-			'view' => 'article',
+			'view' => 'eye',
 			// View source button only appears when the user do not have permission
 			'viewsource' => 'editLock',
 			'history' => 'history',

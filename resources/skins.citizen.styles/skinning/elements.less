@@ -48,7 +48,7 @@ img {
 hr {
 	border: 0;
 	border-top: 1px solid var( --border-color-base );
-	margin: var( --space-md ) 0;
+	margin: var( --space-xs ) 0;
 }
 
 /* Structural Elements */
@@ -60,8 +60,9 @@ h5,
 h6 {
 	margin: 0;
 	// It seems that many wikis have the expectation that headers have a bottom margin
-	margin-bottom: 0.25em;
+	margin-bottom: 0.5em;
 	color: var( --color-base--emphasized );
+	font-family: var( --fonts-serif );
 	font-weight: var( --font-weight-semibold );
 }
 
@@ -80,12 +81,12 @@ h6 {
 
 h3,
 h4 {
-	margin-top: 1.5em;
+	margin-top: 1.25em;
 }
 
 h5,
 h6 {
-	margin-top: 1.25em;
+	margin-top: 1em;
 }
 
 h1 {
@@ -93,9 +94,13 @@ h1 {
 	font-size: var( --font-size-h1 );
 }
 
+h1:not( .firstHeading ) {
+	border-bottom: 1px solid var( --border-color-base );
+}
+
 h2 {
 	border-bottom: 1px solid var( --border-color-base );
-	margin-bottom: 0.5em;
+	margin-top: 0.5em;
 	font-size: var( --font-size-h2 );
 }
 
@@ -116,7 +121,7 @@ h6 {
 }
 
 p {
-	margin: var( --space-md ) 0;
+	margin: var( --space-xs ) 0;
 	overflow-wrap: break-word; // Force wrap to preserve layout
 }
 
@@ -127,12 +132,12 @@ p img {
 ul {
 	// Will break a lot of styles if we use padding for horizontal spacing
 	padding: 0;
-	margin: var( --space-md ) 0 var( --space-md ) var( --space-lg );
+	margin: var( --space-xs ) 0 var( --space-xs ) var( --space-lg );
 }
 
 ol {
 	padding: 0;
-	margin: var( --space-md ) 0 var( --space-md ) var( --space-lg );
+	margin: var( --space-xs ) 0 var( --space-xs ) var( --space-lg );
 }
 
 dt {
@@ -141,7 +146,7 @@ dt {
 }
 
 dl {
-	margin: var( --space-md ) 0;
+	margin: var( --space-xs ) 0;
 }
 
 dd {
@@ -188,10 +193,9 @@ table {
 
 /* Forms */
 fieldset {
-	padding: var( --space-xs ) var( --space-md );
+	padding: var( --space-xs );
 	border: 1px solid var( --border-color-base );
-	margin: var( --space-md ) 0;
-	font-size: 0.875rem;
+	margin: var( --space-xs ) 0;
 }
 
 legend {

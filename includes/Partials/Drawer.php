@@ -100,7 +100,8 @@ final class Drawer extends Partial {
 		// Special pages
 		$html .= $skin->makeListItem( 'specialpages', [
 			'href' => Skin::makeSpecialUrl( 'Specialpages' ),
-			'id' => 't-specialpages'
+			'id' => 't-specialpages',
+			'link-class' => 'mw-ui-icon-wikimedia-specialPages'
 		] );
 
 		// Upload file
@@ -113,7 +114,8 @@ final class Drawer extends Partial {
 		}
 		$html .= $skin->makeListItem( 'upload', [
 			'href' => $uploadHref,
-			'id' => 't-upload'
+			'id' => 't-upload',
+			'link-class' => 'mw-ui-icon-wikimedia-upload'
 		] );
 
 		return $html;

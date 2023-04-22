@@ -24,12 +24,13 @@
 		display: none;
 	}
 
-	.mw-body-header {
-		z-index: 0; // Reset z-index so toolbar won't clip
-		// Reset VE disabled style to allow page action buttons to work
-		opacity: 1;
-		pointer-events: auto;
-		user-select: auto;
+	// HACK: So sticky header will never trigger in edit action
+	#citizen-body-header-sticky-sentinel {
+		display: none;
+	}
+
+	.mw-body-header .page-actions {
+		display: none; // Hide page header
 	}
 
 	.page-heading {
@@ -65,6 +66,7 @@
 		&-ui {
 			&-toolbar {
 				> .oo-ui-toolbar-bar {
+					z-index: 91; // @z-index-site-header - 1
 					border-color: var( --border-color-base--darker );
 					background-color: var( --color-surface-0 );
 
@@ -74,19 +76,12 @@
 					}
 
 					> .oo-ui-toolbar-tools {
-						flex-basis: 50%;
-						flex-grow: 1;
 						overflow-x: auto;
 						overflow-y: hidden;
 					}
 
 					> .oo-ui-toolbar-actions {
-						order: 5; // Second order
 						border-left: 1px solid var( --border-color-base );
-					}
-
-					> .oo-ui-windowManager {
-						order: 10; // Third order
 					}
 
 					.oo-ui-toolbar-tools {
@@ -241,8 +236,7 @@
 				}
 
 				&.ve-ui-toolbar-floating > .oo-ui-toolbar-bar {
-					top: ~'calc( var( --header-size ) - 1px )'; // stick to top
-					padding-top: var( --space-md );
+					top: ~'calc( var( --header-size ) )'; // stick to top
 					transition: @transition-transform; // Hide toolbar on scroll down
 				}
 			}
@@ -265,24 +259,17 @@
 	}
 }
 
-.citizen-scroll--down .ve-init-mw-desktopArticleTarget-toolbar {
-	&.ve-ui-toolbar-floating > .oo-ui-toolbar-bar {
-		top: 0; // stick to top
-	}
-}
+// .citizen-scroll--down .ve-init-mw-desktopArticleTarget-toolbar {
+// 	&.ve-ui-toolbar-floating > .oo-ui-toolbar-bar {
+// 		top: 0; // stick to top
+// 	}
+// }
 
 // Make toolbar more smaller screen friendly
 // Well at least I did by best
 @media ( max-width: 800px ) {
-	.ve-ui-toolbar {
-		> .oo-ui-toolbar-bar {
-			display: flex;
-			flex-wrap: wrap;
-		}
-
-		&-floating {
-			z-index: 4;
-		}
+	.ve-ui-toolbar-floating {
+		z-index: 4;
 	}
 
 	.ve-init-mw-desktopArticleTarget {
@@ -358,6 +345,11 @@
 				}
 			}
 		}
+	}
+
+	// HACK: hide special character button on mobile devices
+	.ve-ui-toolbar-group-specialCharacter {
+		display: none !important;
 	}
 }
 
