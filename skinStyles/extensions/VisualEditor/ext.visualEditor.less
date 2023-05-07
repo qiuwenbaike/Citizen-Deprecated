@@ -108,6 +108,20 @@
 				}
 			}
 
+			&-positionedTargetToolbar {
+				&:not( .ve-ui-toolbar-floating ) {
+					& > .oo-ui-toolbar-bar {
+						position: fixed;
+						right: 0;
+						left: 0;
+
+						.oo-ui-toolbar-actions .ve-ui-toolbar:not( .ve-ui-toolbar-floating ) > .oo-ui-toolbar-bar {
+							position: unset;
+						}
+					}
+				}
+			}
+
 			&-surface {
 				&-visual {
 					.ve-ce-documentNode {
@@ -287,7 +301,7 @@
 		&-toolbar {
 			&.ve-ui-toolbar-floating > .oo-ui-toolbar-bar {
 				top: ~'calc( var( --header-size ) - 1px )'; // stick to top
-				padding-top: var( --space-md );
+				padding-top: 0;
 			}
 
 			.ve-ui-toolbar-group {
