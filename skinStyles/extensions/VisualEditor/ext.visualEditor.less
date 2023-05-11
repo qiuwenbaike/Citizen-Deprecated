@@ -108,20 +108,6 @@
 				}
 			}
 
-			&-positionedTargetToolbar {
-				&:not( .ve-ui-toolbar-floating ) {
-					& > .oo-ui-toolbar-bar {
-						position: fixed;
-						right: 0;
-						left: 0;
-
-						.oo-ui-toolbar-actions .ve-ui-toolbar:not( .ve-ui-toolbar-floating ) > .oo-ui-toolbar-bar {
-							position: unset;
-						}
-					}
-				}
-			}
-
 			&-surface {
 				&-visual {
 					.ve-ce-documentNode {
@@ -236,6 +222,22 @@
 
 	.oo-ui-toolbar-position-top .ve-ui-toolbarDialog-position-above {
 		border-color: var( --border-color-base--darker );
+	}
+
+	*:not( .ext-discussiontools-ui-replyWidget-headerWrapper ) {
+		> .ve-ui-positionedTargetToolbar {
+			&:not( .ve-ui-toolbar-floating ) {
+				& > .oo-ui-toolbar-bar {
+					position: fixed;
+					right: 0;
+					left: 0;
+
+					.oo-ui-toolbar-actions .ve-ui-toolbar:not( .ve-ui-toolbar-floating ) > .oo-ui-toolbar-bar {
+						position: unset;
+					}
+				}
+			}
+		}
 	}
 }
 
