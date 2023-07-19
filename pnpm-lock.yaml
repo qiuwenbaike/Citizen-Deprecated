@@ -9,8 +9,8 @@ devDependencies:
     specifier: ^17.6.5
     version: 17.6.6
   '@commitlint/config-conventional':
-    specifier: ^17.6.3
-    version: 17.6.3
+    specifier: ^17.6.7
+    version: 17.6.7
   devmoji:
     specifier: ^2.3.0
     version: 2.3.0
@@ -107,8 +107,8 @@ packages:
       - '@swc/wasm'
     dev: true
 
-  /@commitlint/config-conventional@17.6.3:
-    resolution: {integrity: sha512-bLyHEjjRWqlLQWIgYFHmUPbEFMOOLXeF3QbUinDIJev/u9e769tkoTH9YPknEywiuIrAgZaVo+OfzAIsJP0fsw==}
+  /@commitlint/config-conventional@17.6.7:
+    resolution: {integrity: sha512-4oTpEUC0HRM54QRHBPMOJW1pETp7usxXn9RuNYNWHcmu8wi1mpws95hvS20u2n6HtIkTn0jfn7vHioCm4AGUTw==}
     engines: {node: '>=v14'}
     dependencies:
       conventional-changelog-conventionalcommits: 5.0.0
