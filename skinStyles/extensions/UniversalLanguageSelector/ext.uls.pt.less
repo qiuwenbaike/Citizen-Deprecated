@@ -17,7 +17,7 @@
 	padding: 0.625rem 1.25rem !important;
 
 	// Sync with .resource-loader-list-icon() mixin
-	&:before {
+	&::before {
 		width: @icon-size;
 		height: @icon-size;
 		flex-shrink: 0;
@@ -28,7 +28,7 @@
 	}
 
 	// Hide default icon
-	&:after {
+	&::after {
 		content: none;
 	}
 }

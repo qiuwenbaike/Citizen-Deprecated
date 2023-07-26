@@ -10,7 +10,7 @@
  * above the loading indicator.
  *
  **/
-.citizen-loading:after {
+.citizen-loading::after {
 	// Delay animation by 500ms after loading
 	--delay-progress-bar: 500ms;
 	--height-progress-bar: 2px;
@@ -25,14 +25,16 @@
 	// Align style with the form
 	border-radius: 0 0 var( --border-radius--large ) var( --border-radius--large );
 	// Animates the progress-bar.
-	animation: progress-bar
+	animation:
+ progress-bar
 		1200ms
 		linear
 		var( --delay-progress-bar )
 		infinite
 		alternate;
 	// Add a progress-bar to the loading indicator
-	background: /*image*/ linear-gradient( 90deg, var( --color-primary ) 0%, var( --color-primary ) 100% )
+	background: /*image*/
+ linear-gradient( 90deg, var( --color-primary ) 0%, var( --color-primary ) 100% )
 		-10% 0 ~'/' 0 var( --height-progress-bar )
 		no-repeat,transparent;
 	// Placeholder text
@@ -66,7 +68,7 @@
 }
 
 // On page unload
-html.citizen-loading:after {
+html.citizen-loading::after {
 	position: fixed;
 	top: 0;
 }
@@ -75,7 +77,7 @@ html.citizen-loading:after {
 @media ( display-mode: standalone ) {
 	// Standalone PWA has no loading affordance
 	// So we provide one
-	html.citizen-loading:after {
+	html.citizen-loading::after {
 		--delay-progress-bar: 0ms;
 	}
 }

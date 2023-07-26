@@ -322,18 +322,18 @@
 				height: 42px !important;
 				padding: 0 !important;
 
-				&:before {
+				&::before {
 					top: 12px;
 					transform: rotate( -45deg );
 				}
 
-				&:after {
+				&::after {
 					bottom: 12px;
 					transform: rotate( 45deg );
 				}
 
-				&:before,
-				&:after {
+				&::before,
+				&::after {
 					position: absolute;
 					left: 30px;
 					display: block;
@@ -351,8 +351,8 @@
 			// Active state
 			.oo-ui-widget-enabled {
 				.ve-ui-toolbar-saveButton {
-					&:before,
-					&:after {
+					&::before,
+					&::after {
 						background: var( --color-base--emphasized );
 					}
 				}
@@ -363,11 +363,11 @@
 	.rtl {
 		.ve-init-mw-desktopArticleTarget-toolbar {
 			.ve-ui-toolbar-saveButton {
-				&:before {
+				&::before {
 					transform: rotate( 45deg );
 				}
 
-				&:after {
+				&::after {
 					transform: rotate( -45deg );
 				}
 			}

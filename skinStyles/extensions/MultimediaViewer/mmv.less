@@ -402,7 +402,7 @@
 	@media ( max-width: @width-breakpoint-tablet ) {
 		text-indent: -9999px;
 
-		&:before {
+		&::before {
 			margin-right: 0 !important;
 		}
 	}
@@ -510,7 +510,8 @@
 	column-gap: var( --space-xs );
 	// Sync with title
 	gap: var( --space-xs );
-	grid-template-areas: 'desc links'
+	grid-template-areas:
+ 'desc links'
 		'about about';
 	grid-template-columns: 2fr 1fr;
 	row-gap: var( --space-xs );
@@ -523,7 +524,8 @@
 		row-gap: var( --space-xl );
 
 		@media ( max-width: @width-breakpoint-tablet ) {
-			grid-template-areas: 'desc desc'
+			grid-template-areas:
+ 'desc desc'
 				'links links'
 				'about about';
 		}
@@ -621,7 +623,7 @@
 	// On touch device, when user drag/swipe the indicator, it will cause the
 	// page to scroll up and show the card below.
 	@media ( hover: none ) {
-		&:before {
+		&::before {
 			position: absolute;
 			top: var( --space-xs );
 			right: 0;
@@ -636,7 +638,7 @@
 
 		&.mw-mmv-untruncated {
 			// Since background color is dependent on theme now
-			&:before {
+			&::before {
 				background-color: var( --border-color-base--darker );
 			}
 		}
