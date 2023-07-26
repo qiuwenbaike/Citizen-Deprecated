@@ -86,7 +86,7 @@ function convertDataToResults( data ) {
 		return [];
 	}
 
-	// eslint-disable-next-line es-x/no-object-values, compat/compat
+	// eslint-disable-next-line es-x/no-object-values
 	data = Object.values( data.query.pages );
 
 	// Sort the data with the index property since it is not in order

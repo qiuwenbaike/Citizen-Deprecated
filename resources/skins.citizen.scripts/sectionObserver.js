@@ -44,7 +44,6 @@
  * @return {SectionObserver}
  */
 function sectionObserver( props ) {
-	// eslint-disable-next-line compat/compat
 	props = Object.assign( {
 		topMargin: 0,
 		throttleMs: 200,
