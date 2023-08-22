@@ -28,7 +28,7 @@
 		"jsdoc-wmf-theme": "0.0.6",
 		"standard-version": "^9.5.0",
 		"stylelint-config-idiomatic-order": "9.0.0",
-		"stylelint-config-wikimedia": "0.16.0",
+		"stylelint-config-wikimedia": "0.16.1",
 		"svgo": "3.0.2"
 	},
 	"version": "2.3.0"
