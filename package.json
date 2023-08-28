@@ -25,7 +25,7 @@
 		"grunt-banana-checker": "0.11.0",
 		"husky": "^8.0.3",
 		"jsdoc": "4.0.2",
-		"jsdoc-wmf-theme": "0.0.6",
+		"jsdoc-wmf-theme": "0.0.8",
 		"standard-version": "^9.5.0",
 		"stylelint-config-idiomatic-order": "9.0.0",
 		"stylelint-config-wikimedia": "0.16.1",
