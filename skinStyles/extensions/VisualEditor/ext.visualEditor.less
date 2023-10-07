@@ -29,12 +29,25 @@
 		display: none;
 	}
 
-	.mw-body-header .page-actions {
-		display: none; // Hide page header
+	.mw-body-header {
+		padding-top: var( --space-lg );
+		
+		.page-actions {
+			display: none; // Hide page header
+		}
 	}
 
 	.page-heading {
 		opacity: 0.5;
+	}
+
+	#bodyContent {
+		margin-top: 0;
+	}
+
+	#contentSub,
+	#contentSub2 {
+		margin: 0;
 	}
 
 	.citizen-toc {
@@ -96,8 +109,7 @@
 					}
 
 					.oo-ui-toolbar-tools {
-						display: inline-block;
-						white-space: nowrap;
+						display: inline;
 					}
 
 					/* Fix inline height */
@@ -295,6 +307,12 @@
 // Make toolbar more smaller screen friendly
 // Well at least I did by best
 @media ( max-width: 800px ) {
+	.ve-activated {
+		.citizen-body-container {
+			padding-top: ~'calc( 2.5 * var(--space-xxl) )';
+		}
+	}
+
 	.ve-ui-toolbar-floating {
 		z-index: 4;
 	}
