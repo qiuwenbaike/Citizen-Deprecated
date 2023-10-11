@@ -24,17 +24,3 @@ a.feedlink {
 	.mixin-screen-reader-text;
 }
 
-/**
- * OOUI has some layout issues when the font size is not
- * same as what is being used in Vector. This is a dirty
- * hack to ensure that the UI is displayed correctly.
- *
- * This is put here because the OOUI skinstyle is lazyloaded,
- * causing significant layout shift
- *
- * Revisit this when T254055 is resolved
- */
-// add :not(.mw-body-content) to avoid small font size inside VE.
-.oo-ui-widget:not( .mw-body-content ) {
-	font-size: 0.875rem;
-}
