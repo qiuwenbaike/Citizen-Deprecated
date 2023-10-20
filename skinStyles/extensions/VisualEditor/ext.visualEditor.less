@@ -96,7 +96,8 @@
 					}
 
 					.oo-ui-toolbar-tools {
-						display: inline;
+						display: inline-block;
+						white-space: nowrap;
 					}
 
 					/* Fix inline height */
@@ -296,6 +297,20 @@
 @media ( max-width: 800px ) {
 	.ve-ui-toolbar-floating {
 		z-index: 4;
+	}
+
+	.skin-citizen {
+		.ve {
+			&-ui {
+				&-toolbar {
+					> .oo-ui-toolbar-bar {
+						.oo-ui-toolbar-tools {
+							display: inline;
+						}
+					}
+				}
+			}
+		}
 	}
 
 	.ve-init-mw-desktopArticleTarget {
