@@ -20,7 +20,7 @@
 	},
 	"devDependencies": {
 		"@commitlint/cli": "^18.4.2",
-		"@commitlint/config-conventional": "^18.4.0",
+		"@commitlint/config-conventional": "^18.4.2",
 		"devmoji": "^2.3.0",
 		"eslint-config-prettier": "^9.0.0",
 		"eslint-config-wikimedia": "latest",
