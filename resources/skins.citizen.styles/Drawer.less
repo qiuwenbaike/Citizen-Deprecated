@@ -31,10 +31,14 @@
 
 	&__menu {
 		// Fallback
+		display: flex;
+		flex-direction: column;
+		max-height: 46.25vh;
+		// End fallback
 		overflow-y: auto;
+		/* stylelint-disable-next-line declaration-block-no-duplicate-properties */
 		display: grid;
 		max-width: 92.5vw;
-		max-height: 46.25vh;
 		justify-content: center;
 		padding: var(--space-xs) var(--space-md);
 		font-size: 0.875rem; // TODO: Make this a variable

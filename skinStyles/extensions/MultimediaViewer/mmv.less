@@ -500,9 +500,11 @@
 
 .mw-mmv-image-metadata {
 	// Fallback
+	display: flex;
 	flex-wrap: wrap;
 	justify-content: space-between;
 	// Use grid instead
+	/* stylelint-disable-next-line declaration-block-no-duplicate-properties */
 	display: grid;
 	width: auto;
 	padding: 0 var(--space-md) var(--space-md) var(--space-md);
