@@ -11,44 +11,44 @@
 /* styles/board/topic/titlebar.less */
 // Show that the topic titlebar is clickable
 .flow-topic-titlebar {
-	background-color: var( --color-surface-3 );
+	background-color: var(--color-surface-3);
 }
 
 .flow-moderated-topic-title {
-	color: var( --color-base--subtle );
+	color: var(--color-base--subtle);
 }
 
 /* styles/board/topic/meta.less */
 // Topic metadata
 .flow-topic-meta {
-	color: var( --color-base--subtle );
+	color: var(--color-base--subtle);
 
-	a.expand-collapse-posts-link:not( :hover ) {
-		color: var( --color-base--subtle );
+	a.expand-collapse-posts-link:not(:hover) {
+		color: var(--color-base--subtle);
 	}
 }
 
 /* styles/board/topic/post.less */
 .flow-post {
-	color: var( --color-base );
+	color: var(--color-base);
 
 	// Author link in post
 	.flow-author {
-		color: var( --color-base );
+		color: var(--color-base);
 	}
 
 	.mw-content-ltr & {
 		// Nested comments (replies & reply forms)
 		.flow-replies {
 			/* @noflip */
-			border-left-color: var( --border-color-base );
+			border-left-color: var(--border-color-base);
 		}
 
 		// Highlights a post (no IE6 support, but acceptable degradation)
 		&.flow-post-highlighted {
 			> .flow-post-main {
 				/* @noflip */
-				border-left-color: var( --color-success );
+				border-left-color: var(--color-success);
 			}
 		}
 
@@ -56,7 +56,7 @@
 		&.flow-post-highlight-newer {
 			.flow-post-content {
 				/* @noflip */
-				border-left-color: var( --color-primary );
+				border-left-color: var(--color-primary);
 			}
 		}
 	}
@@ -65,14 +65,14 @@
 		// Nested comments (replies & reply forms)
 		.flow-replies {
 			/* @noflip */
-			border-right-color: var( --border-color-base );
+			border-right-color: var(--border-color-base);
 		}
 
 		// Highlights a post (no IE6 support, but acceptable degradation)
 		&.flow-post-highlighted {
 			> .flow-post-main {
 				/* @noflip */
-				border-right-color: var( --color-success );
+				border-right-color: var(--color-success);
 			}
 		}
 
@@ -80,7 +80,7 @@
 		&.flow-post-highlight-newer {
 			.flow-post-content {
 				/* @noflip */
-				border-right-color: var( --color-primary );
+				border-right-color: var(--color-primary);
 			}
 		}
 	}
@@ -88,13 +88,13 @@
 
 // Comment metadata
 .flow-post-meta {
-	color: var( --color-base--subtle );
+	color: var(--color-base--subtle);
 }
 
 .flow-post-meta-actions {
 	a {
 		&::after {
-			color: var( --color-base--subtle );
+			color: var(--color-base--subtle);
 		}
 	}
 }
@@ -103,10 +103,10 @@
 .flow-topic-summary-container {
 	.flow-topic-summary,
 	.flow-ui-editTopicSummaryWidget {
-		border-top-color: var( --border-color-base );
+		border-top-color: var(--border-color-base);
 
 		.flow-topic-summary-author {
-			color: var( --color-base--subtle );
+			color: var(--color-base--subtle);
 		}
 	}
 }

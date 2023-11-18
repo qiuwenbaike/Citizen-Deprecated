@@ -11,15 +11,15 @@
 	display: flex;
 	flex-wrap: wrap;
 	clear: both;
-	gap: var( --space-xl );
+	gap: var(--space-xl);
 
 	ul {
 		display: flex;
 		flex-wrap: wrap;
-		margin: var( --space-xs ) 0 0 0;
+		margin: var(--space-xs) 0 0 0;
 		/* Reset font */
 		font-size: 0.8125rem;
-		gap: var( --space-xs );
+		gap: var(--space-xs);
 		letter-spacing: 0; // hidden-catlink title does not have a selector
 	}
 
@@ -29,14 +29,14 @@
 		// Be more specific because gadgets like hotcat can attach links in category
 		> a {
 			display: inline-block;
-			padding: var( --space-xs ) var( --space-md );
-			border: 1px solid var( --border-color-base--darker );
-			border-radius: var( --border-radius--pill );
-			color: var( --color-base--subtle );
+			padding: var(--space-xs) var(--space-md);
+			border: 1px solid var(--border-color-base--darker);
+			border-radius: var(--border-radius--pill);
+			color: var(--color-base--subtle);
 			transition: @transition-background;
 
 			&:hover {
-				background-color: var( --color-primary--hover );
+				background-color: var(--color-primary--hover);
 				color: #fff;
 			}
 
@@ -45,7 +45,7 @@
 				border-style: dashed;
 
 				&:hover {
-					background-color: var( --color-destructive--hover );
+					background-color: var(--color-destructive--hover);
 				}
 			}
 		}
@@ -61,7 +61,7 @@
 .mw-normal-catlinks > a,
 .mw-hidden-catlinks {
 	display: block;
-	color: var( --color-base--subtle );
+	color: var(--color-base--subtle);
 	font-size: 0.8125rem;
 	letter-spacing: 0.05em;
 }

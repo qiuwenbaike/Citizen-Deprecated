@@ -18,8 +18,8 @@
 	.mw-body-header {
 		position: sticky;
 		top: ~'calc( var( --header-size ) - 1px )';
-		padding: var( --space-md ) var( --padding-page ) var( --space-sm );
-		border-bottom: 1px solid var( --border-color-base );
+		padding: var(--space-md) var(--padding-page) var(--space-sm);
+		border-bottom: 1px solid var(--border-color-base);
 		margin: ~'0 calc( var( --padding-page ) * -1 )';
 		transition: @transition-transform; // Hide sticky header on scroll down
 
@@ -32,9 +32,9 @@
 			right: 0;
 			left: 0;
 			height: 100%;
-			-webkit-backdrop-filter: saturate( 50% ) blur( 16px );
-			backdrop-filter: saturate( 50% ) blur( 16px );
-			background-color: var( --background-color-overlay );
+			-webkit-backdrop-filter: saturate(50%) blur(16px);
+			backdrop-filter: saturate(50%) blur(16px);
+			background-color: var(--background-color-overlay);
 			content: '';
 		}
 
@@ -50,7 +50,7 @@
 
 	.firstHeading {
 		overflow: hidden;
-		font-size: var( --font-size-h3 );
+		font-size: var(--font-size-h3);
 		text-overflow: ellipsis;
 		white-space: nowrap;
 	}
@@ -61,15 +61,15 @@
 		right: 0;
 		bottom: 0;
 		left: 0;
-		border-radius: var( --border-radius--small );
+		border-radius: var(--border-radius--small);
 		margin: ~'calc( var(  --space-xs ) * -1 ) 0';
 
 		&:hover {
-			background-color: var( --background-color-quiet--hover );
+			background-color: var(--background-color-quiet--hover);
 		}
 
 		&:active {
-			background-color: var( --background-color-quiet--active );
+			background-color: var(--background-color-quiet--active);
 		}
 	}
 
@@ -82,7 +82,7 @@
 }
 
 // Make sticky header more compact if there are less screen estate
-@media ( max-width: @width-breakpoint-tablet ), ( max-height: 800px ) {
+@media (max-width: @width-breakpoint-tablet), (max-height: 800px) {
 	.citizen-body-header--sticky {
 		#siteSub {
 			display: none;

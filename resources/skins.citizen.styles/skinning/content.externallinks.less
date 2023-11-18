@@ -19,9 +19,9 @@
 				background-color: currentcolor;
 				content: '';
 				/* @embed */
-				-webkit-mask: url( images/linkExternal.svg ) no-repeat 50% 50%;
+				-webkit-mask: url("images/linkExternal.svg") no-repeat 50% 50%;
 				/* @embed */
-				mask: url( images/linkExternal.svg ) no-repeat 50% 50%;
+				mask: url("images/linkExternal.svg") no-repeat 50% 50%;
 				-webkit-mask-size: contain;
 				mask-size: contain;
 			}
@@ -29,7 +29,7 @@
 			// Somehow this get overriden from content.links
 			&:hover,
 			&:visited:hover {
-				color: var( --color-link--hover );
+				color: var(--color-link--hover);
 			}
 		}
 	}
@@ -50,7 +50,7 @@
 			&.extiw,
 			&.external {
 				&::after {
-					transform: scaleX( -1 );
+					transform: scaleX(-1);
 				}
 			}
 		}

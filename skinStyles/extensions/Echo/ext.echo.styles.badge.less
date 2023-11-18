@@ -12,54 +12,54 @@
 	#pt-notifications-alert &,
 	#pt-notifications-notice & {
 		top: 0;
-		width: var( --header-button-size );
-		height: var( --header-button-size );
+		width: var(--header-button-size);
+		height: var(--header-button-size);
 		box-sizing: content-box;
-		border-radius: var( --border-radius--small );
+		border-radius: var(--border-radius--small);
 		margin: 0;
 		background-position: center;
 		background-repeat: no-repeat;
-		background-size: var( --header-icon-size );
-		opacity: var( --opacity-icon-base );
+		background-size: var(--header-icon-size);
+		opacity: var(--opacity-icon-base);
 
 		&:hover {
-			opacity: var( --opacity-icon-base--hover );
+			opacity: var(--opacity-icon-base--hover);
 		}
 
 		&:active {
-			opacity: var( --opacity-icon-base--active );
+			opacity: var(--opacity-icon-base--active);
 		}
 
 		&:focus {
-			box-shadow: 0 0 0 1px #fff, 0 0 0 3px var( --color-primary );
-			opacity: var( --opacity-icon-base--active );
+			box-shadow: 0 0 0 1px #fff, 0 0 0 3px var(--color-primary);
+			opacity: var(--opacity-icon-base--active);
 
 			&::after {
-				border-color: var( --color-primary );
+				border-color: var(--color-primary);
 			}
 		}
 
 		&::after {
 			top: 0;
-			border-color: var( --color-destructive );
-			border-radius: var( --border-radius--pill );
-			background-color: var( --color-destructive );
+			border-color: var(--color-destructive);
+			border-radius: var(--border-radius--pill);
+			background-color: var(--color-destructive);
 			font-size: 0.65rem;
 		}
 
 		&-dimmed {
-			opacity: var( --opacity-icon-base--disabled );
+			opacity: var(--opacity-icon-base--disabled);
 		}
 
 		&.mw-echo-notifications-badge-all-read {
-			opacity: var( --opacity-icon-base );
+			opacity: var(--opacity-icon-base);
 
 			&:hover {
-				opacity: var( --opacity-icon-base--hover );
+				opacity: var(--opacity-icon-base--hover);
 			}
 
 			&:active {
-				opacity: var( --opacity-icon-base--active );
+				opacity: var(--opacity-icon-base--active);
 			}
 		}
 	}
@@ -67,11 +67,11 @@
 	&.oo-ui-flaggedElement-unseen,
 	&.mw-echo-unseen-notifications {
 		#pt-notifications-alert &::after {
-			background-color: var( --color-destructive );
+			background-color: var(--color-destructive);
 		}
 
 		#pt-notifications-notice &::after {
-			background-color: var( --color-destructive );
+			background-color: var(--color-destructive);
 		}
 	}
 }
@@ -80,13 +80,13 @@
 #pt-notifications-alert,
 #pt-notifications-notice {
 	z-index: 1; // fix background clipping
-	border-radius: var( --border-radius--small );
+	border-radius: var(--border-radius--small);
 
 	&:hover {
-		background-color: var( --background-color-quiet--hover );
+		background-color: var(--background-color-quiet--hover);
 	}
 
 	&:active {
-		background-color: var( --background-color-quiet--active );
+		background-color: var(--background-color-quiet--active);
 	}
 }

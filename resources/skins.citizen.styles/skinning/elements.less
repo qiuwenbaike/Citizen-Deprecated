@@ -10,33 +10,33 @@
 /* Links */
 // Some of the link styles are handled in content.links
 a {
-	color: var( --color-link );
+	color: var(--color-link);
 	text-decoration: none;
 
-	&:not( [ href ] ) {
+	&:not([href]) {
 		cursor: pointer; /* Always cursor:pointer even without href */
 	}
 
 	&:hover,
 	&:visited:hover {
-		color: var( --color-link--hover );
+		color: var(--color-link--hover);
 		text-decoration: underline;
 	}
 
 	&:active {
-		color: var( --color-link--active );
+		color: var(--color-link--active);
 	}
 
 	&:visited {
-		color: var( --color-link--visited );
+		color: var(--color-link--visited);
 	}
 }
 
-a:lang( ar ),
-a:lang( kk-arab ),
-a:lang( mzn ),
-a:lang( ps ),
-a:lang( ur ) {
+a:lang(ar),
+a:lang(kk-arab),
+a:lang(mzn),
+a:lang(ps),
+a:lang(ur) {
 	text-decoration: none;
 }
 
@@ -47,8 +47,8 @@ img {
 
 hr {
 	border: 0;
-	border-top: 1px solid var( --border-color-base );
-	margin: var( --space-xs ) 0;
+	border-top: 1px solid var(--border-color-base);
+	margin: var(--space-xs) 0;
 }
 
 /* Structural Elements */
@@ -61,22 +61,22 @@ h6 {
 	margin: 0;
 	// It seems that many wikis have the expectation that headers have a bottom margin
 	margin-bottom: 0.5em;
-	color: var( --color-base--emphasized );
-	font-family: var( --fonts-serif );
-	font-weight: var( --font-weight-semibold );
+	color: var(--color-base--emphasized);
+	font-family: var(--fonts-serif);
+	font-weight: var(--font-weight-semibold);
 }
 
 h1,
 h2 {
-	font-weight: var( --font-weight-bold );
+	font-weight: var(--font-weight-bold);
 }
 
 h3,
 h4,
 h5,
 h6 {
-	font-weight: var( --font-weight-semibold );
-	line-height: var( --line-height-xs );
+	font-weight: var(--font-weight-semibold);
+	line-height: var(--line-height-xs);
 }
 
 h3,
@@ -91,37 +91,37 @@ h6 {
 
 h1 {
 	margin-top: 2em;
-	font-size: var( --font-size-h1 );
+	font-size: var(--font-size-h1);
 }
 
-h1:not( .firstHeading ) {
-	border-bottom: 1px solid var( --border-color-base );
+h1:not(.firstHeading) {
+	border-bottom: 1px solid var(--border-color-base);
 }
 
 h2 {
-	border-bottom: 1px solid var( --border-color-base );
+	border-bottom: 1px solid var(--border-color-base);
 	margin-top: 0.5em;
-	font-size: var( --font-size-h2 );
+	font-size: var(--font-size-h2);
 }
 
 h3 {
-	font-size: var( --font-size-h3 );
+	font-size: var(--font-size-h3);
 }
 
 h4 {
-	font-size: var( --font-size-h4 );
+	font-size: var(--font-size-h4);
 }
 
 h5 {
-	font-size: var( --font-size-h5 );
+	font-size: var(--font-size-h5);
 }
 
 h6 {
-	font-size: var( --font-size-h6 );
+	font-size: var(--font-size-h6);
 }
 
 p {
-	margin: var( --space-xs ) 0;
+	margin: var(--space-xs) 0;
 	overflow-wrap: break-word; // Force wrap to preserve layout
 }
 
@@ -132,25 +132,25 @@ p img {
 ul {
 	// Will break a lot of styles if we use padding for horizontal spacing
 	padding: 0;
-	margin: var( --space-xs ) 0 var( --space-xs ) var( --space-lg );
+	margin: var(--space-xs) 0 var(--space-xs) var(--space-lg);
 }
 
 ol {
 	padding: 0;
-	margin: var( --space-xs ) 0 var( --space-xs ) var( --space-lg );
+	margin: var(--space-xs) 0 var(--space-xs) var(--space-lg);
 }
 
 dt {
-	color: var( --color-base--emphasized );
-	font-weight: var( --font-weight-semibold );
+	color: var(--color-base--emphasized);
+	font-weight: var(--font-weight-semibold);
 }
 
 dl {
-	margin: var( --space-xs ) 0;
+	margin: var(--space-xs) 0;
 }
 
 dd {
-	margin-left: var( --space-lg );
+	margin-left: var(--space-lg);
 }
 
 pre,
@@ -159,28 +159,28 @@ tt,
 kbd,
 samp,
 .mw-code {
-	font-family: var( --fonts-monospace );
+	font-family: var(--fonts-monospace);
 	font-size: 0.875rem;
 }
 
 pre,
 code,
 .mw-code {
-	border: 1px solid var( --border-color-base );
-	background-color: var( --color-surface-2 );
-	color: var( --color-base--emphasized );
+	border: 1px solid var(--border-color-base);
+	background-color: var(--color-surface-2);
+	color: var(--color-base--emphasized);
 }
 
 code {
 	padding: 2px 4px;
-	border-radius: var( --border-radius--small );
+	border-radius: var(--border-radius--small);
 }
 
 pre,
 .mw-code {
 	overflow: auto;
 	padding: 1rem;
-	border-radius: var( --border-radius--large );
+	border-radius: var(--border-radius--large);
 }
 
 /* Tables */
@@ -193,14 +193,14 @@ table {
 
 /* Forms */
 fieldset {
-	padding: var( --space-xs );
-	border: 1px solid var( --border-color-base );
-	margin: var( --space-xs ) 0;
+	padding: var(--space-xs);
+	border: 1px solid var(--border-color-base);
+	margin: var(--space-xs) 0;
 }
 
 legend {
-	padding: var( --space-xxs );
-	color: var( --color-base--subtle );
+	padding: var(--space-xxs);
+	color: var(--color-base--subtle);
 	letter-spacing: 0.05em;
 }
 

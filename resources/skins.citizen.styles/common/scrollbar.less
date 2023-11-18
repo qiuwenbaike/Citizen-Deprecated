@@ -1,7 +1,7 @@
 // Don't style scrollbar for touch device
 // Since the scrollbar will stay visible if styled
 // Besides scrollbar is subtle enough on touch devices
-@media ( hover: hover ) {
+@media (hover: hover) {
 	* {
 		scrollbar-width: thin;
 	}
@@ -11,22 +11,22 @@
 		transition: @transition-background;
 
 		&:hover {
-			background: var( --background-color-quiet--hover );
+			background: var(--background-color-quiet--hover);
 		}
 	}
 
 	::-webkit-scrollbar-thumb {
 		border: 2px solid transparent;
-		border-radius: var( --border-radius--large );
+		border-radius: var(--border-radius--large);
 		background-clip: content-box;
-		box-shadow: inset 0 0 0 10px var( --background-color-icon );
+		box-shadow: inset 0 0 0 10px var(--background-color-icon);
 
 		&:hover {
-			box-shadow: inset 0 0 0 10px var( --background-color-icon--hover );
+			box-shadow: inset 0 0 0 10px var(--background-color-icon--hover);
 		}
 
 		&:active {
-			box-shadow: inset 0 0 0 10px var( --background-color-icon--active );
+			box-shadow: inset 0 0 0 10px var(--background-color-icon--active);
 		}
 	}
 

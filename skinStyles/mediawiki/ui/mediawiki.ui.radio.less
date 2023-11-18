@@ -9,10 +9,10 @@
 */
 
 .client-js .mw-ui-radio {
-	[ type='radio' ] {
+	[type='radio'] {
 		& + label {
 			&::before {
-				border-color: var( --border-color-base--darker );
+				border-color: var(--border-color-base--darker);
 				// Show background when hovered
 				background-color: transparent;
 			}
@@ -20,33 +20,33 @@
 
 		&:enabled {
 			&:hover + label::before {
-				border-color: var( --color-primary--hover );
-				background-color: var( --color-surface-0 );
+				border-color: var(--color-primary--hover);
+				background-color: var(--color-surface-0);
 			}
 
 			&:active + label::before {
-				border-color: var( --color-primary--active );
-				background-color: var( --color-primary--active );
+				border-color: var(--color-primary--active);
+				background-color: var(--color-primary--active);
 			}
 
 			&:checked {
 				& + label::before {
-					border-color: var( --color-primary );
+					border-color: var(--color-primary);
 					background-color: #fff;
 				}
 
 				&:hover + label::before {
-					border-color: var( --color-primary--hover );
+					border-color: var(--color-primary--hover);
 				}
 
 				&:active {
 					& + label::before {
-						border-color: var( --color-primary--active );
-						box-shadow: inset 0 0 0 1px var( --color-primary--active );
+						border-color: var(--color-primary--active);
+						box-shadow: inset 0 0 0 1px var(--color-primary--active);
 					}
 
 					& + label::after {
-						border-color: var( --color-primary--active );
+						border-color: var(--color-primary--active);
 					}
 				}
 			}
@@ -54,12 +54,12 @@
 
 		&:disabled {
 			& + label::before {
-				border-color: var( --color-surface-4 );
-				background-color: var( --color-surface-4 );
+				border-color: var(--color-surface-4);
+				background-color: var(--color-surface-4);
 			}
 
 			&:checked + label::before {
-				background-color: var( --color-surface-0 );
+				background-color: var(--color-surface-0);
 			}
 		}
 	}

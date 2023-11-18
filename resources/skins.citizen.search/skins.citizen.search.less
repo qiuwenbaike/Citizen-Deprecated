@@ -5,7 +5,7 @@
 	position: absolute;
 	overflow: auto;
 	width: 100%;
-	max-height: var( --header-card-maxheight );
+	max-height: var(--header-card-maxheight);
 	box-sizing: border-box;
 	padding: 0.75rem 0 0 0;
 	margin: -0.75rem 0 0 0; // Reset <ol> styles
@@ -19,7 +19,7 @@
 	&__item {
 		.citizen-typeahead {
 			&__thumbnail {
-				margin-right: var( --space-sm );
+				margin-right: var(--space-sm);
 
 				&.citizen-ui-icon {
 					width: 100%; // reset width
@@ -32,7 +32,7 @@
 		}
 
 		&--active {
-			background-color: var( --background-color-primary--hover );
+			background-color: var(--background-color-primary--hover);
 		}
 
 		&--hidden {
@@ -43,12 +43,12 @@
 			.citizen-typeahead {
 				&__content {
 					flex-direction: column;
-					padding: var( --space-xl ) 0;
+					padding: var(--space-xl) 0;
 					text-align: center;
 				}
 
 				&__thumbnail {
-					margin-bottom: var( --space-sm );
+					margin-bottom: var(--space-sm);
 				}
 			}
 		}
@@ -62,7 +62,7 @@
 
 					&.citizen-ui-icon {
 						height: 60px;
-						background-color: var( --color-surface-3 );
+						background-color: var(--color-surface-3);
 
 						&::before {
 							background-size: 20px;
@@ -75,17 +75,17 @@
 		&--tool {
 			.citizen-typeahead {
 				&__content {
-					padding: var( --space-sm ) 0;
-					border-top: 1px solid var( --border-color-base );
+					padding: var(--space-sm) 0;
+					border-top: 1px solid var(--border-color-base);
 				}
 
 				&__thumbnail {
-					height: var( --size-icon );
+					height: var(--size-icon);
 					background-color: transparent;
 				}
 
 				&__description {
-					color: var( --color-base );
+					color: var(--color-base);
 				}
 			}
 
@@ -100,9 +100,9 @@
 	&__content {
 		display: flex;
 		align-items: center;
-		padding: var( --space-xs ) 0;
-		margin: 0 var( --space-sm );
-		color: var( --color-base );
+		padding: var(--space-xs) 0;
+		margin: 0 var(--space-sm);
+		color: var(--color-base);
 	}
 
 	&__thumbnail {
@@ -111,7 +111,7 @@
 		max-width: 70px;
 		height: 60px;
 		flex-shrink: 0;
-		border-radius: var( --border-radius--medium );
+		border-radius: var(--border-radius--medium);
 
 		&.citizen-ui-icon::before {
 			background-size: contain;
@@ -130,31 +130,31 @@
 
 	&__title {
 		flex-shrink: 0;
-		color: var( --color-base--emphasized );
-		font-weight: var( --font-weight-semibold );
+		color: var(--color-base--emphasized);
+		font-weight: var(--font-weight-semibold);
 	}
 
 	&__highlight {
-		color: var( --color-base--subtle );
-		font-weight: var( --font-weight-medium );
+		color: var(--color-base--subtle);
+		font-weight: var(--font-weight-medium);
 	}
 
 	&__query {
-		color: var( --color-base--emphasized );
-		font-weight: var( --font-weight-semibold );
+		color: var(--color-base--emphasized);
+		font-weight: var(--font-weight-semibold);
 	}
 
 	&__label {
 		display: flex;
-		margin-left: var( --space-xs );
-		color: var( --color-base );
+		margin-left: var(--space-xs);
+		color: var(--color-base);
 		font-size: 0.8125rem;
-		gap: var( --space-xxs );
+		gap: var(--space-xxs);
 
 		.citizen-ui-icon {
 			width: 0.8125rem;
 			height: 0.8125rem;
-			margin-right: var( --space-xxs );
+			margin-right: var(--space-xxs);
 		}
 	}
 
@@ -165,7 +165,7 @@
 
 	&__description {
 		margin-top: 0.1rem;
-		color: var( --color-base--subtle );
+		color: var(--color-base--subtle);
 		font-size: 0.8125rem;
 	}
 
@@ -177,14 +177,14 @@
 
 	&__actions {
 		position: absolute;
-		right: var( --space-sm );
+		right: var(--space-sm);
 	}
 
 	&__keyboard {
 		display: none;
 		padding: 0 8px;
-		border-radius: var( --border-radius--small );
-		background-color: var( --color-surface-1 );
+		border-radius: var(--border-radius--small);
+		background-color: var(--color-surface-1);
 	}
 
 	&--expanded {
@@ -193,7 +193,7 @@
 }
 
 // HACK: This is as close as we can to detect whether there is a keyboard in CSS
-@media ( hover: hover ) and ( pointer: fine ) {
+@media (hover: hover) and (pointer: fine) {
 	.citizen-typeahead {
 		&__item--active {
 			.citizen-typeahead__keyboard {

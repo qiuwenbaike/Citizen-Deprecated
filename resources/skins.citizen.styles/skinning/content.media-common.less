@@ -10,10 +10,10 @@
 /**
  * Block media items
  */
-figure[ typeof~='mw:File' ],
-figure[ typeof~='mw:File/Frameless' ],
-figure[ typeof~='mw:File/Thumb' ],
-figure[ typeof~='mw:File/Frame' ] {
+figure[typeof~='mw:File'],
+figure[typeof~='mw:File/Frameless'],
+figure[typeof~='mw:File/Thumb'],
+figure[typeof~='mw:File/Frame'] {
 	&.mw-halign-none {
 		clear: none;
 		float: none;
@@ -25,18 +25,18 @@ figure[ typeof~='mw:File/Frame' ] {
 	}
 }
 
-figure[ typeof~='mw:File' ],
-figure[ typeof~='mw:File/Frameless' ] {
+figure[typeof~='mw:File'],
+figure[typeof~='mw:File/Frameless'] {
 	/* Hide the caption for frameless and plain floated images */
 	> figcaption {
 		display: none;
 	}
 }
 
-figure[ typeof~='mw:File/Thumb' ],
-figure[ typeof~='mw:File/Frame' ] {
+figure[typeof~='mw:File/Thumb'],
+figure[typeof~='mw:File/Frame'] {
 	display: table;
-	margin: var( --space-xs ) auto var( --space-md ) auto;
+	margin: var(--space-xs) auto var(--space-md) auto;
 	font-size: 0.8125rem;
 	text-align: center;
 
@@ -55,26 +55,26 @@ figure[ typeof~='mw:File/Frame' ] {
 	> figcaption {
 		display: table-caption;
 		// Sync with rounded corner
-		padding-right: var( --border-radius--small );
+		padding-right: var(--border-radius--small);
 		// Sync with rounded corner
-		padding-left: var( --border-radius--small );
-		margin-top: var( --space-xs );
+		padding-left: var(--border-radius--small);
+		margin-top: var(--space-xs);
 		caption-side: bottom;
-		color: var( --color-base--subtle );
+		color: var(--color-base--subtle);
 		letter-spacing: 0.025em;
 	}
 }
 
 // Do not float content in mobile view
-@media ( min-width: @width-breakpoint-tablet ) {
-	figure[ typeof~='mw:File/Thumb' ],
-	figure[ typeof~='mw:File/Frame' ] {
+@media (min-width: @width-breakpoint-tablet) {
+	figure[typeof~='mw:File/Thumb'],
+	figure[typeof~='mw:File/Frame'] {
 		text-align: start;
 
 		// When float is not explicitly set
 		.mw-content-ltr & {
 			/* @noflip */
-			margin-left: var( --space-lg );
+			margin-left: var(--space-lg);
 			/* @noflip */
 			clear: right;
 			/* @noflip */
@@ -83,7 +83,7 @@ figure[ typeof~='mw:File/Frame' ] {
 
 		.mw-content-rtl & {
 			/* @noflip */
-			margin-right: var( --space-lg );
+			margin-right: var(--space-lg);
 			/* @noflip */
 			clear: left;
 			/* @noflip */
@@ -91,13 +91,13 @@ figure[ typeof~='mw:File/Frame' ] {
 		}
 	}
 
-	figure[ typeof~='mw:File' ],
-	figure[ typeof~='mw:File/Frameless' ],
-	figure[ typeof~='mw:File/Thumb' ],
-	figure[ typeof~='mw:File/Frame' ] {
+	figure[typeof~='mw:File'],
+	figure[typeof~='mw:File/Frameless'],
+	figure[typeof~='mw:File/Thumb'],
+	figure[typeof~='mw:File/Frame'] {
 		&.mw-halign-right {
 			/* @noflip */
-			margin-left: var( --space-lg );
+			margin-left: var(--space-lg);
 			/* @noflip */
 			clear: right;
 			/* @noflip */
@@ -106,7 +106,7 @@ figure[ typeof~='mw:File/Frame' ] {
 
 		&.mw-halign-left {
 			/* @noflip */
-			margin-right: var( --space-lg );
+			margin-right: var(--space-lg);
 			/* @noflip */
 			clear: left;
 			/* @noflip */

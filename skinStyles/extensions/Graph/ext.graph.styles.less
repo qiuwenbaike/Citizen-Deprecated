@@ -7,7 +7,7 @@
 
 .skin-citizen {
 	.vega {
-		background: var( --color-surface-0 );
+		background: var(--color-surface-0);
 	}
 
 	/* responsive layout */
@@ -20,7 +20,7 @@
 	/* dark mode */
 	&-dark {
 		.mw-graph canvas {
-			filter: invert( 1 ) hue-rotate( 180deg );
+			filter: invert(1) hue-rotate(180deg);
 		}
 	}
 }
@@ -29,56 +29,56 @@
 	.mw-graph-interactable {
 		&:hover {
 			.mw-graph-layover {
-				background-color: var( --background-color-overlay--lighter );
+				background-color: var(--background-color-overlay--lighter);
 			}
 
 			.mw-graph-switch {
 				&.mw-graph-loading {
-					background-color: var( --color-surface-0 );
+					background-color: var(--color-surface-0);
 				}
 
 				&:hover {
-					background-color: var( --color-surface-0 );
+					background-color: var(--color-surface-0);
 				}
 			}
 		}
 	}
 
 	.mw-graph-hover-title {
-		background-color: var( --color-surface-0 );
+		background-color: var(--color-surface-0);
 	}
 
 	/* common button style */
 	.mw-graph-switch {
-		border-color: var( --border-color-base );
-		background-color: var( --background-color-overlay--lighter );
-		color: var( --color-base );
+		border-color: var(--border-color-base);
+		background-color: var(--background-color-overlay--lighter);
+		color: var(--color-base);
 
 		&:hover {
-			border-color: var( --color-primary );
-			background-color: var( --color-surface-0 );
-			color: var( --color-primary );
+			border-color: var(--color-primary);
+			background-color: var(--color-surface-0);
+			color: var(--color-primary);
 		}
 
 		&:active {
-			border-color: var( --color-primary--active );
-			background-color: var( --color-surface-0 );
-			color: var( --color-primary );
+			border-color: var(--color-primary--active);
+			background-color: var(--color-surface-0);
+			color: var(--color-primary);
 		}
 
 		&:focus {
-			border-color: var( --color-primary );
-			box-shadow: inset 0 0 0 1px var( --color-surface-0 );
+			border-color: var(--color-primary);
+			box-shadow: inset 0 0 0 1px var(--color-surface-0);
 		}
 
 		/* Loading button style */
 		&.mw-graph-loading {
-			border-color: var( --color-primary--active );
-			background-color: var( --color-surface-0 );
-			color: var( --color-base--subtle );
+			border-color: var(--color-primary--active);
+			background-color: var(--color-surface-0);
+			color: var(--color-base--subtle);
 
 			&:hover {
-				border-color: var( --color-primary );
+				border-color: var(--color-primary);
 			}
 		}
 	}
