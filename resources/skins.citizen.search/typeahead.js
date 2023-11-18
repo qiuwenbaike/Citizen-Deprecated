@@ -180,6 +180,7 @@ function getSuggestions( searchQuery, htmlSafeSearchQuery, placeholder ) {
 			 * @return {string}
 			 */
 			const highlightTitle = function ( text ) {
+				// eslint-disable-next-line security/detect-non-literal-regexp
 				const regex = new RegExp( mw.util.escapeRegExp( htmlSafeSearchQuery ), 'i' );
 				return text.replace( regex, `<span class="${PREFIX}__highlight">$&</span>` );
 			};
