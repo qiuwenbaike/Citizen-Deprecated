@@ -5,8 +5,8 @@
 	justify-content: flex-end;
 	margin-left: -0.75rem; // Align to the margin
 	font-size: 0.875rem;
-	font-weight: var( --font-weight-medium );
-	gap: var( --space-xxs );
+	font-weight: var(--font-weight-medium);
+	gap: var(--space-xxs);
 
 	// TODO: Merge this with header__item
 	&__item {
@@ -15,25 +15,27 @@
 
 	// TODO: Merge this with header__button
 	&__button {
+		// Fallback
+		justify-content: center;
 		display: grid;
 		width: 2.75rem; // Same width as other buttons
 		height: 2.25rem; // Same height as other buttons
-		border-radius: var( --border-radius--medium );
+		border-radius: var(--border-radius--medium);
 		place-items: center;
 
 		&:hover {
-			background-color: var( --background-color-quiet--hover );
+			background-color: var(--background-color-quiet--hover);
 
 			.citizen-ui-icon::before {
-				opacity: var( --opacity-icon-base--hover );
+				opacity: var(--opacity-icon-base--hover);
 			}
 		}
 
 		&:active {
-			background-color: var( --background-color-quiet--active );
+			background-color: var(--background-color-quiet--active);
 
 			.citizen-ui-icon::before {
-				opacity: var( --opacity-icon-base--active );
+				opacity: var(--opacity-icon-base--active);
 			}
 		}
 	}
@@ -46,13 +48,13 @@
 		overflow: auto;
 		max-height: 60vh;
 		padding: 0.5rem 0;
-		margin: var( --space-xs );
+		margin: var(--space-xs);
 		font-size: 0.875rem;
 		.citizen-card;
 		.citizen-card-hide( top right );
 
 		a {
-			padding: 0.625rem var( --space-md );
+			padding: 0.625rem var(--space-md);
 			.menu-item-link;
 
 			&:hover {
@@ -69,33 +71,33 @@
 	> .mw-portlet {
 		ul {
 			display: flex;
-			gap: var( --space-xxs );
+			gap: var(--space-xxs);
 		}
 
 		li > a {
 			display: flex;
 			align-items: center;
-			padding: var( --space-xs ) var( --space-sm );
-			border-radius: var( --border-radius--medium );
-			color: var( --color-base );
+			padding: var(--space-xs) var(--space-sm);
+			border-radius: var(--border-radius--medium);
+			color: var(--color-base);
 			font-size: 0;
 			transition: @transition-background, @transition-color;
 
 			&:hover {
-				background-color: var( --background-color-quiet--hover );
-				color: var( --color-base--emphasized );
+				background-color: var(--background-color-quiet--hover);
+				color: var(--color-base--emphasized);
 
 				&::before {
-					opacity: var( --opacity-icon-base--hover );
+					opacity: var(--opacity-icon-base--hover);
 				}
 			}
 
 			&:active {
-				background-color: var( --background-color-quiet--active );
-				color: var( --color-base--subtle );
+				background-color: var(--background-color-quiet--active);
+				color: var(--color-base--subtle);
 
 				&::before {
-					opacity: var( --opacity-icon-base--active );
+					opacity: var(--opacity-icon-base--active);
 				}
 			}
 		}
@@ -112,7 +114,7 @@
 
 	// TODO: Merge this with header styles
 	.mw-checkbox-hack-checkbox:checked ~ .page-actions__button {
-		background-color: var( --background-color-primary--active );
+		background-color: var(--background-color-primary--active);
 	}
 }
 
@@ -127,14 +129,14 @@
 		right: 0;
 		display: block;
 		padding: 0.1em 0.4em;
-		border-radius: var( --border-radius--pill );
-		background: var( --color-primary );
+		border-radius: var(--border-radius--pill);
+		background: var(--color-primary);
 		color: #fff;
-		content: attr( data-counter-text );
+		content: attr(data-counter-text);
 		font-size: 0.65rem;
 	}
 
-	&[ data-counter-text='0' ]::after {
+	&[data-counter-text='0']::after {
 		display: none;
 	}
 }
@@ -147,8 +149,8 @@
 		position: absolute;
 		z-index: 1;
 		display: block;
-		width: var( --size-button--page );
-		height: var( --size-button--page );
+		width: var(--size-button--page);
+		height: var(--size-button--page);
 		padding: 0;
 		margin: 0;
 		cursor: pointer;
@@ -157,20 +159,20 @@
 		// Hover state needs to be define because the checkbox now overlays the label
 		&:hover {
 			~ .page-actions__button {
-				background-color: var( --background-color-quiet--hover );
+				background-color: var(--background-color-quiet--hover);
 
 				.citizen-ui-icon::before {
-					opacity: var( --opacity-icon-base--hover );
+					opacity: var(--opacity-icon-base--hover);
 				}
 			}
 		}
 
 		&:active {
 			~ .page-actions__button {
-				background-color: var( --background-color-quiet--active );
+				background-color: var(--background-color-quiet--active);
 
 				.citizen-ui-icon::before {
-					opacity: var( --opacity-icon-base--active );
+					opacity: var(--opacity-icon-base--active);
 				}
 			}
 		}
@@ -186,22 +188,22 @@
 #ca-edit,
 #ca-ve-edit {
 	> a {
-		background-color: var( --color-primary );
+		background-color: var(--color-primary);
 		color: #fff;
 
 		&:hover {
-			background-color: var( --color-primary--hover );
+			background-color: var(--color-primary--hover);
 		}
 
 		&:active {
-			background-color: var( --color-primary--active );
+			background-color: var(--color-primary--active);
 		}
 	}
 
 	> a,
 	.citizen-ui-icon {
 		&::before {
-			filter: invert( 1 );
+			filter: invert(1);
 			// white icon
 			opacity: 1;
 		}
@@ -215,11 +217,11 @@
 	> a {
 		// See SkinHooks.php for why VE is here
 		&::before {
-			width: var( --size-icon );
-			height: var( --size-icon );
+			width: var(--size-icon);
+			height: var(--size-icon);
 			background-position: center;
 			background-repeat: no-repeat;
-			background-size: var( --size-icon );
+			background-size: var(--size-icon);
 			content: '';
 			transition: @transition-opacity;
 		}
@@ -240,7 +242,7 @@
 	}
 
 	&#ca-edit {
-		border-left: 1px solid var( --color-primary--hover );
+		border-left: 1px solid var(--color-primary--hover);
 		margin-left: ~'calc( var( --space-xxs ) * -1 )';
 
 		> a {
@@ -257,11 +259,11 @@
 #ca-redirect,
 #ca-masseditregex {
 	> a::before {
-		width: var( --size-icon );
-		height: var( --size-icon );
+		width: var(--size-icon);
+		height: var(--size-icon);
 		background-position: center;
 		background-repeat: no-repeat;
-		background-size: var( --size-icon );
+		background-size: var(--size-icon);
 		content: '';
 		transition: @transition-opacity;
 	}
@@ -285,7 +287,7 @@
 }
 
 // To avoid more menu from overflow in narrow screen
-@media ( max-width: @width-breakpoint-tablet ) {
+@media (max-width: @width-breakpoint-tablet) {
 	.page-actions {
 		&__item {
 			position: unset;
@@ -293,12 +295,12 @@
 	}
 }
 
-@media ( min-width: @width-breakpoint-desktop ) {
+@media (min-width: @width-breakpoint-desktop) {
 	.page-actions {
 		> .mw-portlet {
 			li > a {
 				font-size: 0.75rem;
-				gap: var( --space-xs );
+				gap: var(--space-xs);
 			}
 		}
 
@@ -311,14 +313,14 @@
 
 // Reset hover styles if it is a touch device
 // This is dumb but hover:hover overrides active states
-@media ( hover: none ) {
+@media (hover: none) {
 	.page-actions {
 		&__button {
 			&:hover {
 				background-color: none;
 
 				.citizen-ui-icon::before {
-					opacity: var( --opacity-icon-base );
+					opacity: var(--opacity-icon-base);
 				}
 			}
 		}

@@ -8,11 +8,11 @@
 	right: 0;
 	left: 0;
 	display: flex;
-	flex-direction: var( --header-direction );
-	padding: var( --space-xs );
-	border-bottom: 1px solid var( --border-color-base );
-	background-color: var( --color-surface-0 );
-	gap: var( --space-xxs );
+	flex-direction: var(--header-direction);
+	padding: var(--space-xs);
+	border-bottom: 1px solid var(--border-color-base);
+	background-color: var(--color-surface-0);
+	gap: var(--space-xxs);
 	transition: @transition-transform; // Hide header when scroll down
 
 	&__item {
@@ -21,10 +21,13 @@
 	}
 
 	&__button {
+		// Fallback
+		display: flex;
+		justify-content: center;
 		display: grid;
-		width: var( --header-button-size );
-		height: var( --header-button-size );
-		border-radius: var( --border-radius--small );
+		width: var(--header-button-size);
+		height: var(--header-button-size);
+		border-radius: var(--border-radius--small);
 		contain: strict;
 		place-items: center;
 
@@ -40,54 +43,54 @@
 		// Pure CSS icons
 		&Icon {
 			overflow: hidden; // Sometimes CSS animation can clip
-			width: var( --header-icon-size );
-			height: var( --header-icon-size );
+			width: var(--header-icon-size);
+			height: var(--header-icon-size);
 			contain: strict;
 		}
 
 		&Icon,
 		.citizen-ui-icon::before {
-			opacity: var( --opacity-icon-base );
+			opacity: var(--opacity-icon-base);
 			transition: @transition-transform, @transition-opacity;
 		}
 
 		&:hover {
-			background-color: var( --background-color-quiet--hover );
+			background-color: var(--background-color-quiet--hover);
 
 			.citizen-ui-icon::before,
 			.citizen-header__buttonIcon {
-				opacity: var( --opacity-icon-base--hover );
+				opacity: var(--opacity-icon-base--hover);
 			}
 		}
 
 		&:active {
-			background-color: var( --background-color-quiet--active );
+			background-color: var(--background-color-quiet--active);
 
 			.citizen-ui-icon::before,
 			.citizen-header__buttonIcon {
-				opacity: var( --opacity-icon-base--active );
+				opacity: var(--opacity-icon-base--active);
 			}
 		}
 	}
 
 	&__logo {
-		padding: 0 var( --space-xs ) 0 0;
-		border-right: 1px solid var( --border-color-base );
-		margin: 0 var( --space-xxs );
+		padding: 0 var(--space-xs) 0 0;
+		border-right: 1px solid var(--border-color-base);
+		margin: 0 var(--space-xxs);
 	}
 
 	&__inner {
 		z-index: -1; // Inner element should be behind menu and search
 		display: flex;
 		min-width: 0;
-		flex-direction: var( --header-direction );
+		flex-direction: var(--header-direction);
 		flex-grow: 1;
 		justify-content: space-between;
-		gap: var( --space-xxs );
+		gap: var(--space-xxs);
 
 		.mw-checkbox-hack-checkbox:checked {
 			~ .citizen-header__button {
-				background-color: var( --background-color-primary--active );
+				background-color: var(--background-color-primary--active);
 			}
 		}
 	}
@@ -95,8 +98,8 @@
 	&__start,
 	&__end {
 		display: flex;
-		flex-direction: var( --header-direction );
-		gap: var( --space-xxs );
+		flex-direction: var(--header-direction);
+		gap: var(--space-xxs);
 	}
 
 	&__start {
@@ -115,29 +118,24 @@
 #p-notifications {
 	ul {
 		display: flex;
-		flex-direction: var( --header-direction );
+		flex-direction: var(--header-direction);
 		align-items: center;
-		gap: var( --space-xxs );
+		gap: var(--space-xxs);
 	}
 }
 
 // Reset hover styles if it is a touch device
 // This is dumb but hover:hover overrides active states
-@media ( hover: none ) {
+@media (hover: none) {
 	.citizen-header {
 		&__button {
 			&:hover {
 				background-color: none;
 
 				.citizen-header__buttonIcon {
-					opacity: var( --opacity-icon-base );
+					opacity: var(--opacity-icon-base);
 				}
 			}
 		}
 	}
 }
-
-/* Hide header when scroll down */
-// .citizen-scroll--down .citizen-header {
-// 	transform: translateY( -100% );
-// }
