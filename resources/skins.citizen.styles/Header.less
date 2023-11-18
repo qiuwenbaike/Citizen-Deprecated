@@ -23,7 +23,7 @@
 	&__button {
 		// Fallback
 		justify-content: center;
-		display: grid;
+		display: flex;
 		width: var(--header-button-size);
 		height: var(--header-button-size);
 		border-radius: var(--border-radius--small);
@@ -32,32 +32,18 @@
 
 		// Used in checkbox hack
 		&Checkbox {
-			position: absolute;
-			display: block;
-			width: inherit;
-			height: inherit;
+			display: flex;
+			width: var(--header-button-size);
+			height: var(--header-button-size);
 			contain: strict;
-		}
-
-		// Pure CSS icons
-		&Icon {
-			overflow: hidden; // Sometimes CSS animation can clip
-			width: var(--header-icon-size);
-			height: var(--header-icon-size);
-			contain: strict;
-		}
-
-		&Icon,
-		.citizen-ui-icon::before {
-			opacity: var(--opacity-icon-base);
-			transition: @transition-transform, @transition-opacity;
+			align-items: center;
+			justify-content: center;
 		}
 
 		&:hover {
 			background-color: var(--background-color-quiet--hover);
 
-			.citizen-ui-icon::before,
-			.citizen-header__buttonIcon {
+			.citizen-ui-icon::before {
 				opacity: var(--opacity-icon-base--hover);
 			}
 		}
@@ -65,8 +51,7 @@
 		&:active {
 			background-color: var(--background-color-quiet--active);
 
-			.citizen-ui-icon::before,
-			.citizen-header__buttonIcon {
+			.citizen-ui-icon::before {
 				opacity: var(--opacity-icon-base--active);
 			}
 		}
@@ -130,10 +115,6 @@
 		&__button {
 			&:hover {
 				background-color: none;
-
-				.citizen-header__buttonIcon {
-					opacity: var(--opacity-icon-base);
-				}
 			}
 		}
 	}
