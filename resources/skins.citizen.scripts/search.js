@@ -14,18 +14,18 @@ const SEARCH_LOADING_CLASS = 'citizen-loading';
  * @param {string} moduleName resourceLoader module to load.
  * @param {function(): void} afterLoadFn function to execute after search module loads.
  */
-function loadSearchModule( element, moduleName, afterLoadFn ) {
-	function requestSearchModule() {
+const loadSearchModule = ( element, moduleName, afterLoadFn ) => {
+	const requestSearchModule = function requestSearchModule() {
 		mw.loader.using( moduleName, afterLoadFn );
 		element.removeEventListener( 'focus', requestSearchModule );
-	}
+	};
 
 	if ( document.activeElement === element ) {
 		requestSearchModule();
 	} else {
 		element.addEventListener( 'focus', requestSearchModule );
 	}
-}
+};
 
 /**
  * Event callback that shows or hides the loading indicator based on the event type.
@@ -36,27 +36,25 @@ function loadSearchModule( element, moduleName, afterLoadFn ) {
  *
  * @param {Event} event
  */
-function renderSearchLoadingIndicator( event ) {
-	const form = /** @type {HTMLElement} */ ( event.currentTarget ),
-		input = /** @type {HTMLInputElement} */ ( event.target );
+const renderSearchLoadingIndicator = ( { currentTarget, target, type } ) => {
+	const form = /** @type {HTMLElement} */ ( currentTarget );
+	const input = /** @type {HTMLInputElement} */ ( target );
 
 	if (
-		!( event.currentTarget instanceof HTMLElement ) ||
-		!( event.target instanceof HTMLInputElement )
+		!( currentTarget instanceof HTMLElement ) ||
+    !( target instanceof HTMLInputElement )
 	) {
 		return;
 	}
 
-	if ( event.type === 'input' ) {
+	if ( type === 'input' ) {
 		form.classList.add( SEARCH_LOADING_CLASS );
-
-	} else if ( event.type === 'focusout' ) {
+	} else if ( type === 'focusout' ) {
 		form.classList.remove( SEARCH_LOADING_CLASS );
-
-	} else if ( event.type === 'focusin' && input.value.trim() ) {
+	} else if ( type === 'focusin' && input.value.trim() ) {
 		form.classList.add( SEARCH_LOADING_CLASS );
 	}
-}
+};
 
 /**
  * Attaches or detaches the event listeners responsible for activating
@@ -66,19 +64,20 @@ function renderSearchLoadingIndicator( event ) {
  * @param {boolean} attach
  * @param {function(Event): void} eventCallback
  */
-function setLoadingIndicatorListeners( element, attach, eventCallback ) {
-
+const setLoadingIndicatorListeners = ( element, attach, eventCallback ) => {
 	/** @type { "addEventListener" | "removeEventListener" } */
-	const addOrRemoveListener = ( attach ? 'addEventListener' : 'removeEventListener' );
+	const addOrRemoveListener = attach ?
+		'addEventListener' :
+		'removeEventListener';
 
-	[ 'input', 'focusin', 'focusout' ].forEach( function ( eventType ) {
+	[ 'input', 'focusin', 'focusout' ].forEach( ( eventType ) => {
 		element[ addOrRemoveListener ]( eventType, eventCallback );
 	} );
 
 	if ( !attach ) {
 		element.classList.remove( SEARCH_LOADING_CLASS );
 	}
-}
+};
 
 /**
  * Manually focus on the input field if checkbox is checked
@@ -87,13 +86,13 @@ function setLoadingIndicatorListeners( element, attach, eventCallback ) {
  * @param {HTMLInputElement} input
  * @return {void}
  */
-function focusOnChecked( checkbox, input ) {
-	if ( checkbox.checked ) {
+const focusOnChecked = ( { checked }, input ) => {
+	if ( checked ) {
 		input.focus();
 	} else {
 		input.blur();
 	}
-}
+};
 
 /**
  * Check if the element is a HTML form element or content editable
@@ -102,17 +101,23 @@ function focusOnChecked( checkbox, input ) {
  * @param {HTMLElement} element
  * @return {boolean}
  */
-function isFormField( element ) {
+const isFormField = ( element ) => {
 	if ( !( element instanceof HTMLElement ) ) {
 		return false;
 	}
 	const name = element.nodeName.toLowerCase();
 	const type = ( element.getAttribute( 'type' ) || '' ).toLowerCase();
-	return ( name === 'select' ||
-        name === 'textarea' ||
-        ( name === 'input' && type !== 'submit' && type !== 'reset' && type !== 'checkbox' && type !== 'radio' ) ||
-        element.isContentEditable );
-}
+	return (
+		name === 'select' ||
+    name === 'textarea' ||
+    ( name === 'input' &&
+      type !== 'submit' &&
+      type !== 'reset' &&
+      type !== 'checkbox' &&
+      type !== 'radio' ) ||
+    element.isContentEditable
+	);
+};
 
 /**
  * Manually check the checkbox state when the button is SLASH is pressed.
@@ -122,8 +127,8 @@ function isFormField( element ) {
  * @param {HTMLInputElement} input
  * @return {void}
  */
-function bindExpandOnSlash( window, checkbox, input ) {
-	const onExpandOnSlash = function ( /** @type {KeyboardEvent} */ event ) {
+const bindExpandOnSlash = ( window, checkbox, input ) => {
+	const onExpandOnSlash = /** @type {KeyboardEvent} */ ( event ) => {
 		// Only handle SPACE and ENTER.
 		if ( event.key === '/' && !isFormField( event.target ) ) {
 			// Since Firefox quickfind interfere with this
@@ -134,24 +139,23 @@ function bindExpandOnSlash( window, checkbox, input ) {
 	};
 
 	window.addEventListener( 'keydown', onExpandOnSlash, true );
-}
+};
 
 /**
  * @param {Window} window
  * @return {void}
  */
-function initSearch( window ) {
-	const
-		searchModule = require( './config.json' ).wgCitizenSearchModule,
-		searchBoxes = document.querySelectorAll( '.citizen-search-box' );
+const initSearch = ( window ) => {
+	const searchModule = require( './config.json' ).wgCitizenSearchModule;
+	const searchBoxes = document.querySelectorAll( '.citizen-search-box' );
 
 	if ( !searchBoxes.length ) {
 		return;
 	}
 
-	searchBoxes.forEach( function ( searchBox ) {
-		const
-			input = searchBox.querySelector( 'input[name="search"]' ), isPrimarySearch = input && input.getAttribute( 'id' ) === 'searchInput';
+	searchBoxes.forEach( ( searchBox ) => {
+		const input = searchBox.querySelector( 'input[name="search"]' );
+		const isPrimarySearch = input && input.getAttribute( 'id' ) === 'searchInput';
 
 		if ( !input ) {
 			return;
@@ -162,17 +166,21 @@ function initSearch( window ) {
 			const checkbox = document.getElementById( 'citizen-search__checkbox' );
 			bindExpandOnSlash( window, checkbox, input );
 			// Focus when toggled
-			checkbox.addEventListener( 'input', function () {
+			checkbox.addEventListener( 'input', () => {
 				focusOnChecked( checkbox, input );
 			} );
 		}
 
 		setLoadingIndicatorListeners( searchBox, true, renderSearchLoadingIndicator );
-		loadSearchModule( input, searchModule, function () {
-			setLoadingIndicatorListeners( searchBox, false, renderSearchLoadingIndicator );
+		loadSearchModule( input, searchModule, () => {
+			setLoadingIndicatorListeners(
+				searchBox,
+				false,
+				renderSearchLoadingIndicator
+			);
 		} );
 	} );
-}
+};
 
 module.exports = {
 	init: initSearch

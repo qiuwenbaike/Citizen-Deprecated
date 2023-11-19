@@ -9,25 +9,22 @@ const config = require( '../config.json' ),
  * @param {string} input
  * @return {string} url
  */
-function getUrl( input ) {
-	const endpoint = config.wgScriptPath + '/api.php?format=json',
-		cacheExpiry = config.wgSearchSuggestCacheExpiry,
-		maxResults = config.wgCitizenMaxSearchResults,
-		query = {
-			action: 'query',
-			smaxage: cacheExpiry,
-			maxage: cacheExpiry,
-			generator: 'prefixsearch',
-			prop: 'pageprops|pageimages',
-			redirects: '',
-			ppprop: 'displaytitle',
-			piprop: 'thumbnail',
-			pithumbsize: 200,
-			pilimit: maxResults,
-			gpssearch: input,
-			gpsnamespace: 0,
-			gpslimit: maxResults
-		};
+const getUrl = ( input ) => {
+	const endpoint = config.wgScriptPath + '/api.php?format=json', cacheExpiry = config.wgSearchSuggestCacheExpiry, maxResults = config.wgCitizenMaxSearchResults, query = {
+		action: 'query',
+		smaxage: cacheExpiry,
+		maxage: cacheExpiry,
+		generator: 'prefixsearch',
+		prop: 'pageprops|pageimages',
+		redirects: '',
+		ppprop: 'displaytitle',
+		piprop: 'thumbnail',
+		pithumbsize: 200,
+		pilimit: maxResults,
+		gpssearch: input,
+		gpsnamespace: 0,
+		gpslimit: maxResults
+	};
 
 	switch ( descriptionSource ) {
 		case 'wikidata':
@@ -52,7 +49,7 @@ function getUrl( input ) {
 	}
 
 	return endpoint + queryString;
-}
+};
 
 /**
  * Map raw response to Results object
@@ -60,8 +57,8 @@ function getUrl( input ) {
  * @param {Object} data
  * @return {Object} Results
  */
-function convertDataToResults( data ) {
-	const getDisplayTitle = function ( item ) {
+const convertDataToResults = ( data ) => {
+	const getDisplayTitle = ( item ) => {
 		if ( item.pageprops && item.pageprops.displaytitle ) {
 			return item.pageprops.displaytitle;
 		} else {
@@ -69,7 +66,7 @@ function convertDataToResults( data ) {
 		}
 	};
 
-	const getDescription = function ( item ) {
+	const getDescription = ( item ) => {
 		switch ( descriptionSource ) {
 			case 'wikidata':
 				return item.description || '';
@@ -90,7 +87,7 @@ function convertDataToResults( data ) {
 	data = Object.values( data.query.pages );
 
 	// Sort the data with the index property since it is not in order
-	data.sort( function ( a, b ) {
+	data.sort( ( a, b ) => {
 		return a.index - b.index;
 	} );
 
@@ -107,7 +104,7 @@ function convertDataToResults( data ) {
 	}
 
 	return results;
-}
+};
 
 module.exports = {
 	getUrl: getUrl,

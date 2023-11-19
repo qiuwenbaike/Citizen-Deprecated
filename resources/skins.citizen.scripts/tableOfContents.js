@@ -5,10 +5,10 @@ let /** @type {HTMLElement | undefined} */ activeSection;
 /**
  * @param {string} id
  */
-function changeActiveSection( id ) {
+const changeActiveSection = ( id ) => {
 	const toc = document.getElementById( 'mw-panel-toc' );
 
-	const getLink = function ( hash ) {
+	const getLink = ( hash ) => {
 		const prefix = 'a[href="#', suffix = '"]';
 
 		let el = toc.querySelector( prefix + hash + suffix );
@@ -30,7 +30,7 @@ function changeActiveSection( id ) {
 
 	activeSection = link.parentNode;
 	activeSection.classList.add( ACTIVE_SECTION_CLASS );
-}
+};
 
 /**
  * Toggle active HTML class to items in table of content based on user viewport.
@@ -38,18 +38,16 @@ function changeActiveSection( id ) {
  *
  * @return {void}
  */
-function initToC() {
+const initToC = () => {
 	const bodyContent = document.getElementById( 'bodyContent' );
 
 	// We use scroll-padding-top to handle scrolling with fixed header
 	// It is better to respect that so it is consistent
-	const getTopMargin = function () {
-		return Number(
-			window.getComputedStyle( document.documentElement )
-				.getPropertyValue( 'scroll-padding-top' )
-				.slice( 0, -2 )
-		) + 20;
-	};
+	const getTopMargin = () => Number(
+		window.getComputedStyle( document.documentElement )
+			.getPropertyValue( 'scroll-padding-top' )
+			.slice( 0, -2 )
+	) + 20;
 
 	const initSectionObserver = require( './sectionObserver.js' ).init;
 
@@ -57,14 +55,14 @@ function initToC() {
 		/* T13555 */
 		elements: bodyContent.querySelectorAll( '.mw-headline' ) ? bodyContent.querySelectorAll( '.mw-headline' ) : bodyContent.querySelectorAll( '.mw-heading' ),
 		topMargin: getTopMargin(),
-		onIntersection: function ( section ) {
+		onIntersection: ( section ) => {
 			changeActiveSection( section.id );
 		}
 	} );
 
 	// TODO: Pause section observer on ToC link click
 	sectionObserver.resume();
-}
+};
 
 module.exports = {
 	init: initToC

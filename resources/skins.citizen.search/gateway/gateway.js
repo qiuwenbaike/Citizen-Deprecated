@@ -15,7 +15,7 @@ const gatewayConfig = require( '../config.json' ).wgCitizenSearchGateway;
  *
  * @return {module}
  */
-function getGateway() {
+const getGateway = () => {
 	switch ( gatewayConfig ) {
 		case 'mwActionApi':
 			return require( './mwActionApi.js' );
@@ -24,7 +24,7 @@ function getGateway() {
 		default:
 			throw new Error( 'Unknown search gateway' );
 	}
-}
+};
 
 /**
  * Fetch suggestion from gateway and return the results object
@@ -34,7 +34,7 @@ function getGateway() {
  * @return {Object} Results
  */
 // eslint-disable-next-line es-x/no-async-functions
-async function getResults( searchQuery, controller ) {
+const getResults = async ( searchQuery, controller ) => {
 	const gateway = getGateway();
 
 	const signal = controller.signal;
@@ -48,7 +48,7 @@ async function getResults( searchQuery, controller ) {
 
 	const data = await response.json();
 	return gateway.convertDataToResults( data );
-}
+};
 
 module.exports = {
 	getResults: getResults
