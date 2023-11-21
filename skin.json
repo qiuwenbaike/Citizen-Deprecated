@@ -97,7 +97,6 @@
 			]
 		},
 		"skins.citizen.scripts": {
-			"es6": true,
 			"packageFiles": [
 				"resources/skins.citizen.scripts/skin.js",
 				{
@@ -120,7 +119,6 @@
 			]
 		},
 		"skins.citizen.search": {
-			"es6": true,
 			"templates": [
 				"resources/skins.citizen.search/templates/typeahead.mustache"
 			],

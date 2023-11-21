@@ -6,11 +6,12 @@ const config = require( '../config.json' );
  * @param {string} input
  * @return {string} url
  */
-const getUrl = ( input ) => {
-	const endpoint = config.wgScriptPath + '/rest.php/v1/search/title?q=', query = '&limit=' + config.wgCitizenMaxSearchResults;
+function getUrl( input ) {
+	const endpoint = config.wgScriptPath + '/rest.php/v1/search/title?q=',
+		query = '&limit=' + config.wgCitizenMaxSearchResults;
 
 	return endpoint + input + query;
-};
+}
 
 /**
  * Map raw response to Results object
@@ -18,7 +19,7 @@ const getUrl = ( input ) => {
  * @param {Object} data
  * @return {Object} Results
  */
-const convertDataToResults = ( data ) => {
+function convertDataToResults( data ) {
 	const results = [];
 
 	// eslint-disable-next-line es-x/no-optional-chaining, es-x/no-nullish-coalescing-operators
@@ -44,7 +45,7 @@ const convertDataToResults = ( data ) => {
 	}
 
 	return results;
-};
+}
 
 module.exports = {
 	getUrl: getUrl,

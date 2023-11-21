@@ -13,9 +13,9 @@
  * @return {void}
  * @ignore
  */
-const updateAriaExpanded = ( checkbox ) => {
+function updateAriaExpanded( checkbox ) {
 	checkbox.setAttribute( 'aria-expanded', checkbox.checked.toString() );
-};
+}
 
 /**
  * Set the checked state and fire the 'input' event.
@@ -41,7 +41,7 @@ const updateAriaExpanded = ( checkbox ) => {
  * @return {void}
  * @ignore
  */
-const setCheckedState = ( checkbox, checked ) => {
+function setCheckedState( checkbox, checked ) {
 	/** @type {Event} @ignore */
 	let e;
 	checkbox.checked = checked;
@@ -57,7 +57,7 @@ const setCheckedState = ( checkbox, checked ) => {
 		e.initCustomEvent( 'input', true /* canBubble */, false, false );
 	}
 	checkbox.dispatchEvent( e );
-};
+}
 
 /**
  * Returns true if the Event's target is an inclusive descendant of any the checkbox hack's
@@ -70,14 +70,13 @@ const setCheckedState = ( checkbox, checked ) => {
  * @return {boolean}
  * @ignore
  */
-const containsEventTarget = ( checkbox, button, target, event ) => {
-	return (
-		event.target instanceof Node &&
-    ( checkbox.contains( event.target ) ||
-      button.contains( event.target ) ||
-      target.contains( event.target ) )
+function containsEventTarget( checkbox, button, target, event ) {
+	return event.target instanceof Node && (
+		checkbox.contains( event.target ) ||
+        button.contains( event.target ) ||
+        target.contains( event.target )
 	);
-};
+}
 
 /**
  * Dismiss the target when event is outside the checkbox, button, and target.
@@ -90,14 +89,11 @@ const containsEventTarget = ( checkbox, button, target, event ) => {
  * @return {void}
  * @ignore
  */
-const dismissIfExternalEventTarget = ( checkbox, button, target, event ) => {
-	if (
-		checkbox.checked &&
-    !containsEventTarget( checkbox, button, target, event )
-	) {
+function dismissIfExternalEventTarget( checkbox, button, target, event ) {
+	if ( checkbox.checked && !containsEventTarget( checkbox, button, target, event ) ) {
 		setCheckedState( checkbox, false );
 	}
-};
+}
 
 /**
  * Update the `aria-expanded` attribute based on checkbox state (target visibility) changes.
@@ -106,15 +102,15 @@ const dismissIfExternalEventTarget = ( checkbox, button, target, event ) => {
  * @return {function(): void} Cleanup function that removes the added event listeners.
  * @ignore
  */
-const bindUpdateAriaExpandedOnInput = ( checkbox ) => {
+function bindUpdateAriaExpandedOnInput( checkbox ) {
 	const listener = updateAriaExpanded.bind( undefined, checkbox );
 	// Whenever the checkbox state changes, update the `aria-expanded` state.
 	checkbox.addEventListener( 'input', listener );
 
-	return () => {
+	return function () {
 		checkbox.removeEventListener( 'input', listener );
 	};
-};
+}
 
 /**
  * Manually change the checkbox state to avoid a focus change when using a pointing device.
@@ -124,19 +120,19 @@ const bindUpdateAriaExpandedOnInput = ( checkbox ) => {
  * @return {function(): void} Cleanup function that removes the added event listeners.
  * @ignore
  */
-const bindToggleOnClick = ( checkbox, button ) => {
-	const listener = ( event ) => {
+function bindToggleOnClick( checkbox, button ) {
+	function listener( event ) {
 		// Do not allow the browser to handle the checkbox. Instead, manually toggle it which does
 		// not alter focus.
 		event.preventDefault();
 		setCheckedState( checkbox, !checkbox.checked );
-	};
+	}
 	button.addEventListener( 'click', listener, true );
 
-	return () => {
+	return function () {
 		button.removeEventListener( 'click', listener, true );
 	};
-};
+}
 
 /**
  * Manually change the checkbox state when the button is focused and Enter is pressed.
@@ -145,22 +141,22 @@ const bindToggleOnClick = ( checkbox, button ) => {
  * @return {function(): void} Cleanup function that removes the added event listeners.
  * @ignore
  */
-const bindToggleOnEnter = ( checkbox ) => {
-	const onKeyup = ( { key } ) => {
+function bindToggleOnEnter( checkbox ) {
+	function onKeyup( /** @type {KeyboardEvent} @ignore */ event ) {
 		// Only handle ENTER.
-		if ( key !== 'Enter' ) {
+		if ( event.key !== 'Enter' ) {
 			return;
 		}
 
 		setCheckedState( checkbox, !checkbox.checked );
-	};
+	}
 
 	checkbox.addEventListener( 'keyup', onKeyup );
 
-	return () => {
+	return function () {
 		checkbox.removeEventListener( 'keyup', onKeyup );
 	};
-};
+}
 
 /**
  * Dismiss the target when clicking elsewhere and update the `aria-expanded` attribute based on
@@ -173,19 +169,14 @@ const bindToggleOnEnter = ( checkbox ) => {
  * @return {function(): void} Cleanup function that removes the added event listeners.
  * @ignore
  */
-const bindDismissOnClickOutside = ( window, checkbox, button, target ) => {
-	const listener = dismissIfExternalEventTarget.bind(
-		undefined,
-		checkbox,
-		button,
-		target
-	);
+function bindDismissOnClickOutside( window, checkbox, button, target ) {
+	const listener = dismissIfExternalEventTarget.bind( undefined, checkbox, button, target );
 	window.addEventListener( 'click', listener, true );
 
-	return () => {
+	return function () {
 		window.removeEventListener( 'click', listener, true );
 	};
-};
+}
 
 /**
  * Dismiss the target when focusing elsewhere and update the `aria-expanded` attribute based on
@@ -198,21 +189,16 @@ const bindDismissOnClickOutside = ( window, checkbox, button, target ) => {
  * @return {function(): void} Cleanup function that removes the added event listeners.
  * @ignore
  */
-const bindDismissOnFocusLoss = ( window, checkbox, button, target ) => {
+function bindDismissOnFocusLoss( window, checkbox, button, target ) {
 	// If focus is given to any element outside the target, dismiss the target. Setting a focusout
 	// listener on the target would be preferable, but this interferes with the click listener.
-	const listener = dismissIfExternalEventTarget.bind(
-		undefined,
-		checkbox,
-		button,
-		target
-	);
+	const listener = dismissIfExternalEventTarget.bind( undefined, checkbox, button, target );
 	window.addEventListener( 'focusin', listener, true );
 
-	return () => {
+	return function () {
 		window.removeEventListener( 'focusin', listener, true );
 	};
-};
+}
 
 /**
  * Dismiss the target when ESCAPE is pressed.
@@ -223,20 +209,20 @@ const bindDismissOnFocusLoss = ( window, checkbox, button, target ) => {
  * @return {function(): void} Cleanup function that removes the added event listeners.
  * @ignore
  */
-const bindDismissOnEscape = ( window, checkbox ) => {
-	const onKeyup = ( { key } ) => {
+function bindDismissOnEscape( window, checkbox ) {
+	const onKeyup = function ( /** @type {KeyboardEvent} */ event ) {
 		// Only handle ESCAPE
-		if ( key !== 'Escape' ) {
+		if ( event.key !== 'Escape' ) {
 			return;
 		}
 		setCheckedState( checkbox, false );
 	};
 
 	window.addEventListener( 'keyup', onKeyup, true );
-	return () => {
+	return function () {
 		window.removeEventListener( 'keyup', onKeyup );
 	};
-};
+}
 
 /**
  * Dismiss the target when clicking or focusing elsewhere and update the `aria-expanded` attribute
@@ -255,7 +241,7 @@ const bindDismissOnEscape = ( window, checkbox ) => {
  * @return {function(): void} Cleanup function that removes the added event listeners.
  * @ignore
  */
-const bind = ( window, checkbox, button, target ) => {
+function bind( window, checkbox, button, target ) {
 	const cleanups = [
 		bindUpdateAriaExpandedOnInput( checkbox ),
 		bindToggleOnClick( checkbox, button ),
@@ -265,12 +251,12 @@ const bind = ( window, checkbox, button, target ) => {
 		bindDismissOnEscape( window, checkbox )
 	];
 
-	return () => {
-		cleanups.forEach( ( cleanup ) => {
+	return function () {
+		cleanups.forEach( function ( cleanup ) {
 			cleanup();
 		} );
 	};
-};
+}
 
 module.exports = {
 	updateAriaExpanded: updateAriaExpanded,
