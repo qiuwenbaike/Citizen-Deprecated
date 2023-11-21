@@ -3,7 +3,7 @@
 if ( !Array.prototype.includes ) {
 	// eslint-disable-next-line no-extend-native
 	Array.prototype.includes = function ( searchElement, fromIndex ) {
-		return this.indexOf( searchElement, fromIndex ) > -1;
+		return this.includes( searchElement, fromIndex );
 	};
 }
 
