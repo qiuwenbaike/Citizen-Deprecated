@@ -128,6 +128,11 @@ function main( window ) {
 		// Set up loading indicator
 		document.documentElement.classList.add( 'citizen-loading' );
 	}, false );
+
+	window.addEventListener( 'unload', function () {
+		// unset loading indicator
+		document.documentElement.classList.remove( 'citizen-loading' );
+	}, false );
 }
 
 if ( document.readyState === 'interactive' || document.readyState === 'complete' ) {
