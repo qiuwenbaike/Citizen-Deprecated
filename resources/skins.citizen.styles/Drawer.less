@@ -14,18 +14,21 @@
 	}
 
 	// Keep aspect ratio
-	&__logo img {
-		width: auto;
-		height: 3rem;
-	}
-
-	&__siteinfo {
+	&__logo {
 		display: flex;
-		flex-direction: column;
+		flex-direction: row;
+		align-items: center;
+		flex-wrap: nowrap;
+		
+		img {
+			width: auto;
+			max-height: 3rem;
+		}
 
 		.mw-logo-wordmark {
 			color: var(--color-base--emphasized);
 			font-size: 1.5rem;
+			margin: 0 1rem;
 		}
 	}
 
@@ -76,13 +79,9 @@
 }
 
 @media (min-width: @width-breakpoint-tablet) {
-	.citizen-drawer {
-		&__siteinfo {
-			.mw-logo-wordmark {
-				font-size: 2rem;
-				// Sometimes long wiki name will wrap when the menu is too small
-				white-space: nowrap;
-			}
-		}
+	.mw-logo-wordmark {
+		font-size: 2rem;
+		// Sometimes long wiki name will wrap when the menu is too small
+		white-space: nowrap;
 	}
 }
