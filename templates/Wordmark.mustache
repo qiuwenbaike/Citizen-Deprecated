@@ -3,13 +3,9 @@
 }}
 {{#data-logos}}
 {{#wordmark}}
-<a href="{{link-mainpage}}" title="{{msg-sitetitle}}">
-	<img class="mw-logo-wordmark" alt="{{msg-sitetitle}}" src="{{src}}" width="{{width}}" height="{{height}}">
-</a>
+<img class="mw-logo-wordmark" alt="{{msg-sitetitle}}" src="{{src}}" width="{{width}}" height="{{height}}">
 {{/wordmark}}
 {{^wordmark}}
-<div class="mw-logo-wordmark">
-	<a href="{{link-mainpage}}" title="{{msg-sitetitle}}">{{msg-sitetitle}}</a>
-</div>
+<div class="mw-logo-wordmark">{{msg-sitetitle}}</div>
 {{/wordmark}}
 {{/data-logos}}
