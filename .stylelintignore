@@ -3,3 +3,5 @@
 /node_modules/
 /skinStyles/jquery.ui/
 /vendor/
+package.json
+package-lock.json

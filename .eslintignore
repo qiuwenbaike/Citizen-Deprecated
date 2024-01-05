@@ -3,3 +3,5 @@
 /i18n/
 /node_modules/
 /vendor/
+package.json
+package-lock.json
