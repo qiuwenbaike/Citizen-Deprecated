@@ -5,7 +5,7 @@
 
 .citizen-page-container {
 	// Reserve space for header
-	margin-top: var(--header-size);
+	margin-top: var( --header-size );
 }
 
 .citizen-body-container {
@@ -16,14 +16,14 @@
 	/* stylelint-disable-next-line declaration-block-no-duplicate-properties */
 	display: grid;
 	justify-content: center;
-	padding: var(--space-xl) var(--padding-page);
-	gap: var(--space-md) var(--space-md);
+	padding: var( --space-xl ) var( --padding-page );
+	gap: var( --space-md ) var( --space-md );
 	grid-template-areas:
-		'header'
+ 'header'
 		'content'
 		'footer';
 	// Using auto as min value will cause overflow
-	grid-template-columns: minmax(0, var(--width-layout));
+	grid-template-columns: minmax( 0, var( --width-layout ) );
 }
 
 .mw-body-header {
@@ -33,8 +33,8 @@
 	flex-wrap: wrap;
 	align-items: center;
 	justify-content: flex-end;
-	padding-top: var(--space-md);
-	gap: var(--space-md);
+	padding-top: var( --space-md );
+	gap: var( --space-md );
 	grid-area: header;
 }
 
@@ -60,27 +60,27 @@ a.image {
 	}
 }
 
-@media (min-width: @width-breakpoint-desktop) {
+@media ( min-width: @width-breakpoint-desktop ) {
 	.citizen-toc-enabled {
 		.citizen-body-container {
 			display: grid;
 			grid-template-areas:
- 				'header header'
+ 'header header'
 				'content toc'
 				'footer .';
-			grid-template-columns: minmax(0, var(--width-layout)) var(--width-toc);
+			grid-template-columns: minmax( 0, var( --width-layout ) ) var( --width-toc );
 		}
 	}
 }
 
 /* Wider page width for certain namespaces */
-@media (min-width: @width-breakpoint-desktop-wide) {
+@media ( min-width: @width-breakpoint-desktop-wide ) {
 	.ns {
 		// 1 - Special, 6 - File, 14 - Category
 		&--1,
 		&-6,
 		&-14 {
-			--width-layout: var(--width-layout--extended);
+			--width-layout: var( --width-layout--extended );
 		}
 
 		// 2 - User, 4 - Project, 12 - Help
@@ -92,7 +92,7 @@ a.image {
 		&-12,
 		&-828,
 		&-talk {
-			--width-layout: var(--width-layout--wide);
+			--width-layout: var( --width-layout--wide );
 		}
 	}
 }

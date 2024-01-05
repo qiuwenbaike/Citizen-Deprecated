@@ -1,6 +1,6 @@
 .citizen-drawer {
 	&__card {
-		padding: var(--space-xs) 0;
+		padding: var( --space-xs ) 0;
 		.citizen-header-card( left );
 	}
 
@@ -8,25 +8,24 @@
 		display: flex;
 		align-items: center;
 		justify-content: center;
-		padding: var(--space-md);
-		border-bottom: 1px solid var(--border-color-base);
-		gap: var(--space-md);
+		padding: var( --space-md );
+		border-bottom: 1px solid var( --border-color-base );
+		gap: var( --space-md );
 	}
 
 	// Keep aspect ratio
 	&__logo {
 		display: flex;
-		flex-direction: row;
+		flex-flow: row nowrap;
 		align-items: center;
-		flex-wrap: nowrap;
-		
+
 		img {
 			width: auto;
 			max-height: 3rem;
 		}
 
 		.mw-logo-wordmark {
-			color: var(--color-base--emphasized);
+			color: var( --color-base--emphasized );
 			font-size: 1.5rem;
 			margin: 0 1rem;
 		}
@@ -43,15 +42,15 @@
 		display: grid;
 		max-width: 92.5vw;
 		justify-content: center;
-		padding: var(--space-xs) var(--space-md);
+		padding: var( --space-xs ) var( --space-md );
 		font-size: 0.875rem; // TODO: Make this a variable
-		gap: var(--space-xs);
-		grid-template-columns: repeat(auto-fit, 15rem);
+		gap: var( --space-xs );
+		grid-template-columns: repeat( auto-fit, 15rem );
 
 		a {
 			.menu-item-link;
-			padding: 0.625rem var(--space-md); // TODO: Make this a variable
-			border-radius: var(--border-radius--small);
+			padding: 0.625rem var( --space-md ); // TODO: Make this a variable
+			border-radius: var( --border-radius--small );
 
 			&:hover {
 				.menu-item-link-hover;
@@ -78,7 +77,7 @@
 	}
 }
 
-@media (min-width: @width-breakpoint-tablet) {
+@media ( min-width: @width-breakpoint-tablet ) {
 	.mw-logo-wordmark {
 		font-size: 2rem;
 		// Sometimes long wiki name will wrap when the menu is too small

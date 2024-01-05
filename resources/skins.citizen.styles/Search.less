@@ -2,7 +2,7 @@
 
 .citizen-search {
 	--width-search-bar: @width-search-bar;
-	--height-search-bar: var(--header-button-size);
+	--height-search-bar: var( --header-button-size );
 
 	&__card {
 		position: fixed;
@@ -10,17 +10,17 @@
 		right: 0;
 		left: 0;
 		display: flex;
-		width: var(--width-search-bar);
+		width: var( --width-search-bar );
 		max-width: ~'calc(100vw - var( --padding-page ) )';
-		height: var(--height-search-bar);
+		height: var( --height-search-bar );
 		margin: ~'calc( var( --header-size ) + 1px ) var( --space-xs ) auto';
 		gap: 0.25rem;
 		.citizen-card();
 		.citizen-card-hide( top left, '', false );
 
 		.citizen-ui-icon {
-			width: var(--height-search-bar);
-			height: var(--height-search-bar);
+			width: var( --height-search-bar );
+			height: var( --height-search-bar );
 
 			&::before {
 				background-size: 1rem;
@@ -50,26 +50,26 @@
 
 	&__random {
 		right: 0;
-		border-radius: var(--border-radius--small);
+		border-radius: var( --border-radius--small );
 
 		.citizen-ui-icon::before {
 			transition: @transition-transform;
 		}
 
 		&:hover {
-			background-color: var(--background-color-quiet--hover);
+			background-color: var( --background-color-quiet--hover );
 
 			.citizen-ui-icon::before {
-				opacity: var(--opacity-icon-base--hover);
-				transform: rotate(30deg);
+				opacity: var( --opacity-icon-base--hover );
+				transform: rotate( 30deg );
 			}
 		}
 
 		&:active {
-			background-color: var(--background-color-quiet--active);
+			background-color: var( --background-color-quiet--active );
 
 			.citizen-ui-icon::before {
-				opacity: var(--opacity-icon-base--active);
+				opacity: var( --opacity-icon-base--active );
 			}
 		}
 	}
@@ -81,7 +81,7 @@
 	#searchInput {
 		width: 100%;
 		height: 100%;
-		padding: 0 var(--height-search-bar);
+		padding: 0 var( --height-search-bar );
 		border: 0; // Cancel default border
 		appearance: none;
 		background: transparent; // Cancel default background
@@ -109,7 +109,7 @@
 	}
 }
 
-@media (max-width: @width-breakpoint-desktop) {
+@media ( max-width: @width-breakpoint-desktop ) {
 	.citizen-search__card {
 		width: auto;
 		margin: ~'calc( var( --header-size ) + 1px ) var( --space-xs )';

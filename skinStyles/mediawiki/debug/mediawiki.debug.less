@@ -15,9 +15,9 @@
 	// @see https://caniuse.com/mdn-css_properties_width_stretch
 	width: -webkit-fill-available;
 	width: -moz-available;
-	margin-bottom: var(--header-size);
+	margin-bottom: var( --header-size );
 
-	@media (min-width: @width-breakpoint-desktop) {
+	@media ( min-width: @width-breakpoint-desktop ) {
 		margin-bottom: 0;
 		// So that it is not hidden by header
 		margin-left: ~'calc( var( --header-size ) + 1px )'; // compensate border
@@ -25,15 +25,15 @@
 }
 
 .mw-debug {
-	border-top-color: var(--border-color-base);
-	background-color: var(--color-surface-0);
+	border-top-color: var( --border-color-base );
+	background-color: var( --color-surface-0 );
 
 	table {
 		tr {
-			background-color: var(--color-surface-1);
+			background-color: var( --color-surface-1 );
 
-			&:nth-child(even) {
-				background-color: var(--color-surface-2);
+			&:nth-child( even ) {
+				background-color: var( --color-surface-2 );
 			}
 		}
 
@@ -43,10 +43,10 @@
 		// }
 
 		td {
-			border-bottom-color: var(--border-color-base);
+			border-bottom-color: var( --border-color-base );
 
 			span.stats {
-				color: var(--color-base--subtle);
+				color: var( --color-base--subtle );
 			}
 		}
 	}
@@ -60,7 +60,7 @@
 }
 
 .mw-debug-bit {
-	padding: var(--space-sm);
+	padding: var( --space-sm );
 }
 
 #mw-debug-mwversion {
@@ -72,26 +72,26 @@
 	background-color: transparent;
 
 	&:hover {
-		background-color: var(--background-color-quiet--hover);
+		background-color: var( --background-color-quiet--hover );
 	}
 
 	&:active {
-		background-color: var(--background-color-quiet--active);
+		background-color: var( --background-color-quiet--active );
 	}
 
 	&.current {
 		background-color: transparent;
-		box-shadow: inset 0 -2px 0 0 var(--color-primary);
+		box-shadow: inset 0 -2px 0 0 var( --color-primary );
 	}
 }
 
 a.mw-debug-panelabel,
 a.mw-debug-panelabel:visited {
-	color: var(--color-base--emphasized);
+	color: var( --color-base--emphasized );
 }
 
 .mw-debug-pane {
-	background-color: var(--color-surface-2);
+	background-color: var( --color-surface-2 );
 }
 
 #mw-debug-pane-request {
@@ -99,64 +99,64 @@ a.mw-debug-panelabel:visited {
 	th,
 	td,
 	table {
-		border-color: var(--border-color-base);
+		border-color: var( --border-color-base );
 	}
 
 	th {
 		background-color: transparent;
-		font-weight: var(--font-weight-semibold);
+		font-weight: var( --font-weight-semibold );
 	}
 
 	td {
-		background-color: var(--background-color-success);
-		color: var(--color-base--emphasized);
+		background-color: var( --background-color-success );
+		color: var( --color-base--emphasized );
 	}
 }
 
 .mw-debug-backtrace {
-	background-color: var(--color-surface-3);
+	background-color: var( --color-surface-3 );
 
 	span {
-		color: var(--color-base--emphasized);
-		font-weight: var(--font-weight-semibold);
+		color: var( --color-base--emphasized );
+		font-weight: var( --font-weight-semibold );
 	}
 
 	li {
-		color: var(--color-base);
+		color: var( --color-base );
 	}
 }
 
 .mw-debug-console-log {
-	background-color: var(--background-color-primary--hover);
+	background-color: var( --background-color-primary--hover );
 }
 
 .mw-debug-console-warn {
-	background-color: var(--background-color-warning);
+	background-color: var( --background-color-warning );
 }
 
 .mw-debug-console-deprecated {
-	background-color: var(--background-color-destructive);
+	background-color: var( --background-color-destructive );
 }
 
 /* $wgShowDebug = true; */
 #mw-html-debug-log {
-	padding: 0 var(--padding-page);
+	padding: 0 var( --padding-page );
 
 	// Label text
 	> strong {
-		color: var(--color-base--subtle);
+		color: var( --color-base--subtle );
 		font-size: 0.875rem;
 		letter-spacing: 0.05em;
 	}
 
-	@media (min-width: @width-breakpoint-desktop) {
+	@media ( min-width: @width-breakpoint-desktop ) {
 		// So that it is not hidden by header
-		margin-left: var(--header-size);
+		margin-left: var( --header-size );
 	}
 }
 
 #mw-debug-html {
-	padding-left: var(--space-lg); // So that it is not clipped
+	padding-left: var( --space-lg ); // So that it is not clipped
 	margin-left: 0;
 	overflow-x: auto;
 }

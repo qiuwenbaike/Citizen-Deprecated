@@ -31,7 +31,7 @@
 #mw-search-top-table {
 	display: flex;
 	justify-content: space-between;
-	gap: var(--space-xl);
+	gap: var( --space-xl );
 
 	// Fix weird space between input field and button
 	.oo-ui-actionFieldLayout .oo-ui-textInputWidget {
@@ -45,8 +45,8 @@
 
 .mw-search-profile-tabs {
 	border: 0;
-	border-bottom: 1px solid var(--border-color-base);
-	margin-top: var(--space-xxs);
+	border-bottom: 1px solid var( --border-color-base );
+	margin-top: var( --space-xxs );
 	background-color: transparent;
 }
 
@@ -61,25 +61,25 @@
 	}
 
 	a {
-		padding: var(--space-xs) var(--space-sm);
+		padding: var( --space-xs ) var( --space-sm );
 		border-bottom: 2px solid transparent;
-		color: var(--color-base--emphasized);
-		font-weight: var(--font-weight-medium);
+		color: var( --color-base--emphasized );
+		font-weight: var( --font-weight-medium );
 
 		&:hover {
-			border-color: var(--color-primary--hover);
-			color: var(-color-primary--hover);
+			border-color: var( --color-primary--hover );
+			color: var( -color-primary--hover );
 		}
 	}
 
 	.current a {
-		border-color: var(--color-primary);
-		color: var(--color-primary);
+		border-color: var( --color-primary );
+		color: var( --color-primary );
 	}
 }
 
 .results-info {
-	color: var(--color-base--subtle);
+	color: var( --color-base--subtle );
 	font-size: 0.875rem;
 	white-space: nowrap;
 }
@@ -87,22 +87,22 @@
 #mw-searchoptions {
 	border-color: transparent;
 	border-radius: 0;
-	background-color: var(--color-surface-1);
+	background-color: var( --color-surface-1 );
 
 	h4 {
-		color: var(--color-base--subtle);
+		color: var( --color-base--subtle );
 		font-size: 0.875rem;
-		font-weight: var(--font-weight-normal);
+		font-weight: var( --font-weight-normal );
 		letter-spacing: 0.05em;
 	}
 
 	.divider {
-		border-color: var(--border-color-base);
+		border-color: var( --border-color-base );
 	}
 }
 
 #mw-search-interwiki {
-	border-color: var(--border-color-base);
+	border-color: var( --border-color-base );
 }
 
 .searchdidyoumean {
@@ -117,17 +117,17 @@
 	// background: var( --color-surface-2 );
 	// border-radius: var( --border-radius--small );
 	margin-top: 0 !important;
-	color: var(--color-base--emphasized);
+	color: var( --color-base--emphasized );
 }
 
 .mw-search-results {
 	max-width: 50em;
 
 	li {
-		padding: var(--space-md) 0;
+		padding: var( --space-md ) 0;
 
 		a {
-			font-size: var(--font-size-h3);
+			font-size: var( --font-size-h3 );
 		}
 	}
 }
@@ -139,19 +139,19 @@
 	&-heading {
 		a {
 			// font-size: var( --font-size-h3 );
-			font-weight: var(--font-weight-semibold);
+			font-weight: var( --font-weight-semibold );
 		}
 	}
 
 	&-data {
-		color: var(--color-base--subtle);
+		color: var( --color-base--subtle );
 		font-size: 0.875rem;
 	}
 }
 
 .searchmatch {
-	color: var(--color-base--emphasized);
-	font-weight: var(--font-weight-semibold);
+	color: var( --color-base--emphasized );
+	font-weight: var( --font-weight-semibold );
 
 	a & {
 		// If searchmatch is part of the link (usually title), use link color
@@ -161,12 +161,12 @@
 
 .searchresults {
 	h2 {
-		padding-bottom: var(--space-xs);
-		border-bottom: 1px solid var(--border-color-base);
+		padding-bottom: var( --space-xs );
+		border-bottom: 1px solid var( --border-color-base );
 		margin-bottom: 0;
-		color: var(--color-base--subtle);
+		color: var( --color-base--subtle );
 		font-size: 0.875rem;
-		font-weight: var(--font-weight-normal);
+		font-weight: var( --font-weight-normal );
 		letter-spacing: 0.05em;
 	}
 }
@@ -184,7 +184,7 @@
 	}
 }
 
-@media (max-width: @width-breakpoint-tablet) {
+@media ( max-width: @width-breakpoint-tablet ) {
 	.results-info {
 		display: none;
 	}

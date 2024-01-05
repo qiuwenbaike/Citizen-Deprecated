@@ -23,43 +23,43 @@
 
 .mw-createacct-benefits {
 	&-container {
-		padding-bottom: var(--space-lg);
-		border-bottom: 1px solid var(--border-color-base);
+		padding-bottom: var( --space-lg );
+		border-bottom: 1px solid var( --border-color-base );
 
 		h2 {
 			margin: 0;
 			font-size: 1rem;
-			font-weight: var(--font-weight-semibold);
+			font-weight: var( --font-weight-semibold );
 		}
 	}
 
 	&-list {
 		display: flex;
 		flex-wrap: wrap;
-		margin-top: var(--space-lg);
-		gap: var(--space-xl);
+		margin-top: var( --space-lg );
+		gap: var( --space-xl );
 
 		.mw-number-text {
 			min-height: auto;
 			padding-left: 3rem;
 			margin: 0;
 			background-size: 2.5rem;
-			color: var(--color-base--subtle);
+			color: var( --color-base--subtle );
 			font-size: 0.8125rem;
-			line-height: var(--line-height-xs);
+			line-height: var( --line-height-xs );
 			text-align: start;
 
 			h3 {
-				color: var(--color-base--emphasized);
-				font-family: var(--fonts-sans);
+				color: var( --color-base--emphasized );
+				font-family: var( --fonts-sans );
 				font-size: 1.125rem;
-				font-weight: var(--font-weight-semibold);
+				font-weight: var( --font-weight-semibold );
 				line-height: 1;
 				text-align: start;
 			}
 
 			p {
-				margin: var(--space-xxs) 0 0 0;
+				margin: var( --space-xxs ) 0 0 0;
 			}
 		}
 	}
@@ -69,36 +69,36 @@
 	margin-right: 0;
 }
 
-@media (min-width: @width-breakpoint-tablet) {
+@media ( min-width: @width-breakpoint-tablet ) {
 	.mw-ui-container {
 		flex-direction: row;
 	}
 
 	.mw-createacct-benefits {
 		&-container {
-			padding-top: var(--space-md);
+			padding-top: var( --space-md );
 			padding-bottom: 0;
-			padding-left: var(--space-xxl);
+			padding-left: var( --space-xxl );
 			border-bottom: 0;
-			border-left: 1px solid var(--border-color-base);
-			margin-left: var(--space-xxl);
+			border-left: 1px solid var( --border-color-base );
+			margin-left: var( --space-xxl );
 
 			h2 {
 				max-width: 20rem;
-				font-size: var(--font-size-h1);
+				font-size: var( --font-size-h1 );
 			}
 		}
 
 		&-list {
 			flex-direction: column;
-			margin-top: var(--space-xxl);
+			margin-top: var( --space-xxl );
 
 			.mw-number-text {
 				padding-left: 5rem;
 				background-size: 4rem;
 
 				h3 {
-					font-size: var(--font-size-h1);
+					font-size: var( --font-size-h1 );
 				}
 			}
 		}

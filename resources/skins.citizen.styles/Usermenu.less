@@ -5,15 +5,15 @@
 	}
 
 	&__header {
-		padding: var(--space-md) 0;
-		border-bottom: 1px solid var(--border-color-base);
+		padding: var( --space-md ) 0;
+		border-bottom: 1px solid var( --border-color-base );
 	}
 }
 
 .mw-portlet {
 	&-personal-header {
 		padding: 0.75rem 0 0.5rem;
-		border-bottom: 1px solid var(--border-color-base);
+		border-bottom: 1px solid var( --border-color-base );
 
 		li {
 			margin: 0 0.75rem;
@@ -26,13 +26,13 @@
 				.menu-item-link;
 				align-items: center;
 				// TODO: Need to revisit this spacing, maybe set a min-height instead?
-				padding: 0.625rem var(--space-md);
+				padding: 0.625rem var( --space-md );
 
 				&:hover {
 					.menu-item-link-hover;
 
 					.citizen-ui-icon::before {
-						opacity: var(--opacity-icon-base--hover);
+						opacity: var( --opacity-icon-base--hover );
 					}
 				}
 
@@ -40,7 +40,7 @@
 					.menu-item-link-active;
 
 					.citizen-ui-icon::before {
-						opacity: var(--opacity-icon-base--active);
+						opacity: var( --opacity-icon-base--active );
 					}
 				}
 			}
@@ -50,8 +50,8 @@
 
 #p-user-info {
 	> ul > li {
-		margin-right: var(--space-md);
-		margin-left: var(--space-md);
+		margin-right: var( --space-md );
+		margin-left: var( --space-md );
 	}
 }
 
@@ -59,25 +59,25 @@
 	&-anonuserpage span,
 	&-tmpuserpage-2,
 	&-userpage-2 a {
-		padding: var(--space-xxs) 0;
-		color: var(--color-base--emphasized);
+		padding: var( --space-xxs ) 0;
+		color: var( --color-base--emphasized );
 		font-size: 1rem;
-		font-weight: var(--font-weight-semibold);
+		font-weight: var( --font-weight-semibold );
 		word-break: break-word;
 	}
 
 	&-user {
 		&groups {
-			margin-bottom: var(--space-xs);
+			margin-bottom: var( --space-xs );
 
 			ul {
 				display: flex;
 				flex-wrap: wrap;
-				gap: var(--space-xxs);
+				gap: var( --space-xxs );
 			}
 
 			a {
-				color: var(--color-base--subtle);
+				color: var( --color-base--subtle );
 			}
 		}
 
@@ -88,17 +88,17 @@
 				transition: @transition-color;
 
 				&:hover {
-					color: var(--color-primary--hover);
+					color: var( --color-primary--hover );
 				}
 
 				&:active {
-					color: var(--color-primary--active);
+					color: var( --color-primary--active );
 				}
 			}
 		}
 
 		&contris {
-			font-weight: var(--font-weight-medium);
+			font-weight: var( --font-weight-medium );
 		}
 	}
 }

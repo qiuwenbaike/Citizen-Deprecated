@@ -7,13 +7,13 @@
 
 			&--collapsed {
 				.section-indicator {
-					transform: rotate3d(1, 0, 0, 180deg);
+					transform: rotate3d( 1, 0, 0, 180deg );
 				}
 
 				.mw-headline,
 				.mw-heading h1,
 				.mw-heading h2 {
-					opacity: var(--opacity-icon-base);
+					opacity: var( --opacity-icon-base );
 				}
 			}
 
@@ -23,11 +23,11 @@
 				transition: @transition-opacity;
 
 				&:hover {
-					opacity: var(--opacity-icon-base--hover);
+					opacity: var( --opacity-icon-base--hover );
 				}
 
 				&:active {
-					opacity: var(--opacity-icon-base--active);
+					opacity: var( --opacity-icon-base--active );
 				}
 			}
 		}
@@ -35,7 +35,7 @@
 		&-indicator {
 			width: 1rem;
 			height: 1rem;
-			margin-right: var(--space-md);
+			margin-right: var( --space-md );
 			cursor: pointer;
 			transition: @transition-transform;
 		}
@@ -70,7 +70,7 @@
 }
 
 // Fix hover state on touch devices
-@media (hover: none) {
+@media ( hover: none ) {
 	.citizen-sections-enabled .section {
 		&-heading .mw-headline,
 		&-indicator {
@@ -83,7 +83,7 @@
 		&-heading--collapsed .mw-headline {
 			&:hover,
 			&:active {
-				opacity: var(--opacity-icon-base);
+				opacity: var( --opacity-icon-base );
 			}
 		}
 	}

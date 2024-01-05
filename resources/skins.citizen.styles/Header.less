@@ -8,11 +8,11 @@
 	right: 0;
 	left: 0;
 	display: flex;
-	flex-direction: var(--header-direction);
-	padding: var(--space-xs);
-	border-bottom: 1px solid var(--border-color-base);
-	background-color: var(--color-surface-0);
-	gap: var(--space-xxs);
+	flex-direction: var( --header-direction );
+	padding: var( --space-xs );
+	border-bottom: 1px solid var( --border-color-base );
+	background-color: var( --color-surface-0 );
+	gap: var( --space-xxs );
 	transition: @transition-transform; // Hide header when scroll down
 
 	&__item {
@@ -23,43 +23,43 @@
 	&__button {
 		display: flex;
 		justify-content: center;
-		width: var(--header-button-size);
-		height: var(--header-button-size);
-		border-radius: var(--border-radius--small);
+		width: var( --header-button-size );
+		height: var( --header-button-size );
+		border-radius: var( --border-radius--small );
 		contain: strict;
 		place-items: center;
 
 		// Used in checkbox hack
 		&Checkbox {
 			display: flex;
-			width: var(--header-button-size);
-			height: var(--header-button-size);
+			width: var( --header-button-size );
+			height: var( --header-button-size );
 			contain: strict;
 			align-items: center;
 			justify-content: center;
 		}
 
 		&:hover {
-			background-color: var(--background-color-quiet--hover);
+			background-color: var( --background-color-quiet--hover );
 
 			.citizen-ui-icon::before {
-				opacity: var(--opacity-icon-base--hover);
+				opacity: var( --opacity-icon-base--hover );
 			}
 		}
 
 		&:active {
-			background-color: var(--background-color-quiet--active);
+			background-color: var( --background-color-quiet--active );
 
 			.citizen-ui-icon::before {
-				opacity: var(--opacity-icon-base--active);
+				opacity: var( --opacity-icon-base--active );
 			}
 		}
 	}
 
 	&__logo {
-		padding: 0 var(--space-xs) 0 0;
-		border-right: 1px solid var(--border-color-base);
-		margin: 0 var(--space-xxs);
+		padding: 0 var( --space-xs ) 0 0;
+		border-right: 1px solid var( --border-color-base );
+		margin: 0 var( --space-xxs );
 
 		span {
 			text-indent: -9999px;
@@ -70,14 +70,14 @@
 		z-index: -1; // Inner element should be behind menu and search
 		display: flex;
 		min-width: 0;
-		flex-direction: var(--header-direction);
+		flex-direction: var( --header-direction );
 		flex-grow: 1;
 		justify-content: space-between;
-		gap: var(--space-xxs);
+		gap: var( --space-xxs );
 
 		.mw-checkbox-hack-checkbox:checked {
 			~ .citizen-header__button {
-				background-color: var(--background-color-primary--active);
+				background-color: var( --background-color-primary--active );
 			}
 		}
 	}
@@ -85,8 +85,8 @@
 	&__start,
 	&__end {
 		display: flex;
-		flex-direction: var(--header-direction);
-		gap: var(--space-xxs);
+		flex-direction: var( --header-direction );
+		gap: var( --space-xxs );
 	}
 
 	&__start {
@@ -105,15 +105,15 @@
 #p-notifications {
 	ul {
 		display: flex;
-		flex-direction: var(--header-direction);
+		flex-direction: var( --header-direction );
 		align-items: center;
-		gap: var(--space-xxs);
+		gap: var( --space-xxs );
 	}
 }
 
 // Reset hover styles if it is a touch device
 // This is dumb but hover:hover overrides active states
-@media (hover: none) {
+@media ( hover: none ) {
 	.citizen-header {
 		&__button {
 			&:hover {

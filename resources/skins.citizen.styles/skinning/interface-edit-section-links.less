@@ -10,7 +10,7 @@
 .mw-editsection {
 	display: flex;
 	align-items: center;
-	margin-left: var(--space-sm);
+	margin-left: var( --space-sm );
 	float: right; // Can't target the container so have to use to float
 	user-select: none;
 
@@ -22,16 +22,16 @@
 
 	// Fallback text button if extensions register those
 	a {
-		padding: var(--space-xxs);
-		border-radius: var(--border-radius--small);
+		padding: var( --space-xxs );
+		border-radius: var( --border-radius--small );
 		font-size: 0.875rem;
 
 		&:hover {
-			background-color: var(--background-color-quiet--hover);
+			background-color: var( --background-color-quiet--hover );
 		}
 
 		&:active {
-			background-color: var(--background-color-quiet--hover);
+			background-color: var( --background-color-quiet--hover );
 		}
 	}
 }
@@ -39,7 +39,7 @@
 .citizen-editsection-icon,
 .Wikiplus-Edit-SectionBtn { // HACK: for Wikiplus
 	.resource-loader-icon-link-small;
-	opacity: var(--opacity-icon-base);
+	opacity: var( --opacity-icon-base );
 	text-indent: -9999px; // Hide text
 	transition: @transition-opacity;
 
@@ -50,11 +50,11 @@
 	}
 
 	&:hover {
-		opacity: var(--opacity-icon-base--hover);
+		opacity: var( --opacity-icon-base--hover );
 	}
 
 	&:active {
-		opacity: var(--opacity-icon-base--active);
+		opacity: var( --opacity-icon-base--active );
 	}
 }
 
@@ -64,13 +64,13 @@
 	/* @noflip */
 	margin-right: 0;
 	/* @noflip */
-	margin-left: var(--space-sm);
+	margin-left: var( --space-sm );
 }
 
 .mw-content-rtl .mw-editsection,
 .mw-content-ltr .mw-content-rtl .mw-editsection {
 	/* @noflip */
-	margin-right: var(--space-sm);
+	margin-right: var( --space-sm );
 	/* @noflip */
 	margin-left: 0;
 }

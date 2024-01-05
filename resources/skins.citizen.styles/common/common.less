@@ -11,21 +11,21 @@ body {
 	min-height: 100vh;
 	padding: 0;
 	margin: 0;
-	accent-color: var(--color-primary);
-	background: var(--color-surface-0);
-	color: var(--color-base);
+	accent-color: var( --color-primary );
+	background: var( --color-surface-0 );
+	color: var( --color-base );
 }
 
 :focus {
-	outline-color: var(--color-primary);
+	outline-color: var( --color-primary );
 }
 
 input,
 select,
 textarea {
-	border: 1px solid var(--border-color-base);
-	background-color: var(--color-surface-1);
-	color: var(--color-base--emphasized);
+	border: 1px solid var( --border-color-base );
+	background-color: var( --color-surface-1 );
+	color: var( --color-base--emphasized );
 }
 
 textarea {
@@ -33,12 +33,12 @@ textarea {
 }
 
 blockquote {
-	margin: var(--space-md);
-	color: var(--color-base--subtle);
+	margin: var( --space-md );
+	color: var( --color-base--subtle );
 
 	cite {
 		display: block;
-		margin-top: var(--space-sm);
+		margin-top: var( --space-sm );
 
 		&::before {
 			content: '— ';
@@ -52,7 +52,7 @@ sub {
 }
 
 th {
-	font-weight: var(--font-weight-semibold);
+	font-weight: var( --font-weight-semibold );
 }
 
 td {
@@ -94,16 +94,16 @@ video {
 }
 
 :focus-visible {
-	outline: 1px solid var(--color-primary);
+	outline: 1px solid var( --color-primary );
 }
 
 .toc,
 #toc {
 	max-width: 20vw;
 	padding: 1rem;
-	border: 1px solid var(--color-surface-4);
+	border: 1px solid var( --color-surface-4 );
 	margin: 1rem auto 1rem 0;
-	background: var(--color-surface-2);
+	background: var( --color-surface-2 );
 
 	#mw-toc-heading {
 		font-size: 1.125rem;
@@ -121,7 +121,7 @@ video {
 	}
 }
 
-@media (hover: none) {
+@media ( hover: none ) {
 	a,
 	button,
 	label {
@@ -130,7 +130,7 @@ video {
 	}
 }
 
-@media (max-width: @width-breakpoint-tablet) {
+@media ( max-width: @width-breakpoint-tablet ) {
 	.mw-body,
 	.parsoid-body {
 		overflow-x: hidden; // fallback if clip is not supported
@@ -147,7 +147,7 @@ video {
 	}
 }
 
-@media (min-width: @width-breakpoint-tablet) {
+@media ( min-width: @width-breakpoint-tablet ) {
 	// Delay scroll animation won't happen on load
 	// Use it only for larger viewport as it is very costly
 	// on mobile devices
@@ -156,7 +156,7 @@ video {
 	}
 }
 
-@media (max-width: @width-breakpoint-mobile) {
+@media ( max-width: @width-breakpoint-mobile ) {
 	.toc,
 	#toc {
 		max-width: 95vw;

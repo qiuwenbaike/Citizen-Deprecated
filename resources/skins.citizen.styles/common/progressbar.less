@@ -19,28 +19,28 @@
 	overflow: hidden;
 	width: 100%;
 	// Hide text in case it extends beyond the input.
-	height: var(--height-progress-bar);
+	height: var( --height-progress-bar );
 	// Ensure it doesn't extend beyond the input.
 	box-sizing: border-box;
 	// Align style with the form
-	border-radius: 0 0 var(--border-radius--large) var(--border-radius--large);
+	border-radius: 0 0 var( --border-radius--large ) var( --border-radius--large );
 	// Animates the progress-bar.
 	animation:
  progress-bar
 		1200ms
 		linear
-		var(--delay-progress-bar)
+		var( --delay-progress-bar )
 		infinite
 		alternate;
 	// Add a progress-bar to the loading indicator
 	background: /*image*/
-		linear-gradient(90deg, var(--color-primary) 0%, var(--color-primary) 100%)
-		-10% 0 ~'/' 0 var(--height-progress-bar)
+		linear-gradient( 90deg, var( --color-primary ) 0%, var( --color-primary ) 100% )
+		-10% 0 ~'/' 0 var( --height-progress-bar )
 		no-repeat,transparent;
 	// Placeholder text
 	content: 'loading';
 	// Fancy shadow under progress
-	filter: drop-shadow(0 0 16px var(--color-primary));
+	filter: drop-shadow( 0 0 16px var( --color-primary ) );
 	text-overflow: ellipsis;
 	white-space: nowrap;
 }
@@ -48,22 +48,22 @@
 @keyframes progress-bar {
 	0% {
 		background-position: -10% 0;
-		background-size: 0 var(--height-progress-bar);
+		background-size: 0 var( --height-progress-bar );
 	}
 
 	30% {
 		background-position: -10% 0;
-		background-size: 30% var(--height-progress-bar);
+		background-size: 30% var( --height-progress-bar );
 	}
 
 	70% {
 		background-position: 110% 0;
-		background-size: 30% var(--height-progress-bar);
+		background-size: 30% var( --height-progress-bar );
 	}
 
 	100% {
 		background-position: 110% 0;
-		background-size: 0 var(--height-progress-bar);
+		background-size: 0 var( --height-progress-bar );
 	}
 }
 
@@ -74,7 +74,7 @@ html.citizen-loading::after {
 }
 
 /* stylelint-disable media-feature-name-no-unknown */
-@media (display-mode: standalone) {
+@media ( display-mode: standalone ) {
 	// Standalone PWA has no loading affordance
 	// So we provide one
 	html.citizen-loading::after {

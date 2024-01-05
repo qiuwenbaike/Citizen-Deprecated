@@ -10,30 +10,30 @@
 
 .tabber {
 	&__tab {
-		color: var(--color-base);
-		font-weight: var(--font-weight-medium);
+		color: var( --color-base );
+		font-weight: var( --font-weight-medium );
 
 		&:visited {
-			color: var(--color-base);
+			color: var( --color-base );
 		}
 
-		&[aria-selected='true'],
-		&[aria-selected='true']:visited {
-			color: var(--color-primary);
+		&[ aria-selected='true' ],
+		&[ aria-selected='true' ]:visited {
+			color: var( --color-primary );
 		}
 	}
 
 	&__indicator {
-		background: var(--color-primary);
+		background: var( --color-primary );
 	}
 
 	&__header {
-		box-shadow: inset 0 -1px 0 0 var(--border-color-base--darker);
+		box-shadow: inset 0 -1px 0 0 var( --border-color-base--darker );
 
 		&__prev,
 		&__next {
 			&::after {
-				opacity: var(--opacity-icon-base);
+				opacity: var( --opacity-icon-base );
 			}
 		}
 	}
@@ -43,21 +43,21 @@
 			.tabber__loading-indicator,
 			&::before,
 			&::after {
-				background-color: var(--color-primary);
+				background-color: var( --color-primary );
 			}
 		}
 	}
 }
 
-@media (hover: hover) {
+@media ( hover: hover ) {
 	.tabber {
 		&__tab {
 			&:hover {
-				color: var(--color-primary--hover);
+				color: var( --color-primary--hover );
 			}
 
 			&:active {
-				color: var(--color-primary--active);
+				color: var( --color-primary--active );
 			}
 		}
 
@@ -65,18 +65,18 @@
 			&__prev,
 			&__next {
 				&:hover {
-					background-color: var(--background-color-quiet--hover);
+					background-color: var( --background-color-quiet--hover );
 
 					&::after {
-						opacity: var(--opacity-icon-base--hover);
+						opacity: var( --opacity-icon-base--hover );
 					}
 				}
 
 				&:active {
-					background-color: var(--background-color-quiet--active);
+					background-color: var( --background-color-quiet--active );
 
 					&::after {
-						opacity: var(--opacity-icon-base--active);
+						opacity: var( --opacity-icon-base--active );
 					}
 				}
 			}

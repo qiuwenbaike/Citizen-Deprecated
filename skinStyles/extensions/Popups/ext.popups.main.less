@@ -14,135 +14,135 @@
 .mwe-popups {
 	// See FIXME below
 	// border-radius: var( --border-radius--medium );
-	background: var(--color-surface-1);
-	box-shadow: var(--box-shadow-dialog);
+	background: var( --color-surface-1 );
+	box-shadow: var( --box-shadow-dialog );
 
 	.mwe-popups-container {
-		color: var(--color-base);
+		color: var( --color-base );
 	}
 
 	.mwe-popups-settings-icon {
-		border-radius: var(--border-radius--small);
-		opacity: var(--opacity-icon-base);
+		border-radius: var( --border-radius--small );
+		opacity: var( --opacity-icon-base );
 
 		&:hover {
-			background-color: var(--background-color-quiet--hover);
-			opacity: var(--opacity-icon-base--hover);
+			background-color: var( --background-color-quiet--hover );
+			opacity: var( --opacity-icon-base--hover );
 		}
 
 		&:active {
-			background-color: var(--background-color-quiet--active);
-			opacity: var(--opacity-icon-base--active);
+			background-color: var( --background-color-quiet--active );
+			opacity: var( --opacity-icon-base--active );
 		}
 	}
 
 	.mwe-popups-extract {
-		color: var(--color-base);
+		color: var( --color-base );
 
-		&[dir='ltr']::after {
+		&[ dir='ltr' ]::after {
 			/* @noflip */
-			background-image: linear-gradient(to right, transparent, var(--color-surface-1) 50%);
+			background-image: linear-gradient( to right, transparent, var( --color-surface-1 ) 50% );
 		}
 
-		&[dir='rtl']::after {
+		&[ dir='rtl' ]::after {
 			/* @noflip */
-			background-image: linear-gradient(to left, transparent, var(--color-surface-1) 50%);
+			background-image: linear-gradient( to left, transparent, var( --color-surface-1 ) 50% );
 		}
 
 		blockquote::after {
 			/* @noflip */
-			background-image: linear-gradient(to bottom, transparent, var(--color-surface-1) 75%);
+			background-image: linear-gradient( to bottom, transparent, var( --color-surface-1 ) 75% );
 		}
 
 		&.mwe-popups-type-generic,
 		&.mwe-popups-type-disambiguation {
 			.mwe-popups-read-link {
-				font-weight: var(--font-weight-semibold);
+				font-weight: var( --font-weight-semibold );
 			}
 		}
 
 		&.mwe-popups-no-image-pointer {
 			&::before {
-				border-bottom-color: var(--border-color-base);
+				border-bottom-color: var( --border-color-base );
 			}
 
 			&::after {
-				border-bottom-color: var(--color-surface-1);
+				border-bottom-color: var( --color-surface-1 );
 			}
 		}
 
 		&.mwe-popups-image-pointer {
 			&::before {
-				border-bottom-color: var(--border-color-base);
+				border-bottom-color: var( --border-color-base );
 			}
 
 			&::after {
-				border-bottom-color: var(--color-surface-1);
+				border-bottom-color: var( --color-surface-1 );
 			}
 
 			&.flipped-x {
 				&::before {
-					border-bottom-color: var(--border-color-base);
+					border-bottom-color: var( --border-color-base );
 				}
 
 				&::after {
-					border-bottom-color: var(--color-surface-1);
+					border-bottom-color: var( --color-surface-1 );
 				}
 			}
 		}
 
 		&.flipped-x.mwe-popups-is-tall {
 			&::before {
-				border-bottom-color: var(--border-color-base);
+				border-bottom-color: var( --border-color-base );
 			}
 		}
 
 		&.flipped-x-y {
 			&::before {
-				border-top-color: var(--border-color-base);
+				border-top-color: var( --border-color-base );
 			}
 
 			&::after {
-				border-top-color: var(--color-surface-1);
+				border-top-color: var( --color-surface-1 );
 			}
 
 			&.mwe-popups-is-tall {
 				&::before {
-					border-top-color: var(--border-color-base);
+					border-top-color: var( --border-color-base );
 				}
 
 				&::after {
-					border-top-color: var(--color-surface-1);
+					border-top-color: var( --color-surface-1 );
 				}
 			}
 		}
 
 		&.flipped-y {
 			&::before {
-				border-top-color: var(--border-color-base);
+				border-top-color: var( --border-color-base );
 			}
 
 			&::after {
-				border-top-color: var(--color-surface-1);
+				border-top-color: var( --color-surface-1 );
 			}
 		}
 	}
 
 	/* preview.less */
 	.mwe-popups-title {
-		font-weight: var(--font-weight-semibold);
+		font-weight: var( --font-weight-semibold );
 	}
 
 	/* referencePreview.less */
 	&.mwe-popups-type-reference {
 		.mwe-popups-extract {
 			.mwe-popups-fade {
-				background-image: linear-gradient(transparent, var(--color-surface-1));
+				background-image: linear-gradient( transparent, var( --color-surface-1 ) );
 			}
 		}
 
 		.mwe-collapsible-placeholder {
-			font-weight: var(--font-weight-semibold);
+			font-weight: var( --font-weight-semibold );
 		}
 	}
 }
@@ -150,7 +150,7 @@
 @supports ( clip-path: polygon( 1px 1px ) ) {
 	.mwe-popups {
 		.mwe-popups-container {
-			background: var(--color-surface-1);
+			background: var( --color-surface-1 );
 			// FIXME: Come up with a clip path that works with increased border radius
 			// Popups is using polygon to clip the card
 			// So the thumbnail corner would look weird if we adjust the border radius
@@ -161,42 +161,42 @@
 
 /* settingsDialog.less */
 #mwe-popups-settings {
-	border-color: var(--border-color-base);
-	border-radius: var(--border-radius--medium);
-	background: var(--color-surface-1);
-	box-shadow: var(--box-shadow-dialog);
+	border-color: var( --border-color-base );
+	border-radius: var( --border-radius--medium );
+	background: var( --color-surface-1 );
+	box-shadow: var( --box-shadow-dialog );
 
 	header {
-		border-bottom-color: var(--border-color-base);
+		border-bottom-color: var( --border-color-base );
 
 		h1 {
-			font-family: var(--fonts-sans);
-			font-weight: var(--font-weight-semibold);
+			font-family: var( --fonts-sans );
+			font-weight: var( --font-weight-semibold );
 		}
 	}
 
 	.mwe-ui-icon-popups-close {
-		opacity: var(--opacity-icon-base);
+		opacity: var( --opacity-icon-base );
 
 		&:hover {
-			opacity: var(--opacity-icon-base--hover);
+			opacity: var( --opacity-icon-base--hover );
 		}
 
 		&:active {
-			opacity: var(--opacity-icon-base--active);
+			opacity: var( --opacity-icon-base--active );
 		}
 	}
 
 	main#mwe-popups-settings-form {
 		p {
-			color: var(--color-base--subtle);
+			color: var( --color-base--subtle );
 		}
 
 		form {
 			label {
 				> span {
-					color: var(--color-base--emphasized);
-					font-weight: var(--font-weight-semibold);
+					color: var( --color-base--emphasized );
+					font-weight: var( --font-weight-semibold );
 				}
 			}
 		}
@@ -205,11 +205,11 @@
 
 /* settingsDialogRenderer.less */
 .mwe-popups-overlay {
-	background-color: var(--background-color-overlay);
+	background-color: var( --background-color-overlay );
 }
 
 // Responsive support
-@media (max-width: @width-breakpoint-tablet) {
+@media ( max-width: @width-breakpoint-tablet ) {
 	.mwe-popups {
 		position: fixed;
 		top: auto !important;
@@ -218,14 +218,14 @@
 		left: 0 !important;
 		overflow: hidden; // Hide pointer and also rounded corners
 		width: auto !important;
-		border-radius: var(--border-radius--medium) var(--border-radius--medium) 0 0;
+		border-radius: var( --border-radius--medium ) var( --border-radius--medium ) 0 0;
 
 		// Top aligned cards
 		&.flipped-x-y,
 		&.flipped-y {
 			top: 0 !important;
 			bottom: auto !important;
-			border-radius: 0 0 var(--border-radius--medium) var(--border-radius--medium);
+			border-radius: 0 0 var( --border-radius--medium ) var( --border-radius--medium );
 		}
 
 		.mwe-popups-container {
@@ -246,7 +246,7 @@
 			.mwe-popups-extract {
 				min-height: auto;
 				max-height: 58px;
-				margin-bottom: var(--space-xl);
+				margin-bottom: var( --space-xl );
 			}
 		}
 	}

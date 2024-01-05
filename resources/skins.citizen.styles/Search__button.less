@@ -8,7 +8,7 @@
 
 		> div {
 			position: relative;
-			border-radius: var(--border-radius--small);
+			border-radius: var( --border-radius--small );
 			transition: inherit;
 
 			&:first-child {
@@ -16,10 +16,10 @@
 				/* @noflip */
 				left: 0.75rem;
 				height: 0.5rem;
-				transform: rotate(-45deg);
+				transform: rotate( -45deg );
 			}
 
-			&:nth-child(2) {
+			&:nth-child( 2 ) {
 				width: 0.625rem;
 				height: 0.625rem;
 				border: 0.125rem solid #000;
@@ -27,14 +27,14 @@
 				margin-top: -0.3125rem;
 				/* @noflip */
 				margin-left: -0.125rem;
-				transform: rotate(-45deg);
+				transform: rotate( -45deg );
 			}
 
 			&:last-child {
 				left: -0.4375rem;
 				height: 1rem;
 				opacity: 0;
-				transform: rotate(-135deg);
+				transform: rotate( -135deg );
 			}
 
 			&:first-child,
@@ -50,6 +50,6 @@
 #citizen-search__checkbox:checked {
 	// Transform the magnifying glass button into a crossmark
 	~ .citizen-search__button {
-		background-color: var(--background-color-primary--active);
+		background-color: var( --background-color-primary--active );
 	}
 }

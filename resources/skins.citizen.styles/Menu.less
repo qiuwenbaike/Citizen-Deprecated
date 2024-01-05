@@ -2,11 +2,11 @@
 	&__heading {
 		&-label {
 			display: block;
-			padding: 0.625rem var(--space-md);
+			padding: 0.625rem var( --space-md );
 			margin: 0;
-			color: var(--color-base--subtle);
+			color: var( --color-base--subtle );
 			font-size: inherit;
-			font-weight: var(--font-weight-normal);
+			font-weight: var( --font-weight-normal );
 			letter-spacing: 0.05em;
 		}
 	}
@@ -15,8 +15,8 @@
 // FIXME: This should not be here
 .citizen-ui-icon {
 	display: block;
-	width: var(--size-icon);
-	height: var(--size-icon);
+	width: var( --size-icon );
+	height: var( --size-icon );
 	contain: strict;
 
 	&::before {
@@ -27,7 +27,7 @@
 		background-repeat: no-repeat;
 		background-size: contain;
 		content: '';
-		opacity: var(--opacity-icon-base);
+		opacity: var( --opacity-icon-base );
 	}
 }
 
@@ -35,20 +35,20 @@
 #t-upload {
 	a::before {
 		display: block;
-		width: var(--size-icon);
-		height: var(--size-icon);
+		width: var( --size-icon );
+		height: var( --size-icon );
 		background-position: center;
 		background-repeat: no-repeat;
 		background-size: contain;
 		contain: strict;
 		content: '';
-		opacity: var(--opacity-icon-base);
+		opacity: var( --opacity-icon-base );
 	}
 }
 
 .mw-portlet {
 	// Hide selected item, except #ca-view
-	.selected:not(#ca-view) {
+	.selected:not( #ca-view ) {
 		.mixin-screen-reader-text;
 	}
 

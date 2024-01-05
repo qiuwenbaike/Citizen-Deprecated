@@ -52,7 +52,7 @@
 		}
 	}
 
-	&:not(.ve-loading) {
+	&:not( .ve-loading ) {
 		footer.ve-init-mw-desktopArticleTarget-uneditableContent {
 			opacity: 1 !important;
 			pointer-events: auto !important;
@@ -75,8 +75,8 @@
 
 			&-linkAnnotation {
 				&.ve-ce-annotation-active {
-					background-color: var(--background-color-primary--active);
-					box-shadow: 0 0 0 1px var(--border-color-base);
+					background-color: var( --background-color-primary--active );
+					box-shadow: 0 0 0 1px var( --border-color-base );
 				}
 			}
 		}
@@ -85,8 +85,8 @@
 			&-toolbar {
 				> .oo-ui-toolbar-bar {
 					z-index: 91; // @z-index-site-header - 1
-					border-color: var(--border-color-base--darker);
-					background-color: var(--color-surface-0);
+					border-color: var( --border-color-base--darker );
+					background-color: var( --color-surface-0 );
 
 					.oo-ui-toolbar-bar {
 						border: 0;
@@ -98,7 +98,7 @@
 					}
 
 					> .oo-ui-toolbar-actions {
-						border-left: 1px solid var(--border-color-base);
+						border-left: 1px solid var( --border-color-base );
 					}
 
 					.oo-ui-toolbar-tools {
@@ -123,15 +123,15 @@
 			}
 
 			&-targetWidget {
-				border-color: var(--border-color-input);
+				border-color: var( --border-color-input );
 
-				&:not(.oo-ui-pendingElement-pending) {
-					background: var(--color-surface-1);
+				&:not( .oo-ui-pendingElement-pending ) {
+					background: var( --color-surface-1 );
 				}
 			}
 
 			&-overlay {
-				font-family: var(--fonts-sans);
+				font-family: var( --fonts-sans );
 
 				&-global {
 					z-index: 100;
@@ -140,13 +140,13 @@
 
 			&-desktopContext {
 				.ve-ui-linkContextItem .ve-ui-linkContextItem-label {
-					border-color: var(--border-color-base);
+					border-color: var( --border-color-base );
 				}
 			}
 
 			&-expandableContent {
 				&-fade {
-					background: linear-gradient(to right, rgba(255, 255, 255, 0) 0, var(--color-surface-1) 90%);
+					background: linear-gradient( to right, rgba( 255, 255, 255, 0 ) 0, var( --color-surface-1 ) 90% );
 				}
 
 				&-toggle {
@@ -160,28 +160,28 @@
 				}
 
 				&-options {
-					border-color: var(--border-color-base);
-					background-color: var(--color-surface-2);
+					border-color: var( --border-color-base );
+					background-color: var( --color-surface-2 );
 				}
 
 				&--editSummary-count {
-					border-color: var(--border-color-base);
+					border-color: var( --border-color-base );
 				}
 
 				&-license {
-					color: var(--color-base--subtle);
+					color: var( --color-base--subtle );
 				}
 
 				// Preview and review change panels
 				&-savePanel {
 					~ .oo-ui-panelLayout {
-						background-color: var(--color-surface-0);
+						background-color: var( --color-surface-0 );
 					}
 				}
 
 				// Give preview content a max width
 				.mw-parser-output {
-					max-width: var(--width-layout);
+					max-width: var( --width-layout );
 					margin-right: auto;
 					margin-left: auto;
 				}
@@ -189,56 +189,56 @@
 
 			&-mwTransclusion {
 				&Dialog-addParameterFieldset .ve-ui-mwParameterSearchWidget {
-					border-color: var(--border-color-base);
+					border-color: var( --border-color-base );
 				}
 
 				&Outline {
 					&ButtonWidget {
 						&.oo-ui-buttonElement-frameless.oo-ui-widget-enabled > .oo-ui-buttonElement-button:hover {
-							background-color: var(--background-color-quiet--hover);
-							color: var(--color-base--emphasized);
+							background-color: var( --background-color-quiet--hover );
+							color: var( --color-base--emphasized );
 						}
 
 						&.oo-ui-optionWidget-selected .oo-ui-buttonElement-button {
-							background-color: var(--background-color-primary--active);
+							background-color: var( --background-color-primary--active );
 						}
 					}
 
 					&TemplateWidget-sticky {
-						background-color: var(--color-surface-1);
+						background-color: var( --color-surface-1 );
 					}
 				}
 			}
 
 			&--mwParameterResultWidget {
 				&.oo-ui-optionWidget-highlighted {
-					background-color: var(--background-color-primary--hover);
+					background-color: var( --background-color-primary--hover );
 				}
 
 				&-description {
-					color: var(--color-base--subtle);
+					color: var( --color-base--subtle );
 				}
 			}
 
 			&-mwTemplatePage-description {
-				color: var(--color-base--subtle);
+				color: var( --color-base--subtle );
 			}
 		}
 	}
 
 	.oo-ui-toolbar-position-top .ve-ui-toolbarDialog-position-above {
-		border-color: var(--border-color-base--darker);
+		border-color: var( --border-color-base--darker );
 	}
 
-	*:not(.ext-discussiontools-ui-replyWidget-headerWrapper) {
+	*:not( .ext-discussiontools-ui-replyWidget-headerWrapper ) {
 		> .ve-init-mw-desktopArticleTarget-toolbar-open {
-			&:not(.ve-ui-toolbar-floating) {
+			&:not( .ve-ui-toolbar-floating ) {
 				& > .oo-ui-toolbar-bar {
 					position: fixed;
 					right: 0;
 					left: 0;
 
-					.oo-ui-toolbar-actions .ve-ui-toolbar:not(.ve-ui-toolbar-floating) > .oo-ui-toolbar-bar {
+					.oo-ui-toolbar-actions .ve-ui-toolbar:not( .ve-ui-toolbar-floating ) > .oo-ui-toolbar-bar {
 						position: unset;
 					}
 				}
@@ -253,7 +253,7 @@
 			&-toolbar {
 				&Placeholder {
 					height: 46px; // Correspond to VE toolbar height in Citizen
-					border-bottom: 1px solid var(--border-color-base);
+					border-bottom: 1px solid var( --border-color-base );
 					margin: 0;
 
 					&-bar {
@@ -263,7 +263,7 @@
 
 					&-floating {
 						.ve-init-mw-desktopArticleTarget-toolbarPlaceholder-bar {
-							background: var(--color-surface-0);
+							background: var( --color-surface-0 );
 						}
 					}
 				}
@@ -276,11 +276,11 @@
 		}
 
 		&-progressBarWidget {
-			border-color: var(--color-primary);
-			background-color: var(--color-surface-0);
+			border-color: var( --color-primary );
+			background-color: var( --color-surface-0 );
 
 			&-bar {
-				background-color: var(--color-primary);
+				background-color: var( --color-primary );
 			}
 		}
 
@@ -294,7 +294,7 @@
 
 // Make toolbar more smaller screen friendly
 // Well at least I did by best
-@media (max-width: 800px) {
+@media ( max-width: 800px ) {
 	// .ve-ui-toolbar-floating {
 	// 	z-index: 4;
 	// }
@@ -340,7 +340,7 @@
 				.ve-ui-toolbar-saveButton {
 					&::before,
 					&::after {
-						background: var(--color-base--emphasized);
+						background: var( --color-base--emphasized );
 					}
 				}
 			}
@@ -351,11 +351,11 @@
 		.ve-init-mw-desktopArticleTarget-toolbar {
 			.ve-ui-toolbar-saveButton {
 				&::before {
-					transform: rotate(45deg);
+					transform: rotate( 45deg );
 				}
 
 				&::after {
-					transform: rotate(-45deg);
+					transform: rotate( -45deg );
 				}
 			}
 		}

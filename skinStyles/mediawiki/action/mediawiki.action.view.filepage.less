@@ -22,7 +22,7 @@
 	border: 0;
 	margin: 0;
 	background-color: transparent; // sticky header will handle background
-	font-weight: var(--font-weight-medium);
+	font-weight: var( --font-weight-medium );
 	white-space: nowrap;
 
 	li {
@@ -31,23 +31,23 @@
 
 	a {
 		display: block;
-		padding: var(--space-xxs) var(--space-md);
-		border-radius: var(--border-radius--small);
-		margin-top: var(--space-xs);
-		margin-bottom: var(--space-xs);
+		padding: var( --space-xxs ) var( --space-md );
+		border-radius: var( --border-radius--small );
+		margin-top: var( --space-xs );
+		margin-bottom: var( --space-xs );
 
 		&:hover {
-			background-color: var(--background-color-quiet--hover);
+			background-color: var( --background-color-quiet--hover );
 		}
 
 		&:active {
-			background-color: var(--background-color-quiet--active);
+			background-color: var( --background-color-quiet--active );
 		}
 	}
 }
 
 .mw-filepage-resolutioninfo {
-	margin-top: var(--space-xs);
+	margin-top: var( --space-xs );
 	margin-right: ~'calc( var(  --space-xxs ) * -1 )';
 	// Compensate for margin in links, because we can't use flex gap
 	margin-left: ~'calc( var(  --space-xxs ) * -1 )';
@@ -56,28 +56,28 @@
 
 	.mw-thumbnail-link {
 		display: inline-block;
-		padding: var(--space-xxs) var(--space-md);
-		border: 1px solid var(--border-color-base);
-		border-radius: var(--border-radius--pill);
-		margin: var(--space-xxs);
-		background-color: var(--color-surface-0);
-		color: var(--color-base--subtle);
+		padding: var( --space-xxs ) var( --space-md );
+		border: 1px solid var( --border-color-base );
+		border-radius: var( --border-radius--pill );
+		margin: var( --space-xxs );
+		background-color: var( --color-surface-0 );
+		color: var( --color-base--subtle );
 		font-size: 0.875rem;
 
 		&:hover {
-			background-color: var(--color-primary--hover);
+			background-color: var( --color-primary--hover );
 			color: #fff;
 		}
 
 		&:active {
-			background-color: var(--color-primary--active);
+			background-color: var( --color-primary--active );
 			color: #fff;
 		}
 	}
 
 	// Current preview resolution
 	> .mw-thumbnail-link {
-		background-color: var(--color-primary) !important;
+		background-color: var( --color-primary ) !important;
 		color: #fff;
 	}
 }
@@ -86,14 +86,14 @@
 	display: flex;
 	flex-direction: column;
 	align-items: flex-start;
-	margin-top: var(--space-xl);
-	margin-bottom: var(--space-xl);
+	margin-top: var( --space-xl );
+	margin-bottom: var( --space-xl );
 
 	img {
 		// Large image can overflow
 		max-width: 100%;
 		height: auto;
-		background-color: var(--color-surface-2);
+		background-color: var( --color-surface-2 );
 		transition: @transition-transform;
 	}
 }
@@ -103,7 +103,7 @@
 		overflow: hidden;
 
 		> img {
-			margin: var(--space-md);
+			margin: var( --space-md );
 		}
 	}
 
@@ -115,11 +115,11 @@
 .filehistory a img,
 #file img:hover {
 	// Because this gets overriden by a default style
-	background-color: var(--color-surface-2);
+	background-color: var( --color-surface-2 );
 }
 
 .fileInfo {
-	color: var(--color-base--subtle);
+	color: var( --color-base--subtle );
 }
 
 .fullMedia {

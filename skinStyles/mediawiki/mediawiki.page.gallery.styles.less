@@ -6,40 +6,40 @@
 // Sync with caption styles
 div.gallerytext {
 	padding: 0;
-	padding-right: var(--border-radius--small);
-	padding-left: var(--border-radius--small);
-	color: var(--color-base--subtle);
+	padding-right: var( --border-radius--small );
+	padding-left: var( --border-radius--small );
+	color: var( --color-base--subtle );
 	font-size: 0.8125rem;
 	letter-spacing: 0.025em;
 
 	p {
-		margin: var(--space-xs) 0; // reset default style
+		margin: var( --space-xs ) 0; // reset default style
 	}
 }
 
 ul.mw-gallery-packed-hover li.gallerybox:hover div.gallerytextwrapper,
 ul.mw-gallery-packed-overlay li.gallerybox div.gallerytextwrapper,
 ul.mw-gallery-packed-hover li.gallerybox.mw-gallery-focused div.gallerytextwrapper {
-	background: var(--background-color-overlay);
-	font-weight: var(--font-weight-normal); // should use the same weight as caption
+	background: var( --background-color-overlay );
+	font-weight: var( --font-weight-normal ); // should use the same weight as caption
 }
 
 /* Slideshow */
 ul.gallery.mw-gallery-slideshow {
 	.gallerybox {
 		&.slideshow-current {
-			background: var(--color-surface-2);
+			background: var( --color-surface-2 );
 		}
 	}
 
 	.mw-gallery-slideshow {
 		&-buttons {
-			padding-top: var(--space-md);
-			padding-bottom: var(--space-sm);
+			padding-top: var( --space-md );
+			padding-bottom: var( --space-sm );
 		}
 
 		&-img-container {
-			border-radius: var(--border-radius--large);
+			border-radius: var( --border-radius--large );
 		}
 
 		&-caption {
@@ -52,7 +52,7 @@ ul.gallery.mw-gallery-slideshow {
 	li.gallerybox div.thumb {
 		overflow: hidden; // quick hack for rounded corner
 		border-color: transparent;
-		border-radius: var(--border-radius--small);
-		background-color: var(--color-surface-2);
+		border-radius: var( --border-radius--small );
+		background-color: var( --color-surface-2 );
 	}
 }
