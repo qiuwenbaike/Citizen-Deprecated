@@ -105,9 +105,9 @@ final class Drawer extends Partial {
 		] );
 
 		// Upload file
-		if ( isset( $this->getConfigValue( 'UploadNavigationUrl' ) ) ) {
+		if ( $this->getConfigValue( 'UploadNavigationUrl' ) ) {
 			$uploadHref = $this->getConfigValue( 'UploadNavigationUrl' );
-		} elseif ( isset( $this->getConfigValue( 'wgEnableUploads' ) ) ) {
+		} elseif ( $this->getConfigValue( 'wgEnableUploads' ) ) {
 			$uploadHref = null;
 		} elseif ( ExtensionRegistry::getInstance()->isLoaded( 'Upload Wizard' ) ) {
 			// Link to Upload Wizard if present
