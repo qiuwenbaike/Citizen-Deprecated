@@ -107,9 +107,9 @@ final class Drawer extends Partial {
 		// Upload file
 		if ( isset( $this->getConfigValue( 'UploadNavigationUrl' ) ) ) {
 			$uploadHref = $this->getConfigValue( 'UploadNavigationUrl' );
-		} else if ( isset( $this->getConfigValue( 'wgEnableUploads' ) ) ) {
+		} elseif ( isset( $this->getConfigValue( 'wgEnableUploads' ) ) ) {
 			$uploadHref = null;
-		} else if ( ExtensionRegistry::getInstance()->isLoaded( 'Upload Wizard' ) ) {
+		} elseif ( ExtensionRegistry::getInstance()->isLoaded( 'Upload Wizard' ) ) {
 			// Link to Upload Wizard if present
 			$uploadHref = SpecialPage::getTitleFor( 'UploadWizard' )->getLocalURL();
 		} else {
@@ -117,7 +117,7 @@ final class Drawer extends Partial {
 			$uploadHref = Skin::makeSpecialUrl( 'Upload' );
 		}
 
-		if ($uploadHref  !== null) {
+		if ( $uploadHref !== null ) {
 			$html .= $skin->makeListItem( 'upload', [
 				'href' => $uploadHref,
 				'id' => 't-upload',
