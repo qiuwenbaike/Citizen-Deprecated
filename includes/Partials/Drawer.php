@@ -105,7 +105,9 @@ final class Drawer extends Partial {
 		] );
 
 		// Upload file
-		if ( ExtensionRegistry::getInstance()->isLoaded( 'Upload Wizard' ) ) {
+		if ( isset( $this->getConfigValue( 'UploadNavigationUrl' ) ) ) {
+			$uploadHref = $this->getConfigValue( 'UploadNavigationUrl' );
+		} else if ( ExtensionRegistry::getInstance()->isLoaded( 'Upload Wizard' ) ) {
 			// Link to Upload Wizard if present
 			$uploadHref = SpecialPage::getTitleFor( 'UploadWizard' )->getLocalURL();
 		} else {
