@@ -33,7 +33,7 @@
 		"postcss-preset-env": "^9.3.0",
 		"prettier": "^3.2.2",
 		"standard-version": "^9.5.0",
-		"stylelint": "^16.1.0",
+		"stylelint": "^16.2.0",
 		"stylelint-config-wikimedia": "latest",
 		"svgo": "3.2.0"
 	},
