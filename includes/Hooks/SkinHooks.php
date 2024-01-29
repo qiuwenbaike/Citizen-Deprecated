@@ -318,7 +318,11 @@ class SkinHooks implements
 			// Bug: T323188
 			// 've-edit' => 'edit',
 			// Extension:DiscussionTools
-			'addsection' => 'speechBubbleAdd'
+			'addsection' => 'speechBubbleAdd',
+			'special-specialAssociatedNavigationLinks-link-0' => 'eye',
+			'special-specialAssociatedNavigationLinks-link-1' => 'listBullet',
+			'special-specialAssociatedNavigationLinks-link-2' => 'edit',
+			'special-specialAssociatedNavigationLinks-link-3' => 'trash',
 		];
 
 		// If both visual edit and source edit buttons are present
