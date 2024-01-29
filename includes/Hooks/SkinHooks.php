@@ -228,16 +228,16 @@ class SkinHooks implements
 				$links['associated-pages'][$key]['icon'] = 'article'; // Add icons for other pages
 			}
 			// Add icons for watchlist
-			if ( substr( $key, -9 ) === 'Watchlist' ) {
+			if ( substr( $key['href'], -9 ) === 'Watchlist' ) {
 				$links['associated-pages'][$key]['icon'] = 'eye';
 			}
-			if ( substr( $key, -13 ) === 'EditWatchlist' ) {
+			if ( substr( $key['href'], -13 ) === 'EditWatchlist' ) {
 				$links['associated-pages'][$key]['icon'] = 'listBullet';
 			}
-			if ( substr( $key, -17 ) === 'EditWatchlist/raw' ) {
+			if ( substr( $key['href'], -17 ) === 'EditWatchlist/raw' ) {
 				$links['associated-pages'][$key]['icon'] = 'edit';
 			}
-			if ( substr( $key, -19 ) === 'EditWatchlist/clear' ) {
+			if ( substr( $key['href'], -19 ) === 'EditWatchlist/clear' ) {
 				$links['associated-pages'][$key]['icon'] = 'trash';
 			}
 		}
