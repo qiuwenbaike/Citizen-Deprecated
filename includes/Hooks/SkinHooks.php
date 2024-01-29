@@ -227,6 +227,19 @@ class SkinHooks implements
 			if ( substr( $key, -4 ) !== 'main' && substr( $key, -4 ) !== 'user' && substr( $key, -4 ) !== 'talk' ) {
 				$links['associated-pages'][$key]['icon'] = 'article'; // Add icons for other pages
 			}
+			// Add icons for watchlist
+			if ( substr( $key, -9 ) === 'Watchlist' ) {
+				$links['associated-pages'][$key]['icon'] = 'eye';
+			}
+			if ( substr( $key, -13 ) === 'EditWatchlist' ) {
+				$links['associated-pages'][$key]['icon'] = 'listBullet';
+			}
+			if ( substr( $key, -17 ) === 'EditWatchlist/raw' ) {
+				$links['associated-pages'][$key]['icon'] = 'edit';
+			}
+			if ( substr( $key, -19 ) === 'EditWatchlist/clear' ) {
+				$links['associated-pages'][$key]['icon'] = 'trash';
+			}
 		}
 
 		self::mapIconsToMenuItems( $links, 'associated-pages', $iconMap );
@@ -319,10 +332,6 @@ class SkinHooks implements
 			// 've-edit' => 'edit',
 			// Extension:DiscussionTools
 			'addsection' => 'speechBubbleAdd',
-			'special-specialAssociatedNavigationLinks-link-0' => 'eye',
-			'special-specialAssociatedNavigationLinks-link-1' => 'listBullet',
-			'special-specialAssociatedNavigationLinks-link-2' => 'edit',
-			'special-specialAssociatedNavigationLinks-link-3' => 'trash',
 		];
 
 		// If both visual edit and source edit buttons are present
