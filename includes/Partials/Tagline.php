@@ -117,6 +117,7 @@ final class Tagline extends Partial {
 	 * @param Title $title
 	 * @return User|null
 	 */
+
 	/**
 	 * Return new User object based on username or IP address.
 	 * Based on MinervaNeue
@@ -144,5 +145,5 @@ final class Tagline extends Partial {
 		}
 
 		return null;
+		}
 	}
-}
