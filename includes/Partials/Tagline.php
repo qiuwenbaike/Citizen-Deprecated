@@ -25,6 +25,7 @@ declare( strict_types=1 );
 
 namespace MediaWiki\Skins\Citizen\Partials;
 
+use MediaWiki\MediaWikiServices;
 use Title;
 use User;
 use Wikimedia\IPUtils;
@@ -116,6 +117,13 @@ final class Tagline extends Partial {
 	 * @param Title $title
 	 * @return User|null
 	 */
+	/**
+	 * Return new User object based on username or IP address.
+	 * Based on MinervaNeue
+	 *
+	 * @param Title $title
+	 * @return User|null
+	 */
 	private function buildPageUserObject( $title ) {
 		$titleText = $title->getText();
 		$user = $this->user;
@@ -130,6 +138,9 @@ final class Tagline extends Partial {
 		$pageUserId = $userIdentity && $userIdentity->isRegistered();
 		if ( $pageUserId ) {
 			return $user->newFromId( $pageUserId );
+		$userIdentity = MediaWikiServices::getInstance()->getUserIdentityLookup()->getUserIdentityByName( $titleText );
+		if ( $userIdentity && $userIdentity->isRegistered() ) {
+			return $user->newFromId( $userIdentity->getId() );
 		}
 
 		return null;
