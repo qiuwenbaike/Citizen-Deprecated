@@ -120,11 +120,14 @@ final class Tagline extends Partial {
 		$titleText = $title->getText();
 		$user = $this->user;
 
+		$services = MediaWikiServices::getInstance();
+		$userIdentity = $services->getUserIdentityLookup()->getUserIdentityByName( $title->getText() );
+
 		if ( IPUtils::isIPAddress( $titleText ) ) {
 			return $user->newFromAnyId( null, $titleText, null );
 		}
 
-		$pageUserId = $user->idFromName( $titleText );
+		$pageUserId = $userIdentity && $userIdentity->isRegistered();
 		if ( $pageUserId ) {
 			return $user->newFromId( $pageUserId );
 		}
