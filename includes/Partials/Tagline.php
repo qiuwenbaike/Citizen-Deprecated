@@ -26,7 +26,9 @@ declare( strict_types=1 );
 namespace MediaWiki\Skins\Citizen\Partials;
 
 use MediaWiki\MediaWikiServices;
-use Title;
+use MediaWiki\Title\Title;
+use MWTimestamp;
+use SpecialPage;
 use User;
 use Wikimedia\IPUtils;
 
@@ -61,15 +63,14 @@ final class Tagline extends Partial {
 					$msg = $skin->msg( 'citizen-tagline-ns-' . strtolower( $namespaceText ) );
 					// Use custom message if exists
 					if ( !$msg->isDisabled() ) {
-						$tagline = $msg->text();
+						$tagline = $msg->parse();
 					} else {
 						if ( $title->isSpecialPage() ) {
 							// No tagline if special page
 							$tagline = '';
 						} elseif ( $title->isTalkPage() ) {
 							// Use generic talk page message if talk page
-							$tagline = $skin->msg( 'citizen-tagline-ns-talk' )->text();
-
+							$tagline = $skin->msg( 'citizen-tagline-ns-talk' )->parse();
 						} elseif ( $title->inNamespace( NS_USER ) && !$title->isSubpage() ) {
 							// Build user tagline if it is a top-level user page
 							$tagline = $this->buildUserTagline( $title );
@@ -96,27 +97,28 @@ final class Tagline extends Partial {
 	private function buildUserTagline( $title ) {
 		$user = $this->buildPageUserObject( $title );
 		if ( $user ) {
+			$skin = $this->skin;
+			$tagline = '<div id="citizen-tagline-user">';
 			$editCount = $user->getEditCount();
+			$regDate = $user->getRegistration();
+
 			if ( $editCount ) {
-				$skin = $this->skin;
-				// TODO: Figure out a waw to get registration duration,
-				//	like Langauge::getHumanTimestamp()
-				//$registration = $user->getRegistration();
-				$msgEditCount = $skin->msg( 'usereditcount' )
-					->numParams( sprintf( '%s', number_format( $editCount, 0 ) ) );
-				return $msgEditCount;
+				$msgEditCount = $skin->msg( 'usereditcount' )->numParams( sprintf( '%s', number_format( $editCount, 0 ) ) );
+				$editCountHref = SpecialPage::getTitleFor( 'Contributions', $user )->getLocalURL();
+				$tagline .= "<span id=\"citizen-tagline-user-editcount\" data-user-editcount=\"$editCount\"><a href=\"$editCountHref\">$msgEditCount</a></span>";
 			}
+
+			if ( is_string( $regDate ) ) {
+				$regDateTs = wfTimestamp( TS_UNIX, $regDate );
+				$msgRegDate = $skin->msg( 'citizen-tagline-user-regdate', $skin->getLanguage()->userDate( new MWTimestamp( $regDate ), $skin->getUser() ), $user );
+				$tagline .= "<span id=\"citizen-tagline-user-regdate\" data-user-regdate=\"$regDateTs\">$msgRegDate</span>";
+			}
+
+			$tagline .= '</div>';
+			return $tagline;
 		}
 		return null;
 	}
-
-	/**
-	 * Return new User object based on username or IP address.
-	 * Based on MinervaNeue
-	 *
-	 * @param Title $title
-	 * @return User|null
-	 */
 
 	/**
 	 * Return new User object based on username or IP address.
@@ -129,21 +131,15 @@ final class Tagline extends Partial {
 		$titleText = $title->getText();
 		$user = $this->user;
 
-		$services = MediaWikiServices::getInstance();
-		$userIdentity = $services->getUserIdentityLookup()->getUserIdentityByName( $title->getText() );
-
 		if ( IPUtils::isIPAddress( $titleText ) ) {
 			return $user->newFromAnyId( null, $titleText, null );
 		}
 
-		$pageUserId = $userIdentity && $userIdentity->isRegistered();
-		if ( $pageUserId ) {
-			return $user->newFromId( $pageUserId );
 		$userIdentity = MediaWikiServices::getInstance()->getUserIdentityLookup()->getUserIdentityByName( $titleText );
 		if ( $userIdentity && $userIdentity->isRegistered() ) {
 			return $user->newFromId( $userIdentity->getId() );
 		}
 
 		return null;
-		}
 	}
+}
