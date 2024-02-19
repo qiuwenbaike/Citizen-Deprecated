@@ -71,18 +71,31 @@ final class Tagline extends Partial {
 						} elseif ( $title->isTalkPage() ) {
 							// Use generic talk page message if talk page
 							$tagline = $skin->msg( 'citizen-tagline-ns-talk' )->parse();
-						} elseif ( $title->inNamespace( NS_USER ) && !$title->isSubpage() ) {
+						} elseif ( ( $title->inNamespace( NS_USER ) || ( defined( 'NS_USER_WIKI' ) && $title->inNamespace( NS_USER_WIKI ) ) || ( defined( 'NS_USER_WIKI' ) && $title->inNamespace( NS_USER_PROFILE ) ) ) && !$title->isSubpage() ) {
 							// Build user tagline if it is a top-level user page
 							$tagline = $this->buildUserTagline( $title );
+						} elseif ( !$skin->msg( 'citizen-tagline' )->isDisabled() ) {
+							$tagline = $skin->msg( 'citizen-tagline' )->parse();
 						} else {
 							// Fallback to site tagline
 							$tagline = $skin->msg( 'tagline' )->text();
 						}
 					}
+				} elseif ( !$skin->msg( 'citizen-tagline' )->isDisabled() ) {
+					$tagline = $skin->msg( 'citizen-tagline' )->parse();
 				} else {
 					$tagline = $skin->msg( 'tagline' )->text();
 				}
 			}
+		}
+
+		// Apply language variant conversion
+		if ( !empty( $tagline ) ) {
+			$services = MediaWikiServices::getInstance();
+			$langConv = $services
+					->getLanguageConverterFactory()
+					->getLanguageConverter( $services->getContentLanguage() );
+			$tagline = $langConv->convert( $tagline );
 		}
 
 		return $tagline;
