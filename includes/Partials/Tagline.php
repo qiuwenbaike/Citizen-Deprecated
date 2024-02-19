@@ -71,9 +71,6 @@ final class Tagline extends Partial {
 						} elseif ( $title->isTalkPage() ) {
 							// Use generic talk page message if talk page
 							$tagline = $skin->msg( 'citizen-tagline-ns-talk' )->parse();
-						} elseif ( ( $title->inNamespace( NS_USER ) || ( defined( 'NS_USER_WIKI' ) && $title->inNamespace( NS_USER_WIKI ) ) || ( defined( 'NS_USER_WIKI' ) && $title->inNamespace( NS_USER_PROFILE ) ) ) && !$title->isSubpage() ) {
-							// Build user tagline if it is a top-level user page
-							$tagline = $this->buildUserTagline( $title );
 						} elseif ( !$skin->msg( 'citizen-tagline' )->isDisabled() ) {
 							$tagline = $skin->msg( 'citizen-tagline' )->parse();
 						} else {
@@ -99,38 +96,6 @@ final class Tagline extends Partial {
 		}
 
 		return $tagline;
-	}
-
-	/**
-	 * Return user tagline message
-	 *
-	 * @param Title $title
-	 * @return string
-	 */
-	private function buildUserTagline( $title ) {
-		$user = $this->buildPageUserObject( $title );
-		if ( $user ) {
-			$skin = $this->skin;
-			$tagline = '<div id="citizen-tagline-user">';
-			$editCount = $user->getEditCount();
-			$regDate = $user->getRegistration();
-
-			if ( $editCount ) {
-				$msgEditCount = $skin->msg( 'usereditcount' )->numParams( sprintf( '%s', number_format( $editCount, 0 ) ) );
-				$editCountHref = SpecialPage::getTitleFor( 'Contributions', $user )->getLocalURL();
-				$tagline .= "<span id=\"citizen-tagline-user-editcount\" data-user-editcount=\"$editCount\"><a href=\"$editCountHref\">$msgEditCount</a></span>";
-			}
-
-			if ( is_string( $regDate ) ) {
-				$regDateTs = wfTimestamp( TS_UNIX, $regDate );
-				$msgRegDate = $skin->msg( 'citizen-tagline-user-regdate', $skin->getLanguage()->userDate( new MWTimestamp( $regDate ), $skin->getUser() ), $user );
-				$tagline .= "<span id=\"citizen-tagline-user-regdate\" data-user-regdate=\"$regDateTs\">$msgRegDate</span>";
-			}
-
-			$tagline .= '</div>';
-			return $tagline;
-		}
-		return null;
 	}
 
 	/**
