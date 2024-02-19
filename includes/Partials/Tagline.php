@@ -27,8 +27,6 @@ namespace MediaWiki\Skins\Citizen\Partials;
 
 use MediaWiki\MediaWikiServices;
 use MediaWiki\Title\Title;
-use MWTimestamp;
-use SpecialPage;
 use User;
 use Wikimedia\IPUtils;
 
