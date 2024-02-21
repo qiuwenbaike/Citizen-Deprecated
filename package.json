@@ -30,7 +30,7 @@
 		"jsdoc": "4.0.2",
 		"jsdoc-wmf-theme": "0.0.12",
 		"postcss-import": "^16.0.1",
-		"postcss-preset-env": "^9.3.0",
+		"postcss-preset-env": "^9.4.0",
 		"prettier": "^3.2.5",
 		"standard-version": "^9.5.0",
 		"stylelint": "^16.2.1",
