@@ -65,10 +65,6 @@
 .skin-citizen {
 	.ve {
 		&-ce {
-			&-surface {
-				padding: 1.5em;
-			}
-
 			&-branchNode {
 				&-blockSlug,
 				&-newSlug {
@@ -370,4 +366,16 @@
 // HACK: hide .mw-editsection-divider
 .client-js .mw-editsection-divider {
 	display: none !important;
+}
+
+// HACK: font-size
+/* Essentially revert T182320 (core change) */
+.mw-editfont-monospace,
+.mw-editfont-sans-serif,
+.mw-editfont-serif {
+	font-size: inherit;
+}
+// HACK: .ve-ce-surface padding
+.ve-ce-surface {
+	padding: 1.5em;
 }
