@@ -270,8 +270,8 @@
 	background-color: var( --color-primary--active );
 }
 
-.cdx-checkbox__input:enabled:checked:focus:not( :active, :hover ) + .cdx-checkbox__icon,
-.cdx-checkbox__input:enabled:indeterminate:focus:not( :active, :hover ) + .cdx-checkbox__icon {
+.cdx-checkbox__input:enabled:checked:focus:not( :active ):not( :hover ) + .cdx-checkbox__icon,
+.cdx-checkbox__input:enabled:indeterminate:focus:not( :active ):not( :hover ) + .cdx-checkbox__icon {
 	border-color: var( --color-primary );
 	background-color: var( --color-primary );
 }
