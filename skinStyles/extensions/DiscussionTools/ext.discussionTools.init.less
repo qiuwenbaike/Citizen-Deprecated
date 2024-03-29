@@ -7,6 +7,7 @@
  *
  * Date: 2022-05-06
 */
+
 @import '../../../resources/variables.less';
 
 .ext-discussiontools-init-section {
@@ -14,15 +15,25 @@
 	flex-wrap: wrap;
 	justify-content: space-between;
 	align-items: center;
+	border-top-color: var( --border-color-base );
 
-	.mw-headline {
+	&-metaitem {
+		color: var( --color-base--subtle );
+
+		& + .ext-discussiontools-init-section-metaitem {
+			border-left-color: var( --border-color-base );
+		}
+	}
+
+	.mw-headline,
+	& > h2,
+	h2.ext-discussiontools-ui-newTopic-sectionTitle .oo-ui-inputWidget-input {
 		font-family: var( --fonts-serif );
 	}
 
 	& > h2 {
 		display: flex;
 		flex-wrap: wrap;
-		font-family: var( --fonts-serif );
 		justify-content: space-around;
 	}
 }
@@ -56,21 +67,57 @@
 	font-size: 1.125rem;
 }
 
-.dt-init-replylink-buttons {
-	.dt-init-replylink {
+.ext-discussiontools-init-replylink-buttons {
+	.ext-discussiontools-init-replylink {
 		// Similar to mw-editsection-bracket
 		&-bracket {
 			color: var( --color-base--subtle );
 		}
+
+		&-divider {
+			color: var( --border-color-base );
+		}
 	}
 
-	.dt-init-replylink-open & > a {
+	.ext-discussiontools-init-replylink-open & > .ext-discussiontools-init-replylink-reply {
 		color: var( --color-base--subtle );
+	}
+
+	&.ext-discussiontools-init-replylink-active > .ext-discussiontools-init-replylink-reply {
+		color: var( --color-base );
 	}
 }
 
 .ext-discussiontools-ui-newTopic {
 	.ve-ui-toolbar > .oo-ui-toolbar-bar {
 		z-index: 11;
+	}
+}
+
+.ext-discussiontools-init-pageframe-latestcomment {
+	color: var( --color-base--subtle );
+}
+
+.ext-discussiontools-visualenhancements_pageframe-enabled {
+	.ext-discussiontools-init-sidebar-meta {
+		color: var( --color-base--subtle );
+	}
+}
+
+.ext-discussiontools-visualenhancements-enabled {
+	h2.ext-discussiontools-ui-newTopic-sectionTitle .oo-ui-inputWidget-input {
+		font-weight: var( --font-weight-semibold );
+	}
+}
+
+.ext-discussiontools-emptystate {
+	.mw-parser-output:not( .noarticletext ) & {
+		border-top-color: var( --border-color-base );
+	}
+}
+
+.ext-discussiontools-autotopicsubpopup {
+	&-title {
+		font-weight: var( --font-weight-semibold );
 	}
 }
