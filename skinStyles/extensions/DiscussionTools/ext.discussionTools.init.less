@@ -11,30 +11,33 @@
 @import '../../../resources/variables.less';
 
 .ext-discussiontools-init-section {
-	display: flex;
-	flex-wrap: wrap;
-	justify-content: space-between;
-	align-items: center;
-	border-top-color: var( --border-color-base );
-
-	&-metaitem {
-		color: var( --color-base--subtle );
-
-		& + .ext-discussiontools-init-section-metaitem {
-			border-left-color: var( --border-color-base );
-		}
-	}
-
-	.mw-headline,
-	& > h2,
-	h2.ext-discussiontools-ui-newTopic-sectionTitle .oo-ui-inputWidget-input {
-		font-family: var( --fonts-serif );
-	}
-
-	& > h2 {
+	&,
+	.ext-discussiontools-init-section & {
 		display: flex;
 		flex-wrap: wrap;
-		justify-content: space-around;
+		justify-content: space-between;
+		align-items: center;
+		border-top-color: var( --border-color-base );
+
+		&-metaitem {
+			color: var( --color-base--subtle );
+
+			& + .ext-discussiontools-init-section-metaitem {
+				border-left-color: var( --border-color-base );
+			}
+		}
+
+		.mw-headline,
+		& > h2,
+		h2.ext-discussiontools-ui-newTopic-sectionTitle .oo-ui-inputWidget-input {
+			font-family: var( --fonts-serif );
+		}
+
+		& > h2 {
+			display: flex;
+			flex-wrap: wrap;
+			justify-content: space-around;
+		}
 	}
 }
 
