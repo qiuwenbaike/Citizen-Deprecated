@@ -270,6 +270,7 @@ class SkinHooks implements
 			'emailuser' => 'message',
 			// Extension:CiteThisPage
 			'citethispage' => 'reference',
+			'cite' => 'reference',
 			// Extension:Cargo
 			'cargo-pagevalues' => 'database',
 			// Extension:SemanticMediaWiki
