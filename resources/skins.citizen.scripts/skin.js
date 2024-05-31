@@ -127,6 +127,10 @@ function main( window ) {
 		uncheckCheckboxHacks();
 		// Set up loading indicator
 		document.documentElement.classList.add( 'citizen-loading' );
+		// Auto-unset scheme
+		setTimeout( function () {
+			document.documentElement.classList.remove( 'citizen-loading' );
+		}, 1e5 );
 	}, false );
 
 	window.addEventListener( 'unload', function () {
