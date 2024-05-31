@@ -130,7 +130,7 @@ function main( window ) {
 		// Auto-unset scheme
 		setTimeout( function () {
 			document.documentElement.classList.remove( 'citizen-loading' );
-		}, 1e5 );
+		}, 10 * 1000 );
 	}, false );
 
 	window.addEventListener( 'unload', function () {
