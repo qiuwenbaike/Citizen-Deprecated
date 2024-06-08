@@ -125,10 +125,10 @@ function keyboardEvents( event ) {
  * @param {HTMLElement} element
  */
 function bindMouseHoverEvent( element ) {
-	element.addEventListener( 'mouseenter', function ( event ) {
+	element.addEventListener( 'mouseenter', ( event ) => {
 		toggleActive( event.currentTarget );
 	} );
-	element.addEventListener( 'mouseleave', function ( event ) {
+	element.addEventListener( 'mouseleave', ( event ) => {
 		toggleActive( event.currentTarget );
 	} );
 }
@@ -146,7 +146,7 @@ function clearSuggestions() {
 			fragment = new DocumentFragment(),
 			template = document.getElementById( `${ PREFIX }-template` );
 
-		[ ...typeaheadItems ].forEach( function ( item ) {
+		[ ...typeaheadItems ].forEach( ( item ) => {
 			if ( !item.classList.contains( `${ ITEM_CLASS }--page` ) ) {
 				fragment.append( item );
 			}
@@ -180,7 +180,7 @@ function getSuggestions( searchQuery, htmlSafeSearchQuery, placeholder ) {
 			 * @return {string}
 			 */
 			const highlightTitle = function ( text ) {
-				// eslint-disable-next-line security/detect-non-literal-regexp
+
 				const regex = new RegExp( mw.util.escapeRegExp( htmlSafeSearchQuery ), 'i' );
 				return text.replace( regex, `<span class="${ PREFIX }__highlight">$&</span>` );
 			};
@@ -225,7 +225,7 @@ function getSuggestions( searchQuery, htmlSafeSearchQuery, placeholder ) {
 			};
 
 			// Create suggestion items
-			results.forEach( function ( result, index ) {
+			results.forEach( ( result, index ) => {
 				const data = {
 					id: `${ PREFIX }-suggestion-${ index }`,
 					type: 'page',
@@ -281,13 +281,13 @@ function getSuggestions( searchQuery, htmlSafeSearchQuery, placeholder ) {
 	// So that fetch request won't be queued up
 	searchInput.addEventListener( 'input', abortFetch, { once: true } );
 
-	getResults.then( function ( results ) {
+	getResults.then( ( results ) => {
 		searchInput.removeEventListener( 'input', abortFetch );
 		clearSuggestions();
 		if ( results !== null ) {
 			renderSuggestions( results );
 		}
-	} ).catch( function ( error ) {
+	} ).catch( ( error ) => {
 		searchInput.removeEventListener( 'input', abortFetch );
 		searchInput.parentNode.classList.remove( SEARCH_LOADING_CLASS );
 		// User can trigger the abort when the fetch event is pending
@@ -481,7 +481,7 @@ function initTypeahead( searchForm, input ) {
 		if ( !focusIn ) {
 			// HACK: On Safari, users are unable to click any links because the blur
 			// event dismiss the links before it is clicked. This should fix it.
-			setTimeout( function () {
+			setTimeout( () => {
 				searchInput.setAttribute( 'aria-activedescendant', '' );
 				typeahead.classList.remove( EXPANDED_CLASS );
 				searchInput.removeEventListener( 'keydown', keyboardEvents );
@@ -516,7 +516,7 @@ function initTypeahead( searchForm, input ) {
 		updateTypeahead( messages );
 	}
 
-	searchInput.addEventListener( 'input', function () {
+	searchInput.addEventListener( 'input', () => {
 		mw.util.debounce( 100, updateTypeahead( messages ) );
 	} );
 

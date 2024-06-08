@@ -53,12 +53,12 @@ function sectionObserver( props ) {
 	let /** @type {boolean} */ inThrottle = false;
 	let /** @type {HTMLElement | undefined} */ current;
 	// eslint-disable-next-line compat/compat
-	const observer = new IntersectionObserver( function ( entries ) {
+	const observer = new IntersectionObserver( ( entries ) => {
 		let /** @type {IntersectionObserverEntry | undefined} */ closestNegativeEntry;
 		let /** @type {IntersectionObserverEntry | undefined} */ closestPositiveEntry;
 		const topMargin = /** @type {number} */ ( props.topMargin );
 
-		entries.forEach( function ( entry ) {
+		entries.forEach( ( entry ) => {
 			const top = entry.boundingClientRect.top - topMargin;
 			if ( top > 0 &&
                 ( closestPositiveEntry === undefined ||
@@ -101,7 +101,7 @@ function sectionObserver( props ) {
 	function calcIntersection() {
 		// IntersectionObserver will asynchronously calculate the boundingClientRect
 		// of each observed element off the main thread after `observe` is called.
-		props.elements.forEach( function ( element ) {
+		props.elements.forEach( ( element ) => {
 			observer.observe( /** @type {HTMLElement} */( element ) );
 		} );
 	}
@@ -111,7 +111,7 @@ function sectionObserver( props ) {
 		if ( !inThrottle ) {
 			inThrottle = true;
 
-			setTimeout( function () {
+			setTimeout( () => {
 				calcIntersection();
 				inThrottle = false;
 			}, props.throttleMs );

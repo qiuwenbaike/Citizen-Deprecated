@@ -71,7 +71,7 @@ function setLoadingIndicatorListeners( element, attach, eventCallback ) {
 	/** @type { "addEventListener" | "removeEventListener" } */
 	const addOrRemoveListener = ( attach ? 'addEventListener' : 'removeEventListener' );
 
-	[ 'input', 'focusin', 'focusout' ].forEach( function ( eventType ) {
+	[ 'input', 'focusin', 'focusout' ].forEach( ( eventType ) => {
 		element[ addOrRemoveListener ]( eventType, eventCallback );
 	} );
 
@@ -149,7 +149,7 @@ function initSearch( window ) {
 		return;
 	}
 
-	searchBoxes.forEach( function ( searchBox ) {
+	searchBoxes.forEach( ( searchBox ) => {
 		const
 			input = searchBox.querySelector( 'input[name="search"]' ), isPrimarySearch = input && input.getAttribute( 'id' ) === 'searchInput';
 
@@ -162,13 +162,13 @@ function initSearch( window ) {
 			const checkbox = document.getElementById( 'citizen-search__checkbox' );
 			bindExpandOnSlash( window, checkbox, input );
 			// Focus when toggled
-			checkbox.addEventListener( 'input', function () {
+			checkbox.addEventListener( 'input', () => {
 				focusOnChecked( checkbox, input );
 			} );
 		}
 
 		setLoadingIndicatorListeners( searchBox, true, renderSearchLoadingIndicator );
-		loadSearchModule( input, searchModule, function () {
+		loadSearchModule( input, searchModule, () => {
 			setLoadingIndicatorListeners( searchBox, false, renderSearchLoadingIndicator );
 		} );
 	} );

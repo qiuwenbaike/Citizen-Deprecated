@@ -28,7 +28,7 @@ function bind() {
 	// Search for all dropdown containers using the CHECKBOX_HACK_CONTAINER_SELECTOR.
 	const containers = document.querySelectorAll( CHECKBOX_HACK_CONTAINER_SELECTOR );
 
-	containers.forEach( function ( container ) {
+	containers.forEach( ( container ) => {
 		const checkbox = container.querySelector( CHECKBOX_HACK_CHECKBOX_SELECTOR ),
 			button = container.querySelector( CHECKBOX_HACK_BUTTON_SELECTOR ),
 			target = container.querySelector( CHECKBOX_HACK_TARGET_SELECTOR );
@@ -49,7 +49,7 @@ function bind() {
 function uncheckCheckboxHacks() {
 	const checkboxes = document.querySelectorAll( CHECKBOX_HACK_CHECKBOX_SELECTOR + ':checked' );
 
-	checkboxes.forEach( function ( checkbox ) {
+	checkboxes.forEach( ( checkbox ) => {
 		/** @type {HTMLInputElement} */ ( checkbox ).checked = false;
 	} );
 }
@@ -82,10 +82,10 @@ function initStickyHeader( document ) {
 	// Do not start observer if it is set to display:none
 	if ( sentinel && getComputedStyle( sentinel ).getPropertyValue( 'display' ) !== 'none' ) {
 		const observer = scrollObserver.initIntersectionObserver(
-			function () {
+			() => {
 				document.body.classList.add( 'citizen-body-header--sticky' );
 			},
-			function () {
+			() => {
 				document.body.classList.remove( 'citizen-body-header--sticky' );
 			}
 		);
@@ -121,19 +121,19 @@ function main( window ) {
 		sections.init();
 	}
 
-	window.addEventListener( 'beforeunload', function () {
+	window.addEventListener( 'beforeunload', () => {
 		// T295085: Close all dropdown menus when page is unloaded to prevent them
 		// from being open when navigating back to a page.
 		uncheckCheckboxHacks();
 		// Set up loading indicator
 		document.documentElement.classList.add( 'citizen-loading' );
 		// Auto-unset scheme
-		setTimeout( function () {
+		setTimeout( () => {
 			document.documentElement.classList.remove( 'citizen-loading' );
 		}, 10 * 1000 );
 	}, false );
 
-	window.addEventListener( 'unload', function () {
+	window.addEventListener( 'unload', () => {
 		// unset loading indicator
 		document.documentElement.classList.remove( 'citizen-loading' );
 	}, false );
@@ -142,7 +142,7 @@ function main( window ) {
 if ( document.readyState === 'interactive' || document.readyState === 'complete' ) {
 	main( window );
 } else {
-	document.addEventListener( 'DOMContentLoaded', function () {
+	document.addEventListener( 'DOMContentLoaded', () => {
 		main( window );
 	} );
 }

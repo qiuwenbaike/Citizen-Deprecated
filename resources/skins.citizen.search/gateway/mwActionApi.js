@@ -90,9 +90,7 @@ function convertDataToResults( data ) {
 	data = Object.values( data.query.pages );
 
 	// Sort the data with the index property since it is not in order
-	data.sort( function ( a, b ) {
-		return a.index - b.index;
-	} );
+	data.sort( ( a, b ) => a.index - b.index );
 
 	for ( let i = 0; i < data.length; i++ ) {
 		results[ i ] = {
