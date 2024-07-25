@@ -32,14 +32,11 @@
 	}
 
 	&__menu {
-		// Fallback
-		display: flex;
+		display: flex; // Fallback
+		display: grid;
 		flex-direction: column;
 		max-height: 46.25vh;
-		// End fallback
 		overflow-y: auto;
-		/* stylelint-disable-next-line declaration-block-no-duplicate-properties */
-		display: grid;
 		max-width: 92.5vw;
 		justify-content: center;
 		padding: var( --space-xs ) var( --space-md );
