@@ -24,7 +24,7 @@
 		"grunt-banana-checker": "0.13.0",
 		"husky": "^9.1.2",
 		"standard-version": "^9.5.0",
-		"stylelint": "^16.7.0",
+		"stylelint": "^16.8.1",
 		"stylelint-config-wikimedia": "latest",
 		"svgo": "3.3.2"
 	},
