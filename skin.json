@@ -233,6 +233,7 @@
 	},
 	"ResourceModuleSkinStyles": {
 		"citizen": {
+			"+codex-styles": "skinStyles/codex-styles/codex-styles.less",
 			"+ext.advancedSearch.initialstyles": "skinStyles/extensions/AdvancedSearch/ext.advancedSearch.initialstyles.less",
 			"+ext.advancedSearch.styles": "skinStyles/extensions/AdvancedSearch/ext.advancedSearch.styles.less",
 			"+ext.ajaxpoll": "skinStyles/extensions/AJAXPoll/ext.ajaxpoll.less",
@@ -366,7 +367,8 @@
 			"+oojs-ui-core.styles": "skinStyles/ooui/oojs-ui-core.less",
 			"+oojs-ui-toolbars": "skinStyles/ooui/oojs-ui-toolbars.less",
 			"+oojs-ui-widgets": "skinStyles/ooui/oojs-ui-widgets.less",
-			"+oojs-ui-windows": "skinStyles/ooui/oojs-ui-windows.less"
+			"+oojs-ui-windows": "skinStyles/ooui/oojs-ui-windows.less",
+			"+@wikimedia/codex": "skinStyles/codex-styles/codex-styles.less"
 		}
 	},
 	"config_prefix": "wgCitizen",
